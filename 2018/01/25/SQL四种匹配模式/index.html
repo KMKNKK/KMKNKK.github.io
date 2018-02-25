@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="转自：http://blog.csdn.net/yuanzeyao/article/details/38777557 在学习android连接Mysql 数据库前，我们先来复习一下java如何通过jdbc连接MysqlJDBC程序开发的几个步骤: 0、在工程的libs文件夹下放置jar包按照：Project Struc">
+<meta name="description" content="SQL提供了四种匹配模式：% _ [  ] [^ ] 1. %%表示模糊匹配0或多个字符，如以下查询语句：select * from user where name like &amp;#39;%三%&amp;#39;; 这个语句将会把name中带有“三”的信息全部查找出来select * from user wher">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android端用JDBC远程连接服务端Mysql数据库">
-<meta property="og:url" content="http://kmknkk.xin/2017/09/14/Android端用JDBC远程连接服务端Mysql数据库/index.html">
+<meta property="og:title" content="SQL四种匹配模式">
+<meta property="og:url" content="http://kmknkk.xin/2018/01/25/SQL四种匹配模式/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="转自：http://blog.csdn.net/yuanzeyao/article/details/38777557 在学习android连接Mysql 数据库前，我们先来复习一下java如何通过jdbc连接MysqlJDBC程序开发的几个步骤: 0、在工程的libs文件夹下放置jar包按照：Project Structure — Denpendencies — + — Jar dependenc">
+<meta property="og:description" content="SQL提供了四种匹配模式：% _ [  ] [^ ] 1. %%表示模糊匹配0或多个字符，如以下查询语句：select * from user where name like &amp;#39;%三%&amp;#39;; 这个语句将会把name中带有“三”的信息全部查找出来select * from user where name like &amp;#39;%三&amp;#39; ; 这个语句将会把name中最右边带有“三”的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-26T05:34:13.540Z">
+<meta property="og:updated_time" content="2018-02-25T15:24:20.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android端用JDBC远程连接服务端Mysql数据库">
-<meta name="twitter:description" content="转自：http://blog.csdn.net/yuanzeyao/article/details/38777557 在学习android连接Mysql 数据库前，我们先来复习一下java如何通过jdbc连接MysqlJDBC程序开发的几个步骤: 0、在工程的libs文件夹下放置jar包按照：Project Structure — Denpendencies — + — Jar dependenc">
+<meta name="twitter:title" content="SQL四种匹配模式">
+<meta name="twitter:description" content="SQL提供了四种匹配模式：% _ [  ] [^ ] 1. %%表示模糊匹配0或多个字符，如以下查询语句：select * from user where name like &amp;#39;%三%&amp;#39;; 这个语句将会把name中带有“三”的信息全部查找出来select * from user where name like &amp;#39;%三&amp;#39; ; 这个语句将会把name中最右边带有“三”的">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2017/09/14/Android端用JDBC远程连接服务端Mysql数据库/"/>
+  <link rel="canonical" href="http://kmknkk.xin/2018/01/25/SQL四种匹配模式/"/>
 
 
 
 
 
-  <title>Android端用JDBC远程连接服务端Mysql数据库 | KMKNKK | MuffinFish</title>
+  <title>SQL四种匹配模式 | KMKNKK | MuffinFish</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2017/09/14/Android端用JDBC远程连接服务端Mysql数据库/">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/01/25/SQL四种匹配模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Android端用JDBC远程连接服务端Mysql数据库</h1>
+          <h1 class="post-title" itemprop="name headline">SQL四种匹配模式</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T21:15:34+08:00">
-                2017-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T22:59:03+08:00">
+                2018-01-25
               </time>
             
 
@@ -348,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -390,19 +390,13 @@
       
 
       
-        <p>转自：<a href="http://blog.csdn.net/yuanzeyao/article/details/38777557" target="_blank" rel="noopener">http://blog.csdn.net/yuanzeyao/article/details/38777557</a></p>
-<p>在学习android连接Mysql 数据库前，我们先来复习一下java如何通过jdbc连接Mysql<br>JDBC程序开发的几个步骤:</p>
-<p>0、在工程的libs文件夹下放置jar包<br>按照：Project Structure — Denpendencies — + — Jar dependency 的步骤导入jar包到工程里<br>jar包下载地址：<a href="http://download.csdn.net/download/qq_36113598/9979455" target="_blank" rel="noopener">http://download.csdn.net/download/qq_36113598/9979455</a></p>
-<p>1、注册驱动程序<br>    Class.forName(“com.mysql.jdbc.Driver”);<br>    JAVA规范中明确规定：所有的驱动程序必须在静态初始化代码块中将驱动注册到驱动程序管理器中。<br><a id="more"></a></p>
-<p>2、建立数据库连接对象(Connection)<br>    Connection conn=DriverManager.getConnection(“jdbc:mysql://192.168.8.21:3306/test”,  ” User”,” Pasword”);</p>
-<p>3、创建Statement对象<br>    Statement stm = con.createStatement();</p>
-<p>4、发送SQL语句<br>    stm.executeUpdate()或者stm.executeQuery()</p>
-<p>5、如果有结果集，处理结果集(ResultSet)                    </p>
-<p>6、关闭相应的流资源    </p>
-<p>那么开始在android中开始通过Jdbc连接Mysql数据库吧</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public void onClickQuery(View view)</span><br><span class="line"> &#123;</span><br><span class="line"> </span><br><span class="line">//在android中操作数据库最好在子线程中执行，否则可能会报异常</span><br><span class="line">   new Thread()</span><br><span class="line">   &#123;</span><br><span class="line">     public void run() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">	</span><br><span class="line">	  //注册驱动</span><br><span class="line">         Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">         String url = &quot;jdbc:mysql://10.0.2.2:3306/gjun&quot;;</span><br><span class="line">         Connection conn = DriverManager.getConnection(url, &quot;root&quot;, &quot;gavin&quot;);</span><br><span class="line">         Statement stmt = conn.createStatement();</span><br><span class="line">         String sql = &quot;select * from t_user&quot;;</span><br><span class="line">         ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">         while (rs.next()) &#123;</span><br><span class="line">          //处理结果集</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         rs.close();</span><br><span class="line">         stmt.close();</span><br><span class="line">         conn.close();</span><br><span class="line">         Log.v(&quot;final&quot;, &quot;success to connect!&quot;);</span><br><span class="line">       &#125;</span><br><span class="line">	catch(ClassNotFoundException e)</span><br><span class="line">       &#123;</span><br><span class="line">         Log.v(&quot;final&quot;, &quot;fail to connect!&quot;+&quot;  &quot;+e.getMessage());</span><br><span class="line">       &#125; </span><br><span class="line">	catch (SQLException e)</span><br><span class="line">       &#123;</span><br><span class="line">         Log.v(&quot;final&quot;, &quot;fail to connect!&quot;+&quot;  &quot;+e.getMessage());</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;;</span><br><span class="line">   &#125;.start();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意，我是在模拟器上运行的，如果在真机上运行，那么Ip地址就需要换成真实Ip地址，在虚拟机中，10.0.2.2指的就是寄主电脑的Ip地址</p>
-<p>  在运行过程中一定要注意：<br>  1、关闭本机防火墙(不一定需要)<br>  2、在Manifest中加入网络访问权限android.permission.INTERNET<br>  3、服务端mysql数据库允许外部远程用户访问</p>
+        <p>SQL提供了四种匹配模式：% _ [  ] [^ ]</p>
+<h2 id="1"><a href="#1" class="headerlink" title="1. %"></a>1. %</h2><p>%表示模糊匹配0或多个字符，如以下查询语句：<br><code>select * from user where name like &#39;%三%&#39;;</code> 这个语句将会把name中带有“三”的信息全部查找出来<br><code>select * from user where name like &#39;%三&#39; ;</code> 这个语句将会把name中最右边带有“三”的信息全部查找出来<br><code>select * from user where name like &#39;三%&#39; ;</code> 这个语句将会把name中最左边带有“三”的信息全部查找出来</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2. _"></a>2. _</h2><p>_表示任意单个字符，如以下语句:</p>
+<p><code>select * from user where name like &#39;_三_&#39;;</code> 这个语句会匹配出“二三四”</p>
+<p><code>select * from user where name like &#39;__三&#39;;</code> 这个语句会匹配出“一二三”</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3. [  ]"></a>3. [  ]</h2><p>[  ]表示括号内所列字符中的一个（类似于正则表达式），如以下语句：<br><code>select * from user where name like &#39;老[大二三]&#39;;</code> 如果都存在的话将找出“老大”、“老二”、“老三”<br>同时支持缩写0-9、a-z等。</p>
+<h2 id="4"><a href="#4" class="headerlink" title="4.[^ ]"></a>4.[^ ]</h2><p>[^ ]类似于正则表达式，将括号内的元素排除，如以下语句：<br><code>select * from user where name like &#39;[0-3]个&#39;</code> 将会检索出除了“0个”，“1个”，“2个”，“3个”</p>
 
       
     </div>
@@ -427,8 +421,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/08/使用OkHttp/" rel="next" title="使用OkHttp">
-                <i class="fa fa-chevron-left"></i> 使用OkHttp
+              <a href="/2018/01/24/常用头部标签/" rel="next" title="HTML常用头部标签">
+                <i class="fa fa-chevron-left"></i> HTML常用头部标签
               </a>
             
           </div>
@@ -437,8 +431,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/02/Windows下用Git-Github托管代码/" rel="prev" title="Windows下用Git/Github托管代码">
-                Windows下用Git/Github托管代码 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/02/IM即时聊天室（三）：项目详解及源码分析/" rel="prev" title="IM即时聊天室（三）：项目详解及源码分析">
+                IM即时聊天室（三）：项目详解及源码分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -502,8 +496,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -590,6 +593,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1. %</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2. _</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3. [  ]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4.[^ ]</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
