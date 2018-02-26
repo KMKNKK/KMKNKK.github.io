@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E6%96%87%E5%AD%97%E6%B5%AE%E5%8A%A8%E7%8E%AF%E7%BB%95%E5%9B%BE%E7%89%87.jpg">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg">
-<meta property="og:updated_time" content="2018-02-21T14:00:18.862Z">
+<meta property="og:updated_time" content="2018-02-26T15:08:49.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS:元素和基本定位">
 <meta name="twitter:description" content="元素块级元素(disply：block)：p、h1、div等元素，这些元素显示为一块内容，即”块框”。 行内元素(display：inline)：strong、span等元素，这些内容显示在行中，即”行内框”。 行内盒元素（display：inline-block）：顾名思义，这个定义使得元素像行内元素一样水平依次排列，但是框的内容仍然符合块级框的行为，例如可以显示地设置宽度、高度、垂直外边距和内">
@@ -153,7 +153,6 @@
 
 
 </head>
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -411,7 +410,7 @@
         <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><strong>块级元素(disply：block)</strong>：p、h1、div等元素，这些元素显示为一块内容，即”块框”。</p>
 <p><strong>行内元素(display：inline)</strong>：strong、span等元素，这些内容显示在行中，即”行内框”。</p>
 <p><strong>行内盒元素（display：inline-block）</strong>：顾名思义，这个定义使得元素像行内元素一样水平依次排列，但是框的内容仍然符合块级框的行为，例如可以显示地设置宽度、高度、垂直外边距和内边距。</p>
-<p>我们可以使用dispaly来更改元素的类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display:block        //使行内元素表现的像块级元素一样</span><br><span class="line">display:inline       //默认值，像行内元素一样显示</span><br><span class="line">display:inline-block //行内盒元素</span><br><span class="line">display:list-item    //像列表项一样显示</span><br><span class="line">display:none         //使这个框的内容不显示，不占用文档空间</span><br></pre></td></tr></table></figure></p>
+<p>我们可以使用dispaly来更改元素的类型：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display:block        <span class="comment">//使行内元素表现的像块级元素一样</span></span><br><span class="line">display:inline       <span class="comment">//默认值，像行内元素一样显示</span></span><br><span class="line">display:inline-block <span class="comment">//行内盒元素</span></span><br><span class="line">display:list-item    <span class="comment">//像列表项一样显示</span></span><br><span class="line">display:none         <span class="comment">//使这个框的内容不显示，不占用文档空间</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="CSS中的基本定位方式"><a href="#CSS中的基本定位方式" class="headerlink" title="CSS中的基本定位方式"></a>CSS中的基本定位方式</h2><ul>
 <li>普通流</li>
@@ -437,20 +436,20 @@
 <p><strong>清除浮动：</strong></p>
 <ul>
 <li>overflow:hidden 这个方法可以清除浮动，但会产生BFC，强制包裹住元素，导致内容被截断或产生滚动条。</li>
-<li>clear类方法(推荐)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clear:after &#123;</span><br><span class="line">	content: &quot;.&quot;;</span><br><span class="line">	height: 0;</span><br><span class="line">	visibility: hidden;</span><br><span class="line">	display: block;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>clear类方法(推荐)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clear:after &#123;</span><br><span class="line">	content: <span class="string">"."</span>;</span><br><span class="line">	height: <span class="number">0</span>;</span><br><span class="line">	visibility: hidden;</span><br><span class="line">	display: block;</span><br><span class="line">	clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><strong>3、绝对定位</strong></p>
-<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#myBox &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: 20px;</span><br><span class="line">	top: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#myBox &#123;</span><br><span class="line">	position: absolute;</span><br><span class="line">	left: <span class="number">20</span>px;</span><br><span class="line">	top: <span class="number">20</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>绝对定位使元素位置与文档流无关，因此不占据文档空间。普通文档流元素就当绝对定位元素不存在一样。</p>
 <p><strong>4、相对定位</strong></p>
-<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#myBox &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	left: 20px;</span><br><span class="line">	top: 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E5%AE%9A%E4%BD%8D/%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.jpg"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#myBox &#123;</span><br><span class="line">	position: relative;</span><br><span class="line">	left: <span class="number">20</span>px;</span><br><span class="line">	top: <span class="number">20</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>在使用相对定位时，无论是否移动，元素仍然占据原来的空间（占据文档空间）。因此，移动元素会导致覆盖其他框。</p>
-<p><strong>5、固定定位</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: fixed;</span><br></pre></td></tr></table></figure></p>
+<p><strong>5、固定定位</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: fixed;</span><br></pre></td></tr></table></figure></p>
 <p>将元素从文档流中移除，使元素固定在窗口某一位置不动，并且跟随页面滚动始终处于页面固定的位置。</p>
-<p><strong>6、继承定位</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: inherit;</span><br></pre></td></tr></table></figure></p>
+<p><strong>6、继承定位</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: inherit;</span><br></pre></td></tr></table></figure></p>
 <p>顾名思义，从父类元素继承定位属性。</p>
-<p><strong>7、默认值</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: static;</span><br></pre></td></tr></table></figure></p>
+<p><strong>7、默认值</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: <span class="keyword">static</span>;</span><br></pre></td></tr></table></figure></p>
 <p>默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</p>
 
       
@@ -1210,6 +1209,9 @@
 
   
 
+  
+
+  
   <script type="text/javascript">
     function async_load() {
            

@@ -142,7 +142,6 @@
 
 
 </head>
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -523,7 +522,7 @@
         
           <p><strong>1. 标签</strong><br> &lt;a&gt;中不能再嵌套&lt;a&gt;</p>
 <p> &lt;ul&gt;中嵌套&lt;li&gt;构成无序列表 Unorderlist<br> &lt;ol&gt;中嵌套&lt;li&gt;构成有序列表 Orderlist</p>
-<p> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;Firefox&lt;/dt&gt;</span><br><span class="line">	&lt;dd&gt;A free, open source, cross-platform, graphical web browser&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure></p>
+<p> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;Firefox&lt;<span class="regexp">/dt&gt;</span></span><br><span class="line"><span class="regexp">	&lt;dd&gt;A free, open source, cross-platform, graphical web browser&lt;/</span>dd&gt;</span><br><span class="line">&lt;<span class="regexp">/dl&gt;</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/21/HTML小知识汇总/#more" rel="contents">
@@ -827,21 +826,18 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>最近在和好基友用Github练习共同开发，期间发现了一些问题和一些有用的Tips，在这里挑一些比较有有用/有意思的小小总结一下。</p>
 </blockquote>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h2><p>起初没啥经验，<code>.gitignore</code>总是空空白白的，导致Git的文件过于冗余。</p>
-<p>并且<strong>很致命</strong>的一点是这会导致上传一些没必要的配置文件，而由于电脑环境变量或者轮子版本的不同，很可能会<strong>导致编译错误</strong>= =</p>
-<p>解决方法：丰富<code>.gitignore</code> 文件，遵守Github规范<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"># See http://help.github.com/ignore-files/ for more about ignoring files.</span><br><span class="line"></span><br><span class="line"># compiled output</span><br><span class="line">/dist</span><br><span class="line">/tmp</span><br><span class="line"></span><br><span class="line"># dependencies</span><br><span class="line">/node_modules</span><br><span class="line"></span><br><span class="line"># IDEs and editors</span><br><span class="line">/.idea</span><br><span class="line">.project</span><br><span class="line">.classpath</span><br><span class="line">.c9/</span><br><span class="line">*.launch</span><br><span class="line">.settings/</span><br><span class="line">*.sublime-workspace</span><br><span class="line"></span><br><span class="line"># IDE - VSCode</span><br><span class="line">.vscode/*</span><br><span class="line">!.vscode/settings.json</span><br><span class="line">!.vscode/tasks.json</span><br><span class="line">!.vscode/launch.json</span><br><span class="line">!.vscode/extensions.json</span><br><span class="line"></span><br><span class="line"># misc</span><br><span class="line">/.sass-cache</span><br><span class="line">/connect.lock</span><br><span class="line">/coverage/*</span><br><span class="line">/libpeerconnection.log</span><br><span class="line">npm-debug.log</span><br><span class="line">testem.log</span><br><span class="line">/typings</span><br><span class="line"></span><br><span class="line"># e2e</span><br><span class="line">/e2e/*.js</span><br><span class="line">/e2e/*.map</span><br><span class="line"></span><br><span class="line">#System Files</span><br><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br></pre></td></tr></table></figure></p>
-<h2 id="小Tips："><a href="#小Tips：" class="headerlink" title="小Tips："></a>小Tips：</h2><p>在提交到Github的时候，我们需要写一些信息来介绍一下这次提交。不仅是提醒自己，同样也使得其他开发者和用户能够更清楚地了解项目动向。所以一个清晰地Summary就显得比较重要了。</p>
-<p>在这里介绍一种增加Summary可读性的方法：<strong>加入emoji</strong></p>
-<p>这不仅使得commit的Summary更加美观、具有可读性，而且<strong>在遵循emoji使用规范的前提下</strong>，能使得读者更易了解commit的内容。</p>
-<p>效果如图：<br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Git/emoji_example.png"></p>
-<p>以下为常用emoji使用规范，<a href="https://github.com/liuchengxu/git-commit-emoji-cn" target="_blank" rel="noopener">查看完整文档</a>。</p>
-<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Git/emoji.png"></p>
-
-          
+<p>并且<strong>很致命</strong>的一点是这会导致上传一些没必要的配置文件，而由于电脑环境变量或者轮子版本的不同，很可能会<strong>导致编译错误</strong>= =<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/18/git/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1302,9 +1298,9 @@
 
       
         
-          <h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/meta/html-meta.jpg"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; &lt;!-- 使用 HTML doctype，不区分大小写 --&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=&apos;utf-8&apos;&gt; &lt;!-- 声明文档使用的字符编码 --&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html lang=&quot;zh-CN&quot;&gt;       &lt;!-- 页面采用中文（中国大陆范围，包括各种方言、繁体、简体等） --&gt;</span><br><span class="line">&lt;html lang=&quot;zh-cmn-Hans&quot;&gt; &lt;!-- 简体中文（世界范围） --&gt;</span><br><span class="line">&lt;html lang=&quot;zh-cmn-Hant&quot;&gt; &lt;!-- 繁体中文 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;html lang=&quot;en-US&quot;&gt;       &lt;!-- 页面采用英文 --&gt;</span><br></pre></td></tr></table></figure>
+          <h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/meta/html-meta.jpg"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; <span class="xml"><span class="comment">&lt;!-- 使用 HTML doctype，不区分大小写 --&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=<span class="string">'utf-8'</span>&gt; <span class="xml"><span class="comment">&lt;!-- 声明文档使用的字符编码 --&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;       <span class="xml"><span class="comment">&lt;!-- 页面采用中文（中国大陆范围，包括各种方言、繁体、简体等） --&gt;</span></span></span><br><span class="line">&lt;html lang="zh-cmn-Hans"&gt; &lt;!-- 简体中文（世界范围） --&gt;</span><br><span class="line">&lt;html lang="zh-cmn-Hant"&gt; &lt;!-- 繁体中文 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;html lang="en-US"&gt;       &lt;!-- 页面采用英文 --&gt;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/24/常用头部标签/#more" rel="contents">
@@ -1631,7 +1627,7 @@
           <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><strong>块级元素(disply：block)</strong>：p、h1、div等元素，这些元素显示为一块内容，即”块框”。</p>
 <p><strong>行内元素(display：inline)</strong>：strong、span等元素，这些内容显示在行中，即”行内框”。</p>
 <p><strong>行内盒元素（display：inline-block）</strong>：顾名思义，这个定义使得元素像行内元素一样水平依次排列，但是框的内容仍然符合块级框的行为，例如可以显示地设置宽度、高度、垂直外边距和内边距。</p>
-<p>我们可以使用dispaly来更改元素的类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display:block        //使行内元素表现的像块级元素一样</span><br><span class="line">display:inline       //默认值，像行内元素一样显示</span><br><span class="line">display:inline-block //行内盒元素</span><br><span class="line">display:list-item    //像列表项一样显示</span><br><span class="line">display:none         //使这个框的内容不显示，不占用文档空间</span><br></pre></td></tr></table></figure></p>
+<p>我们可以使用dispaly来更改元素的类型：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display:block        <span class="comment">//使行内元素表现的像块级元素一样</span></span><br><span class="line">display:inline       <span class="comment">//默认值，像行内元素一样显示</span></span><br><span class="line">display:inline-block <span class="comment">//行内盒元素</span></span><br><span class="line">display:list-item    <span class="comment">//像列表项一样显示</span></span><br><span class="line">display:none         <span class="comment">//使这个框的内容不显示，不占用文档空间</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/05/CSS-元素和定位/#more" rel="contents">
@@ -2477,6 +2473,9 @@
 
   
 
+  
+
+  
   <script type="text/javascript">
     function async_load() {
            
