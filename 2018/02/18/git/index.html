@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Git/emoji_example.png">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Git/emoji.png">
-<meta property="og:updated_time" content="2018-02-26T15:18:31.611Z">
+<meta property="og:updated_time" content="2018-02-27T06:43:41.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git一些小tips">
 <meta name="twitter:description" content="最近在和好基友用Github练习共同开发，期间发现了一些问题和一些有用的Tips，在这里挑一些比较有有用/有意思的小小总结一下。  问题:起初没啥经验，.gitignore总是空空白白的，导致Git的文件过于冗余。 并且很致命的一点是这会导致上传一些没必要的配置文件，而由于电脑环境变量或者轮子版本的不同，很可能会导致编译错误= =">
@@ -157,7 +157,9 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -396,15 +398,7 @@
 <p>最近在和好基友用Github练习共同开发，期间发现了一些问题和一些有用的Tips，在这里挑一些比较有有用/有意思的小小总结一下。</p>
 </blockquote>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h2><p>起初没啥经验，<code>.gitignore</code>总是空空白白的，导致Git的文件过于冗余。</p>
-<p>并且<strong>很致命</strong>的一点是这会导致上传一些没必要的配置文件，而由于电脑环境变量或者轮子版本的不同，很可能会<strong>导致编译错误</strong>= =<br><a id="more"></a><br>解决方法：丰富<code>.gitignore</code> 文件，遵守Github规范<br>```js</p>
-<h1 id="See-http-help-github-com-ignore-files-for-more-about-ignoring-files"><a href="#See-http-help-github-com-ignore-files-for-more-about-ignoring-files" class="headerlink" title="See http://help.github.com/ignore-files/ for more about ignoring files."></a>See <a href="http://help.github.com/ignore-files/" target="_blank" rel="noopener">http://help.github.com/ignore-files/</a> for more about ignoring files.</h1><h1 id="compiled-output"><a href="#compiled-output" class="headerlink" title="compiled output"></a>compiled output</h1><p>/dist<br>/tmp</p>
-<h1 id="dependencies"><a href="#dependencies" class="headerlink" title="dependencies"></a>dependencies</h1><p>/node_modules</p>
-<h1 id="IDEs-and-editors"><a href="#IDEs-and-editors" class="headerlink" title="IDEs and editors"></a>IDEs and editors</h1><p>/.idea<br>.project<br>.classpath<br>.c9/<br><em>.launch<br>.settings/
-</em>.sublime-workspace</p>
-<h1 id="IDE-VSCode"><a href="#IDE-VSCode" class="headerlink" title="IDE - VSCode"></a>IDE - VSCode</h1><p>.vscode/*<br>!.vscode/settings.json<br>!.vscode/tasks.json<br>!.vscode/launch.json<br>!.vscode/extensions.json</p>
-<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><p>/.sass-cache<br>/connect.lock<br>/coverage/*<br>/libpeerconnection.log<br>npm-debug.log<br>testem.log<br>/typings</p>
-<h1 id="e2e"><a href="#e2e" class="headerlink" title="e2e"></a>e2e</h1><p>/e2e/<em>.js<br>/e2e/</em>.map</p>
-<p>#System Files<br>.DS_Store<br>Thumbs.db<br>```js</p>
+<p>并且<strong>很致命</strong>的一点是这会导致上传一些没必要的配置文件，而由于电脑环境变量或者轮子版本的不同，很可能会<strong>导致编译错误</strong>= =<br><a id="more"></a><br>解决方法：丰富<code>.gitignore</code> 文件，遵守Github规范<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># See http://help.github.com/ignore-files/ for more about ignoring files.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># compiled output</span></span><br><span class="line"><span class="string">/dist</span></span><br><span class="line"><span class="string">/tmp</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># dependencies</span></span><br><span class="line"><span class="string">/node_modules</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># IDEs and editors</span></span><br><span class="line"><span class="string">/.idea</span></span><br><span class="line"><span class="string">.project</span></span><br><span class="line"><span class="string">.classpath</span></span><br><span class="line"><span class="string">.c9/</span></span><br><span class="line">*<span class="string">.launch</span></span><br><span class="line"><span class="string">.settings/</span></span><br><span class="line">*<span class="string">.sublime-workspace</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># IDE - VSCode</span></span><br><span class="line"><span class="string">.vscode/</span>*</span><br><span class="line">!<span class="string">.vscode/settings.json</span></span><br><span class="line">!<span class="string">.vscode/tasks.json</span></span><br><span class="line">!<span class="string">.vscode/launch.json</span></span><br><span class="line">!<span class="string">.vscode/extensions.json</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># misc</span></span><br><span class="line"><span class="string">/.sass-cache</span></span><br><span class="line"><span class="string">/connect.lock</span></span><br><span class="line"><span class="string">/coverage/</span>*</span><br><span class="line"><span class="string">/libpeerconnection.log</span></span><br><span class="line">npm-debug.log</span><br><span class="line">testem.log</span><br><span class="line"><span class="string">/typings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># e2e</span></span><br><span class="line"><span class="string">/e2e/</span>*<span class="string">.js</span></span><br><span class="line"><span class="string">/e2e/</span>*<span class="string">.map</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#System Files</span></span><br><span class="line"><span class="string">.DS_Store</span></span><br><span class="line">Thumbs.db</span><br></pre></td></tr></table></figure></p>
 <h2 id="小Tips："><a href="#小Tips：" class="headerlink" title="小Tips："></a>小Tips：</h2><p>在提交到Github的时候，我们需要写一些信息来介绍一下这次提交。不仅是提醒自己，同样也使得其他开发者和用户能够更清楚地了解项目动向。所以一个清晰地Summary就显得比较重要了。</p>
 <p>在这里介绍一种增加Summary可读性的方法：<strong>加入emoji</strong></p>
 <p>这不仅使得commit的Summary更加美观、具有可读性，而且<strong>在遵循emoji使用规范的前提下</strong>，能使得读者更易了解commit的内容。</p>
@@ -584,9 +578,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             
@@ -617,7 +611,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#See-http-help-github-com-ignore-files-for-more-about-ignoring-files"><span class="nav-number"></span> <span class="nav-text">See http://help.github.com/ignore-files/ for more about ignoring files.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#compiled-output"><span class="nav-number"></span> <span class="nav-text">compiled output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dependencies"><span class="nav-number"></span> <span class="nav-text">dependencies</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDEs-and-editors"><span class="nav-number"></span> <span class="nav-text">IDEs and editors</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDE-VSCode"><span class="nav-number"></span> <span class="nav-text">IDE - VSCode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#misc"><span class="nav-number"></span> <span class="nav-text">misc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#e2e"><span class="nav-number"></span> <span class="nav-text">e2e</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小Tips："><span class="nav-number">1.</span> <span class="nav-text">小Tips：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小Tips："><span class="nav-number">2.</span> <span class="nav-text">小Tips：</span></a></li></ol></div>
             
 
           </div>

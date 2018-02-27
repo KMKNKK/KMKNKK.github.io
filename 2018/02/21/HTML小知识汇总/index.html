@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="1. 标签 &amp;lt;a&amp;gt;中不能再嵌套&amp;lt;a&amp;gt;  &amp;lt;ul&amp;gt;中嵌套&amp;lt;li&amp;gt;构成无序列表 Unorderlist &amp;lt;ol&amp;gt;中嵌套&amp;lt;li&amp;gt;构成有序列表 Orderlist  &amp;lt;dl&amp;gt;标签定义一个描述列表，与&amp;lt;dt&amp;gt;(定义项目名字)和&amp;lt;dd&amp;gt;(描述项目)一起使用 用法：(&amp;lt;dt&amp;gt;和&amp;lt;dd&amp;g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-26T15:18:31.547Z">
+<meta property="og:updated_time" content="2018-02-27T06:35:28.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML小知识汇总">
 <meta name="twitter:description" content="1. 标签 &amp;lt;a&amp;gt;中不能再嵌套&amp;lt;a&amp;gt;  &amp;lt;ul&amp;gt;中嵌套&amp;lt;li&amp;gt;构成无序列表 Unorderlist &amp;lt;ol&amp;gt;中嵌套&amp;lt;li&amp;gt;构成有序列表 Orderlist  &amp;lt;dl&amp;gt;标签定义一个描述列表，与&amp;lt;dt&amp;gt;(定义项目名字)和&amp;lt;dd&amp;gt;(描述项目)一起使用 用法：(&amp;lt;dt&amp;gt;和&amp;lt;dd&amp;g">
@@ -154,7 +154,9 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -402,15 +404,15 @@
       
         <p><strong>1. 标签</strong><br> &lt;a&gt;中不能再嵌套&lt;a&gt;</p>
 <p> &lt;ul&gt;中嵌套&lt;li&gt;构成无序列表 Unorderlist<br> &lt;ol&gt;中嵌套&lt;li&gt;构成有序列表 Orderlist</p>
-<p> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;Firefox&lt;<span class="regexp">/dt&gt;</span></span><br><span class="line"><span class="regexp">	&lt;dd&gt;A free, open source, cross-platform, graphical web browser&lt;/</span>dd&gt;</span><br><span class="line">&lt;<span class="regexp">/dl&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>A free, open source, cross-platform, graphical web browser<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p><strong>2. HTML5中新的表单元素</strong></p>
 <ul>
 <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist" target="_blank" rel="noopener">datalist : 规定输入域的选项列表,类似于下拉框</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;input list=<span class="string">"browsers"</span> id=<span class="string">"myBrowser"</span> name=<span class="string">"myBrowser"</span> /&gt;</span><br><span class="line">&lt;datalist id=<span class="string">"browsers"</span>&gt;</span><br><span class="line">  &lt;option value=<span class="string">"Chrome"</span>&gt;</span><br><span class="line">  &lt;option value=<span class="string">"Firefox"</span>&gt;</span><br><span class="line">  &lt;option value=<span class="string">"Internet Explorer"</span>&gt;</span><br><span class="line">  &lt;option value=<span class="string">"Opera"</span>&gt;</span><br><span class="line">  &lt;option value=<span class="string">"Safari"</span>&gt;</span><br><span class="line">  &lt;option value=<span class="string">"Microsoft Edge"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/datalist&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;input list=<span class="string">"browsers"</span> id=<span class="string">"myBrowser"</span> name=<span class="string">"myBrowser"</span> /&gt;</span><br><span class="line">&lt;datalist id=<span class="string">"browsers"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Chrome"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Firefox"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Opera"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Safari"</span>&gt;</span><br><span class="line">  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Microsoft Edge"</span>&gt;</span><br><span class="line">&lt;/datalist&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output" target="_blank" rel="noopener">output : 用于不同类型的输出</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form oninput=<span class="string">"result.value=parseInt(a.value)+parseInt(b.value)"</span>&gt;</span><br><span class="line">  &lt;input type=<span class="string">"range"</span> name=<span class="string">"b"</span> value=<span class="string">"50"</span> /&gt; +</span><br><span class="line">  &lt;input type=<span class="string">"number"</span> name=<span class="string">"a"</span> value=<span class="string">"10"</span> /&gt; =</span><br><span class="line">  &lt;output name=<span class="string">"result"</span>&gt;<span class="number">60</span>&lt;<span class="regexp">/output&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">oninput</span>=<span class="string">"result.value=parseInt(a.value)+parseInt(b.value)"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">"b"</span> <span class="attr">value</span>=<span class="string">"50"</span> /&gt;</span> +</span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"a"</span> <span class="attr">value</span>=<span class="string">"10"</span> /&gt;</span> =</span><br><span class="line">  <span class="tag">&lt;<span class="name">output</span> <span class="attr">name</span>=<span class="string">"result"</span>&gt;</span>60<span class="tag">&lt;/<span class="name">output</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>keygen : 用于验证用户，但是已移出标准</p>
 </li>
@@ -584,9 +586,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             

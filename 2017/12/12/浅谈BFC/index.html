@@ -89,7 +89,7 @@
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/BFC-1.png">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/BFC-2.png">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/BFC-3.png">
-<meta property="og:updated_time" content="2018-02-26T15:18:32.045Z">
+<meta property="og:updated_time" content="2018-02-27T08:12:35.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈BFC">
 <meta name="twitter:description" content="写在前面：本文是我在看了CSS：潜藏着的BFC、为什么这么多人讲不清楚 BFC两篇文章后做做出的关于CSS的总结，如有错误与不足，欢迎指正，不胜感激！  一、什么是BFC（Block Formatting Context） 我们先来看BFC的定义：块级格式化上下文，指一个独立的块级渲染区域，该区域有一套渲染规则来约束块级盒子布局,浮动层元素可再次进行交互,且与区域外部无关。 那么BFC是如何产生">
@@ -158,7 +158,9 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -410,7 +412,6 @@
 <p>一、什么是BFC（Block Formatting Context）</p>
 <p>我们先来看BFC的定义：块级格式化上下文，指一个独立的块级渲染区域，该区域有一套渲染规则来约束块级盒子布局,浮动层元素可再次进行交互,且与区域外部无关。</p>
 <p>那么BFC是如何产生的呢？查阅<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">MDN</a>可以看到，满足下列条件之一便会生成BFC:</p>
-<blockquote>
 <ul>
 <li>根元素或其它包含它的元素</li>
 <li>浮动元素 (元素的 float 不是 none)</li>
@@ -423,7 +424,6 @@
 <li>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all    的元素并不被包裹在一个多列容器中。<a id="more"></a>
 最好的方法应该是使用display：flow-root ，不过部分浏览器不支持。</li>
 </ul>
-</blockquote>
 <hr>
 <p>二、BFC内部的渲染布局规则及功能</p>
 <p>简单归纳如下：</p>
@@ -440,7 +440,7 @@
 </blockquote>
 <p>通俗地来说，BFC内相邻两元素的margin会发生合并，并且合并为两者中较大的那一个。</p>
 <p>但是在不同的BFC中的两个元素不会发生重叠，我们甚至可以用这一特性在日常页面中防止margin合并，如：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="father"&gt;</span><br><span class="line">  &lt;div class="son"&gt;&lt;/div&gt;</span><br><span class="line">&lt;div style="overflow:hidden;"&gt;</span><br><span class="line">  &lt;div class="son"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">margin </span>: <span class="number">10px</span> <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">"father"</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=<span class="string">"son"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;<span class="selector-tag">div</span> style=<span class="string">"overflow:hidden;"</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">div</span> class=<span class="string">"son"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.son&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">  <span class="attribute">margin</span> : <span class="number">10px</span> <span class="number">0px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>:<span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时这两个son块不会发生margin重叠：<br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/BFC-3.png"></p>
 <p><strong>3.BFC只管着直系子元素，直系子元素所管理的元素则管不到</strong></p>
 <p>让我想起了以前历史课上学的一句话“你的附庸的附庸不是你的附庸”，是什么意思呢，就是你的爸爸管着你，你的爷爷管着你的爸爸，但是你的爷爷不会管你，因为你的爸爸已经管着你了。</p>
@@ -613,9 +613,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             

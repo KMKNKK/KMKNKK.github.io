@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS。有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？  解决方法就是：使用自定的CSS样式覆盖之前的CSS样式 CSS中的优先级大体是：内联样式&amp;">
+<meta name="description" content="在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS 有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？ 解决方法就是：使用自定的CSS样式覆盖之前的CSS样式 CSS中的优先级大体是：内联样式&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端笔记（CSS）：CSS的覆盖">
 <meta property="og:url" content="http://kmknkk.xin/2017/10/29/前端笔记（CSS）：CSS的覆盖/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS。有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？  解决方法就是：使用自定的CSS样式覆盖之前的CSS样式 CSS中的优先级大体是：内联样式&amp;gt;id引用&amp;gt;class、伪类、属性选择器引用&amp;gt;类型选择器、伪元素选择器">
+<meta property="og:description" content="在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS 有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？ 解决方法就是：使用自定的CSS样式覆盖之前的CSS样式 CSS中的优先级大体是：内联样式&amp;gt;id引用&amp;gt;class、伪类、属性选择器引用&amp;gt;类型选择器、伪元素选择器引用">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/timg.jpg">
-<meta property="og:updated_time" content="2018-02-26T15:18:31.418Z">
+<meta property="og:updated_time" content="2018-02-27T08:10:13.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端笔记（CSS）：CSS的覆盖">
-<meta name="twitter:description" content="在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS。有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？  解决方法就是：使用自定的CSS样式覆盖之前的CSS样式 CSS中的优先级大体是：内联样式&amp;gt;id引用&amp;gt;class、伪类、属性选择器引用&amp;gt;类型选择器、伪元素选择器">
+<meta name="twitter:description" content="在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS 有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？ 解决方法就是：使用自定的CSS样式覆盖之前的CSS样式 CSS中的优先级大体是：内联样式&amp;gt;id引用&amp;gt;class、伪类、属性选择器引用&amp;gt;类型选择器、伪元素选择器引用">
 <meta name="twitter:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/timg.jpg">
 
 
@@ -156,7 +156,9 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -402,27 +404,14 @@
       
 
       
-        <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/timg.jpg"></p>
-<h4>在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS。<br>有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？</h4>
-
+        <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/timg.jpg"><br>在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS</p>
+<p>有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？</p>
 <p>解决方法就是：<strong>使用自定的CSS样式覆盖之前的CSS样式</strong></p>
 <p>CSS中的优先级大体是：<strong>内联样式&gt;id引用&gt;class、伪类、属性选择器引用&gt;类型选择器、伪元素选择器引用</strong>，当优先类型相同时，数量较多的属性优先级较高。</p>
 <p>特殊性排行：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//选择器                  类型(由低到高)</span><br><span class="line">style=""                  1,0,0,0</span><br><span class="line"><span class="selector-id">#test1</span> <span class="selector-id">#test2</span> &#123;&#125;          0,2,0,0</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-class">.date</span> &#123;&#125;         0,1,1,0</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#content</span> &#123;&#125;            0,1,0,1</span><br><span class="line"><span class="selector-id">#content</span> &#123;&#125;               0,1,0,0</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.comment</span> <span class="selector-class">.date</span> &#123;&#125;        0,0,2,1</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.comment</span> &#123;&#125;              0,0,1,1</span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;&#125;                  0,0,0,2</span><br><span class="line"><span class="selector-tag">p</span> &#123;&#125;                      0,0,0,1</span><br></pre></td></tr></table></figure></p>
 <p>举个例子，比如下面这个style：</p>
 <a id="more"></a>
-<blockquote>
-<p>&lt; style&gt;<br>    body {<br>    background-color: black;<br>    font-family: Monospace;<br>    color: green;<br>    }   </p>
-<pre><code>#orange-text {
-color: orange;    
-}    
-.class1 {
-color: pink ;   
-}   
-.class2 { 
-color: blue;    
-} 
-</code></pre><p>&lt; /style&gt;</p>
-</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line"><span class="attribute">background-color</span>: black;</span><br><span class="line"><span class="attribute">font-family</span>: Monospace;</span><br><span class="line"><span class="attribute">color</span>: green;   </span><br><span class="line">&#125;   </span><br><span class="line"><span class="selector-id">#orange-text</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: orange;    </span><br><span class="line">&#125;    </span><br><span class="line"><span class="selector-class">.class1</span> &#123;</span><br><span class="line"><span class="attribute">color</span>: pink ;   </span><br><span class="line">&#125;   </span><br><span class="line"><span class="selector-class">.class2</span> &#123; </span><br><span class="line"><span class="attribute">color</span>: blue;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们来创建一个段落加上点文本看看字体颜色会发生什么变化</p>
 <ul>
 <li><code>&lt;p&gt;Hello World!&lt;/p&gt;</code>，首先不指定id和class，字体默认为body中的样式，为green</li>
@@ -445,12 +434,9 @@ color: blue;
 </li>
 </ul>
 <hr>
-<p>如果你想某个样式的某个变量不被覆盖的话，可以在其后面加上！important来强制增加其的优先级，<strong>但是只能加在id、class中</strong>。比如在#orange-text中的color后面加上！important：</p>
-<blockquote>
-<p>   #orange-text<br>   {<br>    color: orange ！important ;<br>    }    </p>
-</blockquote>
-<p>  <code>&lt;p class=&quot;class1 class2&quot; id=&quot;orange-text&quot; style=&quot;color:whitle&quot;&gt;Hello World!&lt;/p&gt;</code> </p>
-<h2 id="这样的话就算有内联样式表设置color为white，color仍然为orange。"><a href="#这样的话就算有内联样式表设置color为white，color仍然为orange。" class="headerlink" title="这样的话就算有内联样式表设置color为white，color仍然为orange。 "></a>这样的话就算有内联样式表设置color为white，color仍然为orange。 </h2><p>当优先类型相同时，数量较多的属性优先级较高，比如：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#test1</span> <span class="selector-id">#test2</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-id">#test2</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id="test1"&gt;</span><br><span class="line">&lt;h1 id="test2"&gt;Test&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果你想某个样式的某个变量不被覆盖的话，可以在其后面加上！important来强制增加其的优先级，<strong>但是只能加在id、class中</strong>。比如在#orange-text中的color后面加上！important：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#orange-text</span> </span><br><span class="line">&#123;</span><br><span class="line">  <span class="attribute">color</span>: orange ！important ;    </span><br><span class="line">&#125;    </span><br><span class="line"></span><br><span class="line">&lt;p class="class1 class2" id="orange-text" style="color:whitle"&gt;Hello World!&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样的话就算有内联样式表设置color为white，color仍然为orange。 </p>
+<p>当优先类型相同时，数量较多的属性优先级较高，比如：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#test1</span> <span class="selector-id">#test2</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span> #test2&#123;</span><br><span class="line">  <span class="attribute">color</span>:black;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"test1"</span>&gt;</span><br><span class="line">&lt;<span class="selector-tag">h1</span> id=<span class="string">"test2"</span>&gt;Test&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>页面中的h1应为红色，因为red属性有两个id，而black属性只有一个id选择器和一个类型选择器。</p>
 
       
@@ -551,17 +537,8 @@ color: blue;
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -625,9 +602,9 @@ color: blue;
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             
@@ -648,22 +625,6 @@ color: blue;
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS。有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这样的话就算有内联样式表设置color为white，color仍然为orange。"><span class="nav-number"></span> <span class="nav-text">这样的话就算有内联样式表设置color为white，color仍然为orange。 </span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

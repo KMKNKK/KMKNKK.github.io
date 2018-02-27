@@ -87,7 +87,7 @@
 <meta property="og:description" content="写在前面 : 摘自第一行代码，仅用作学习 一、访问 : https://git-for-windows.github.io/ 下载git for windows  二、打开Git Bash配置下身份：   12git config --global user.name &quot;Tony&quot;git config --golbal user.email &quot;tony@gmail.com&quot; 验证是否创建成功：仅">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/timg.gif">
-<meta property="og:updated_time" content="2018-02-26T15:18:31.957Z">
+<meta property="og:updated_time" content="2018-02-27T07:54:25.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows下用Git&#x2F;Github托管代码">
 <meta name="twitter:description" content="写在前面 : 摘自第一行代码，仅用作学习 一、访问 : https://git-for-windows.github.io/ 下载git for windows  二、打开Git Bash配置下身份：   12git config --global user.name &quot;Tony&quot;git config --golbal user.email &quot;tony@gmail.com&quot; 验证是否创建成功：仅">
@@ -156,7 +156,9 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -395,32 +397,32 @@
 <p>写在前面 : 摘自第一行代码，仅用作学习</p>
 <p>一、访问 : <a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a> 下载git for windows </p>
 <p>二、打开Git Bash配置下身份：  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Tony"</span></span><br><span class="line">git config --golbal user.email <span class="string">"tony@gmail.com"</span></span><br></pre></td></tr></table></figure>
-<p>验证是否创建成功：仅需将用户名和邮箱去掉<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name </span><br><span class="line">git config --golbal user.email</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Tony"</span></span><br><span class="line">git<span class="built_in"> config </span>--golbal user.email <span class="string">"tony@gmail.com"</span></span><br></pre></td></tr></table></figure>
+<p>验证是否创建成功：仅需将用户名和邮箱去掉<br><a id="more"></a><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name </span><br><span class="line">git<span class="built_in"> config </span>--golbal user.email</span><br></pre></td></tr></table></figure></p>
 <p>若创建成功则会打印出刚才创建的用户名和邮箱</p>
 <p>三、创建代码仓库</p>
 <p>进入到项目文件夹：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 项目文件夹位置</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> 项目文件夹位置</span><br></pre></td></tr></table></figure>
 <p>在这个目录下输入命令：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git init</span></span><br></pre></td></tr></table></figure>
 <p>仓库创建完成后会在项目文件夹下生成一个隐藏的.Git文件夹，用于记录本地所有Git操作，可以通过ls -al命令来查看，如果想删除本地仓库直接删除这个隐藏文件夹就好了</p>
 <p>四、提交本地代码</p>
 <p>添加想要提交的某个文件/某个目录/全部文件分别对应：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名  / git add 目录名 / git add .</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="builtin-name">add</span> 文件名  / git <span class="builtin-name">add</span> 目录名 / git <span class="builtin-name">add</span> .</span><br></pre></td></tr></table></figure>
 <p>提交文件：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"first commit."</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">"first commit."</span></span><br></pre></td></tr></table></figure>
 <p>后面的描述信息可以任意更改，但一定要有。</p>
 <p> 五、创建和选择分支</p>
 <p>创建：<code>git branch 分支名</code>  选择分支：<code>git checkout 分支名</code></p>
 <p>将分支一的代码合并到主支上：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge 分支一</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br><span class="line">git merge 分支一</span><br></pre></td></tr></table></figure>
 <p>删除分支：<code>git branch -D 分支名</code></p>
 <p>六、将代码托管到Github上</p>
 <p>在github上创建完项目后，用Git Bush进入到本地的文件夹，init以后，将github上的项目克隆到本地：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone guihub地址</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">&lt;github</span>地址&gt;</span><br></pre></td></tr></table></figure>
 <p>将克隆下来的.gitgnore、LICENSE、README.md、.git这四个文件放到本项目文件夹中，覆盖原有项目。</p>
 <p>接着提交就好了：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"First conmit."</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .</span></span><br><span class="line"><span class="bash">git commit -m <span class="string">"First conmit."</span></span></span><br><span class="line"><span class="bash">git push origin master</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -585,9 +587,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             

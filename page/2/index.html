@@ -151,7 +151,9 @@
 
   <div class="container sidebar-position-left 
   page-home">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -539,8 +541,7 @@
 <p>前言:之前在<a href="http://kmknkk.xin/2017/11/30/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">教你用shadowsocks和vps科学上网</a>中使用的VPS到期并且续费比较贵<br>所以最近转用了DigitalOcean，由于Github提供50刀的学生优惠，所以基本上可以免费使用一年低配VPS，虽然比之前的稍微慢一点，但是是免费的呀！</p>
 </blockquote>
 <p>具体操作步骤如下：</p>
-<ul>
-<li>在Github上申请成为学生账号（只需要有学生邮箱即可，一般大学都提供学生邮箱，例如博主就是在教务处申请的以edu.cn结尾的教育邮箱）
+<p>(1)在Github上申请成为学生账号（只需要有学生邮箱即可，一般大学都提供学生邮箱，例如博主就是在教务处申请的以edu.cn结尾的教育邮箱）<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/12/25/DigitalOcean学生优惠/#more" rel="contents">
@@ -698,7 +699,7 @@
       
         
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<a href="http://kmknkk.xin/2017/12/18/IM%E5%8D%B3%E6%97%B6%E8%81%8A%E5%A4%A9%E5%AE%A4%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWebSocket/#more">IM即时聊天室（一）</a>中,我们了解了WebSocket的相关知识和基础API作为编写聊天室的基础。那么作为进阶篇，今天我们就来讲一讲Socket.io</p>
-<h2 id="1、什么是Socket-io？"><a href="#1、什么是Socket-io？" class="headerlink" title="1、什么是Socket.io？"></a>1、什么是Socket.io？</h2><p>简单来说，Socket.io封装了WebSocket以及其他的一些协议，是一个完全由JavaScript实现、基于Node.js、支持WebSocket的协议用于实时通信、跨平台的开源框架。</p>
+<h2 id="1、什么是Socket-io？"><a href="#1、什么是Socket-io？" class="headerlink" title="1、什么是Socket.io？"></a>1、什么是Socket.io？</h2><p>简单来说，<code>Socket.io</code>封装了WebSocket以及其他的一些协议，是一个完全由JavaScript实现、基于Node.js、支持WebSocket的协议用于实时通信、跨平台的开源框架。</p>
 <p>它包括了客户端的JavaScript和服务器端的Node.js并且实现了WebSocket的服务端代码。同时还有很强的兼容性，兼容各种浏览器以及移动设备。有了它，我们能更方便快捷地实现服务器端与客户端之间的实时通讯。<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -858,18 +859,11 @@
         
           <h2 id="1、什么是WebSocket-它和Socket有什么关系？"><a href="#1、什么是WebSocket-它和Socket有什么关系？" class="headerlink" title="1、什么是WebSocket?它和Socket有什么关系？"></a>1、什么是WebSocket?它和Socket有什么关系？</h2><p>在网络中，两个程序（进程）需要<strong>全双工通信</strong>，即双方可以同时向对方发送消息，需要用到的就是Socket，它能够提供端对端通信。</p>
 <p>具体的实现过程如下：</p>
-<ul>
-<li><p>客户端：创建一个Socket实例，并且提供服务端的IP和端口，如：192.168.1.1:8081</p>
-</li>
-<li><p>服务端：创建另一个Socket并绑定本地端口进行监听，如：localhost:8081</p>
-</li>
-<li><p>两者约定的端口要相同</p>
-</li>
-<li><p>客户端对服务端进行请求连接，服务端接受后通知客户端，双方就建立了一个TCP连接</p>
-</li>
-<li><p>至此，客户端和服务端之间可以进行双向通信，并且<strong>无客户端和服务端之分</strong>，均为端对端通信，但是主流的IM还是采用服务端转发的方式进行消息传送。</p>
-</li>
-</ul>
+<p>(1)客户端：创建一个Socket实例，并且提供服务端的IP和端口，如：192.168.1.1:8081</p>
+<p>(2)服务端：创建另一个Socket并绑定本地端口进行监听，如：localhost:8081</p>
+<p>(3)两者约定的端口要相同</p>
+<p>(4)客户端对服务端进行请求连接，服务端接受后通知客户端，双方就建立了一个TCP连接</p>
+<p>(5)至此，客户端和服务端之间可以进行双向通信，并且<strong>无客户端和服务端之分</strong>，均为端对端通信，但是主流的IM还是采用服务端转发的方式进行消息传送。</p>
 <p>WebSocket借鉴了socket的思想，为web应用程序的客户端和服务端之间提供了一种全双工通信机制（<strong>注意：在WebSocket中是有客户端和服务端之分的</strong>）。</p>
 <p>不同于原生Socket的端到端直接通信，WebSocke采取的方式是让所有客户端连接服务端，服务器再将不同客户端发送给自己的消息进行转发或者广播。<br>
           <!--noindex-->
@@ -1034,7 +1028,6 @@
 <p>一、什么是BFC（Block Formatting Context）</p>
 <p>我们先来看BFC的定义：块级格式化上下文，指一个独立的块级渲染区域，该区域有一套渲染规则来约束块级盒子布局,浮动层元素可再次进行交互,且与区域外部无关。</p>
 <p>那么BFC是如何产生的呢？查阅<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">MDN</a>可以看到，满足下列条件之一便会生成BFC:</p>
-<blockquote>
 <ul>
 <li>根元素或其它包含它的元素</li>
 <li>浮动元素 (元素的 float 不是 none)</li>
@@ -1503,7 +1496,7 @@
 
       
         
-          <p align="center" style="font-size:200%">冒泡排序</p><br><blockquote class="blockquote-center"><br><strong>什么时候最快</strong><br>当输入的数据已经是正序时: O(n)<br><br><strong>什么时候最慢</strong><br>当输入的数据是反序时: O(n²)<br></blockquote><br><br><strong>冒泡排序动图演示</strong><br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/1867034-e19840224b331fae.gif"><br><strong>JavaScript代码实现</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;        <span class="comment">//相邻元素两两对比</span></span><br><span class="line">                <span class="keyword">var</span> temp = arr[j+<span class="number">1</span>];        <span class="comment">//元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>
+          <p align="center" style="font-size:200%">冒泡排序</p><br><blockquote class="blockquote-center"><br><strong>什么时候最快</strong><br>当输入的数据已经是正序时: O(n)<br><br><strong>什么时候最慢</strong><br>当输入的数据是反序时: O(n²)<br></blockquote><br><br><strong>冒泡排序动图演示</strong><br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/1867034-e19840224b331fae.gif"><br><strong>JavaScript代码实现</strong><br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span><span class="params">(arr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.length;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;        <span class="comment">//相邻元素两两对比</span></span><br><span class="line">                <span class="keyword">var</span> temp = arr[j+<span class="number">1</span>];        <span class="comment">//元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/26/排序算法/#more" rel="contents">
@@ -1660,17 +1653,10 @@
 
       
         
-          <blockquote>
-<p><strong>来源：今日头条技术博客</strong></p>
-</blockquote>
-<p><iframe id="Example2" title="Example2" width="100%" height="400" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" src="https://techblog.toutiao.com/2017/06/06/xss/"><br></iframe><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/23/前端安全/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="markdown">/<span class="strong">**重构中**</span>/</span></span></span><br></pre></td></tr></table></figure>
+
+          
         
       
     </div>
@@ -1969,9 +1955,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             

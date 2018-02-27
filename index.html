@@ -151,7 +151,9 @@
 
   <div class="container sidebar-position-left 
   page-home">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -522,7 +524,7 @@
         
           <p><strong>1. 标签</strong><br> &lt;a&gt;中不能再嵌套&lt;a&gt;</p>
 <p> &lt;ul&gt;中嵌套&lt;li&gt;构成无序列表 Unorderlist<br> &lt;ol&gt;中嵌套&lt;li&gt;构成有序列表 Orderlist</p>
-<p> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">	&lt;dt&gt;Firefox&lt;<span class="regexp">/dt&gt;</span></span><br><span class="line"><span class="regexp">	&lt;dd&gt;A free, open source, cross-platform, graphical web browser&lt;/</span>dd&gt;</span><br><span class="line">&lt;<span class="regexp">/dl&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>A free, open source, cross-platform, graphical web browser<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/21/HTML小知识汇总/#more" rel="contents">
@@ -679,8 +681,7 @@
 
       
         
-          <p><strong>1. link和@import的区别</strong></p>
-<p> (1) link属于HTML标签，而@import由CSS提供<br> (2) 页面加载时，link会同时被加载，而@import引用的CSS会等到页面加载完时再加载<br> (3) import的IE版本要求为&gt;IE5，而link无兼容问题<br>
+          <p><strong>1. link和@import的区别</strong><br> (1) link属于HTML标签，而@import由CSS提供<br> (2) 页面加载时，link会同时被加载，而@import引用的CSS会等到页面加载完时再加载<br> (3) import的IE版本要求为&gt;IE5，而link无兼容问题<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/21/CSS小知识汇总/#more" rel="contents">
@@ -1298,9 +1299,10 @@
 
       
         
-          <h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/meta/html-meta.jpg"><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; <span class="xml"><span class="comment">&lt;!-- 使用 HTML doctype，不区分大小写 --&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta charset=<span class="string">'utf-8'</span>&gt; <span class="xml"><span class="comment">&lt;!-- 声明文档使用的字符编码 --&gt;</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html lang=<span class="string">"zh-CN"</span>&gt;       <span class="xml"><span class="comment">&lt;!-- 页面采用中文（中国大陆范围，包括各种方言、繁体、简体等） --&gt;</span></span></span><br><span class="line">&lt;html lang="zh-cmn-Hans"&gt; &lt;!-- 简体中文（世界范围） --&gt;</span><br><span class="line">&lt;html lang="zh-cmn-Hant"&gt; &lt;!-- 繁体中文 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;html lang="en-US"&gt;       &lt;!-- 页面采用英文 --&gt;</span><br></pre></td></tr></table></figure>
+          <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/meta/html-meta.jpg"></p>
+<h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span> <span class="comment">&lt;!-- 使用 HTML doctype，不区分大小写 --&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">'utf-8'</span>&gt;</span> <span class="comment">&lt;!-- 声明文档使用的字符编码 --&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-CN"</span>&gt;</span>       <span class="comment">&lt;!-- 页面采用中文（中国大陆范围，包括各种方言、繁体、简体等） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn-Hans"</span>&gt;</span> <span class="comment">&lt;!-- 简体中文（世界范围） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"zh-cmn-Hant"</span>&gt;</span> <span class="comment">&lt;!-- 繁体中文 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en-US"</span>&gt;</span>       <span class="comment">&lt;!-- 页面采用英文 --&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/24/常用头部标签/#more" rel="contents">
@@ -1457,16 +1459,7 @@
 
       
         
-          <p>最近在复习红宝书，里面介绍了对象创建的七种方式，分别是：</p>
-<ul>
-<li>工厂模式</li>
-<li>构造函数模式</li>
-<li>原型模式</li>
-<li>构造函数和原型组合模式</li>
-<li>动态原型模式</li>
-<li>寄生构造模式</li>
-<li>稳妥构造模式</li>
-</ul>
+          <p>最近在复习红宝书，里面介绍了对象创建的七种方式，分别是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">工厂模式</span><br><span class="line">构造函数模式</span><br><span class="line">原型模式</span><br><span class="line">构造函数和原型组合模式</span><br><span class="line">动态原型模式</span><br><span class="line">寄生构造模式</span><br><span class="line">稳妥构造模式</span><br></pre></td></tr></table></figure></p>
 <p>在这里总结一下，以便归纳学习。<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1624,10 +1617,10 @@
 
       
         
-          <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><strong>块级元素(disply：block)</strong>：p、h1、div等元素，这些元素显示为一块内容，即”块框”。</p>
-<p><strong>行内元素(display：inline)</strong>：strong、span等元素，这些内容显示在行中，即”行内框”。</p>
-<p><strong>行内盒元素（display：inline-block）</strong>：顾名思义，这个定义使得元素像行内元素一样水平依次排列，但是框的内容仍然符合块级框的行为，例如可以显示地设置宽度、高度、垂直外边距和内边距。</p>
-<p>我们可以使用dispaly来更改元素的类型：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display:block        <span class="comment">//使行内元素表现的像块级元素一样</span></span><br><span class="line">display:inline       <span class="comment">//默认值，像行内元素一样显示</span></span><br><span class="line">display:inline-block <span class="comment">//行内盒元素</span></span><br><span class="line">display:list-item    <span class="comment">//像列表项一样显示</span></span><br><span class="line">display:none         <span class="comment">//使这个框的内容不显示，不占用文档空间</span></span><br></pre></td></tr></table></figure></p>
+          <h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><p><strong>块级元素(disply：block)</strong><br>这类元素显示为一块内容，即”块框”,常见的块级元素有：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">menu</span><br><span class="line"><span class="selector-tag">p</span>,pre</span><br><span class="line">h1~<span class="selector-tag">h6</span>,hr</span><br><span class="line"><span class="selector-tag">div</span>,dir,dl</span><br><span class="line"><span class="selector-tag">table</span>,<span class="selector-tag">ul</span>,<span class="selector-tag">ol</span>,<span class="selector-tag">li</span>,form</span><br><span class="line"><span class="selector-tag">address</span>,<span class="selector-tag">blockquote</span>,center</span><br></pre></td></tr></table></figure></p>
+<p><strong>行内元素(display：inline)</strong><br>strong、span等元素，这些内容显示在行中，即”行内框”。</p>
+<p><strong>行内盒元素（display：inline-block）</strong><br>顾名思义，这个定义使得元素像行内元素一样水平依次排列，但是框的内容仍然符合块级框的行为。<br>例如可以显示地设置宽度、高度、垂直外边距和内边距。</p>
+<p>我们可以使用dispaly来更改元素的类型：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">display: block        //使行内元素表现的像块级元素一样</span><br><span class="line">display: inline       //默认值，像行内元素一样显示</span><br><span class="line">display: inline-block //行内盒元素</span><br><span class="line">display: list-item    //像列表项一样显示</span><br><span class="line">display: none         //使这个框的内容不显示，不占用文档空间</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/05/CSS-元素和定位/#more" rel="contents">
@@ -1919,9 +1912,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             

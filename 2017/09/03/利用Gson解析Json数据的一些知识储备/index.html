@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20171001151402999?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171001152832070?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 <meta property="og:image" content="http://img.blog.csdn.net/20171001153543670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-02-26T15:18:31.907Z">
+<meta property="og:updated_time" content="2018-02-27T06:43:41.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Gson解析Json数据的一些知识储备">
 <meta name="twitter:description" content="1、利用GsonFormat直接创建JSON语句对应的JavaBean">
@@ -159,7 +159,9 @@
   
 
   <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -398,15 +400,15 @@
 <p><img src="http://img.blog.csdn.net/20171001151345413?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p><img src="http://img.blog.csdn.net/20171001151402999?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><a id="more"></a></p>
 <p><strong>2、由于JSON语句里不能使用大写解析出的JavaBean变量名全为小写，而有时我们需要将部分变量名改为大写或其他名字，可使用如下方法：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SerializedName</span>(<span class="string">"n"</span>)</span><br><span class="line"><span class="keyword">private</span> String userName;   </span><br><span class="line"><span class="comment">//将Json传回来的n更改为userName；</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SerializedName(<span class="meta-string">"n"</span>)</span></span><br><span class="line"><span class="keyword">private</span> String userName;   </span><br><span class="line"><span class="comment">//将Json传回来的n更改为userName；</span></span><br></pre></td></tr></table></figure>
 <p><strong>3、使用Gson解析Json语句，生成实体类（比如下面的News类）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> News <span class="title">parseJsonWithGson</span><span class="params">(<span class="keyword">final</span> String requestText)</span></span>&#123;       </span><br><span class="line">       Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">       <span class="keyword">return</span> gson.fromJson(requestText, News.class);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">News <span class="title">parseJsonWithGson</span><span class="params">(<span class="keyword">final</span> String requestText)</span></span>&#123;       </span><br><span class="line">       Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line">       <span class="function"><span class="keyword">return</span> gson.<span class="title">fromJson</span><span class="params">(requestText, News.class)</span></span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>调用这个方法以后就会生成Json对应的JavaBean了，接下来就可以愉快的调用里面的参数啦，当然前提是要导入了Gson的包，如：compile ‘com.google.code.gson:gson:2.8.0’，最新的依赖包请执行查询。</p>
 <p><strong>4、完整流程展示：</strong></p>
 <p>首先，从api获取Json数据如下：<br><img src="http://img.blog.csdn.net/20171001152832070?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>然后，用Gsonformat解析出对应的JavaBean：<br><img src="http://img.blog.csdn.net/20171001153543670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>接着调用Gson，生成对应实体：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> NList nlist = Utility.parseJsonWithGsonN(responseText);   </span><br><span class="line"><span class="comment">//用Gson处理javaon数据，并传回NewsList实例中</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> NList nlist = Utility.parseJsonWithGsonN(responseText);   </span><br><span class="line"><span class="comment">//用Gson处理javaon数据，并传回NewsList实例中</span></span><br></pre></td></tr></table></figure>
 <p>最后根据JavaBean的结构愉快地调用nlist里面的内容就好啦~</p>
 
       
@@ -568,9 +570,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             

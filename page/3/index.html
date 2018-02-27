@@ -151,7 +151,9 @@
 
   <div class="container sidebar-position-left 
   page-home">
-    <div class="headband"></div>
+    <div class="headband">
+	<a href="https://github.com/KMKNKK"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+	</div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -395,9 +397,8 @@
 
       
         
-          <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/timg.jpg"></p>
-<h4>在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS。<br>有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？</h4>
-
+          <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/timg.jpg"><br>在页面中，我们常用id、class以及内联样式表来设置我们的组件CSS</p>
+<p>有时候我们为了编码的简便会使用CSS库，这些库会设置好全局的CSS，但是有某几个组件我们不想使用CSS库中定义的样式而想用别的特别的样式怎么办呢？</p>
 <p>解决方法就是：<strong>使用自定的CSS样式覆盖之前的CSS样式</strong></p>
 <p>CSS中的优先级大体是：<strong>内联样式&gt;id引用&gt;class、伪类、属性选择器引用&gt;类型选择器、伪元素选择器引用</strong>，当优先类型相同时，数量较多的属性优先级较高。</p>
 <p>特殊性排行：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//选择器                  类型(由低到高)</span><br><span class="line">style=""                  1,0,0,0</span><br><span class="line"><span class="selector-id">#test1</span> <span class="selector-id">#test2</span> &#123;&#125;          0,2,0,0</span><br><span class="line"><span class="selector-id">#content</span> <span class="selector-class">.date</span> &#123;&#125;         0,1,1,0</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-id">#content</span> &#123;&#125;            0,1,0,1</span><br><span class="line"><span class="selector-id">#content</span> &#123;&#125;               0,1,0,0</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.comment</span> <span class="selector-class">.date</span> &#123;&#125;        0,0,2,1</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.comment</span> &#123;&#125;              0,0,1,1</span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">p</span> &#123;&#125;                  0,0,0,2</span><br><span class="line"><span class="selector-tag">p</span> &#123;&#125;                      0,0,0,1</span><br></pre></td></tr></table></figure></p>
@@ -551,7 +552,7 @@
 <p>写在前面 : 摘自第一行代码，仅用作学习</p>
 <p>一、访问 : <a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a> 下载git for windows </p>
 <p>二、打开Git Bash配置下身份：  </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Tony"</span></span><br><span class="line">git config --golbal user.email <span class="string">"tony@gmail.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Tony"</span></span><br><span class="line">git<span class="built_in"> config </span>--golbal user.email <span class="string">"tony@gmail.com"</span></span><br></pre></td></tr></table></figure>
 <p>验证是否创建成功：仅需将用户名和邮箱去掉<br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -701,7 +702,9 @@
           <p>转自：<a href="http://blog.csdn.net/yuanzeyao/article/details/38777557" target="_blank" rel="noopener">http://blog.csdn.net/yuanzeyao/article/details/38777557</a></p>
 <p>在学习android连接Mysql 数据库前，我们先来复习一下java如何通过jdbc连接Mysql<br>JDBC程序开发的几个步骤:</p>
 <p>0、在工程的libs文件夹下放置jar包<br>按照：Project Structure — Denpendencies — + — Jar dependency 的步骤导入jar包到工程里<br>jar包下载地址：<a href="http://download.csdn.net/download/qq_36113598/9979455" target="_blank" rel="noopener">http://download.csdn.net/download/qq_36113598/9979455</a></p>
-<p>1、注册驱动程序<br>    Class.forName(“com.mysql.jdbc.Driver”);<br>    JAVA规范中明确规定：所有的驱动程序必须在静态初始化代码块中将驱动注册到驱动程序管理器中。<br>
+<p>1、注册驱动程序<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br></pre></td></tr></table></figure></p>
+<pre><code>JAVA规范中明确规定：所有的驱动程序必须在静态初始化代码块中将驱动注册到驱动程序管理器中。
+</code></pre>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/14/Android端用JDBC远程连接服务端Mysql数据库/#more" rel="contents">
@@ -850,7 +853,7 @@
           <p>写在最前面：用于个人学习，资料来源于《第一行代码》（郭霖 著）和 <a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0106/2275.html" target="_blank" rel="noopener">OkHttp教程</a></p>
 <hr>
 <h2 id="1-首先添加OkHttp库的依赖"><a href="#1-首先添加OkHttp库的依赖" class="headerlink" title="1. 首先添加OkHttp库的依赖"></a>1. 首先添加OkHttp库的依赖</h2><p><strong>在app/build.gradle里的dependencies闭包里加入最新版本的okhttp依赖</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    ...(省略部分)</span><br><span class="line">    compile <span class="string">'com.squareup.okhttp3:okhttp:3.7.0'</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    ...(省略部分)</span><br><span class="line">    compile <span class="string">'com.squareup.okhttp3:okhttp:3.7.0'</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/08/使用OkHttp/#more" rel="contents">
@@ -1138,9 +1141,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="Zhihu">
+                  <a href="mailto:muffinzkun@gmail.com" target="_blank" title="E-mail">
                     
-                      <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                      <i class="fa fa-fw fa-google"></i>E-mail</a>
                 </span>
               
             
