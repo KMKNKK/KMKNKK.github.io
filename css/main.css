@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #f5f7f9;
@@ -203,7 +203,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 h1,
@@ -1238,7 +1238,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1659,6 +1659,16 @@ pre .javascript .function {
 .rtl.post-title {
   font-family: UKIJ Ekran;
 }
+.post-body p a {
+  color: rgba(5,147,211,0.722);
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: rgba(252,100,35,0.671);
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
+}
 .sidebar {
   position: fixed;
   right: 0;
@@ -1823,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6bff54;
+  background: #ff69ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2609,7 +2619,7 @@ pre .javascript .function {
   overflow: hidden;
   padding: 0;
   width: 240px;
-  background: #fff;
+  background: rgba(255,255,255,0.51);
   box-shadow: initial;
   border-radius: initial;
 }
@@ -2666,9 +2676,9 @@ pre .javascript .function {
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 0 40px 40px 40px;
   width: 800px;
-  background: #fff;
+  background: rgba(255,255,255,0);
   min-height: 700px;
   box-shadow: initial;
   border-radius: initial;
@@ -2802,7 +2812,7 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  background: #f9f9f9;
+  background: rgba(238,238,238,0.812);
   border-bottom-color: #fff;
 }
 .menu .menu-item br {
@@ -2850,9 +2860,9 @@ pre .javascript .function {
   box-sizing: border-box;
   width: 240px;
   color: #555;
-  background: #fff;
+  background: rgba(255,255,255,0.51);
   box-shadow: initial;
-  border-radius: initial;
+  border-radius: 5px;
   opacity: 0;
 }
 .sidebar-inner.affix {
@@ -2983,4 +2993,31 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
+}
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  margin: 2px;
+}
+.highlight,
+pre {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px;
+}
+.highlight,
+code,
+pre {
+  border: 1px solid #d6d6d6;
+}
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+.post-type-normal {
+  background: rgba(255,255,255,0.51);
+  border-radius: 5px;
 }

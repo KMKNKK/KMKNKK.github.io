@@ -418,11 +418,11 @@
 <p>第一次登录时，OpenVZVPS会让你设置一下你的<strong>私人端口</strong>，以提高安全性，以后登录的时候就用这个端口登录。</p>
 <p>接下来OpenVZVPS会更新Ubuntu相关文件，在这里博主出现了卡顿现象，上网查解决方案发现是因为系统默认使用IPV6来连接网络，但是博主校园网并不支持IPV6…</p>
 <p>解决方案是使用WinSCP登录服务器，找到gai.config这个文件地址为/etc/gai.conf，并且将第54行前面的#去掉，也就是取消注释，这样就是允许使用IPV4连接。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将这一行: <span class="selector-id">#precedence</span> <span class="selector-pseudo">::ffff</span><span class="selector-pseudo">:0</span><span class="selector-pseudo">:0</span>/<span class="selector-tag">96</span>  <span class="selector-tag">100</span></span><br><span class="line"></span><br><span class="line">变为: <span class="selector-tag">precedence</span> <span class="selector-pseudo">::ffff</span><span class="selector-pseudo">:0</span><span class="selector-pseudo">:0</span>/<span class="selector-tag">96</span>  <span class="selector-tag">100</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将这一行: #precedence ::ffff:0:0/96  100</span><br><span class="line"></span><br><span class="line">变为: precedence ::ffff:0:0/96  100</span><br></pre></td></tr></table></figure>
 <p>等待ubuntu安装好后退出，用putty或Xshell再次登录VPS就好啦。</p>
 <hr>
 <h2 id="安装shadowsockes"><a href="#安装shadowsockes" class="headerlink" title="安装shadowsockes"></a>安装shadowsockes</h2><p>使用命令一条一条的输入，$ sudo可以不用输入，安装shadowsocks</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get update</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install python-gevent python-pip</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo pip install shadowsocks</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> apt-get install python-m2crypto</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install python-gevent python-pip</span><br><span class="line">$ sudo pip install shadowsocks</span><br><span class="line">$ apt-get install python-m2crypto</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="配置Shadowsocks"><a href="#配置Shadowsocks" class="headerlink" title="配置Shadowsocks"></a>配置Shadowsocks</h2><p>全部安装好后，就可以开始配置config了</p>
 <ul>
@@ -436,7 +436,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="运行Shadowsocks"><a href="#运行Shadowsocks" class="headerlink" title="运行Shadowsocks"></a>运行Shadowsocks</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ su -</span><br><span class="line">ssserver -c /etc/shadowsocks<span class="selector-class">.json</span> -d start</span><br><span class="line">ssserver -c /etc/shadowsocks<span class="selector-class">.json</span> -d stop</span><br></pre></td></tr></table></figure>
+<h2 id="运行Shadowsocks"><a href="#运行Shadowsocks" class="headerlink" title="运行Shadowsocks"></a>运行Shadowsocks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ su -</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
 <p>上面两行代码分别是开启和关闭shadowsocks服务，这里我们打开就好啦。<br>至此服务端建设完毕。</p>
 <hr>
 <p>接下来下载shadowsocks客户端：</p>
