@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。 例如：高度固定为200px，两边固定为200px，中间自适应，效果如图： (1)Float方法原理：  元素浮动后，脱离文档流。 左右栏分别浮动在窗口两边，中间块(处于文档流中)受左右浮动影响被卡在中间无法继续向左右伸展已达到">
+<meta name="description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。 例如：高度固定为200px，两边固定为200px，中间自适应，效果如图：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解CSS实现三栏布局的七种方法">
 <meta property="og:url" content="http://kmknkk.xin/2018/03/02/CSS三栏布局/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。 例如：高度固定为200px，两边固定为200px，中间自适应，效果如图： (1)Float方法原理：  元素浮动后，脱离文档流。 左右栏分别浮动在窗口两边，中间块(处于文档流中)受左右浮动影响被卡在中间无法继续向左右伸展已达到自适应，最后按需设置中间块的margin值来改变快间间隙即可。 基于纯float">
+<meta property="og:description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。 例如：高度固定为200px，两边固定为200px，中间自适应，效果如图：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/float.png">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/flex-grow.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/%E5%9C%A3%E6%9D%AF-1.1.png">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/%E5%9C%A3%E6%9D%AF-2.png">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/%E5%9C%A3%E6%9D%AF-3.png">
-<meta property="og:updated_time" content="2018-03-03T15:06:35.967Z">
+<meta property="og:updated_time" content="2018-03-03T15:09:24.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解CSS实现三栏布局的七种方法">
-<meta name="twitter:description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。 例如：高度固定为200px，两边固定为200px，中间自适应，效果如图： (1)Float方法原理：  元素浮动后，脱离文档流。 左右栏分别浮动在窗口两边，中间块(处于文档流中)受左右浮动影响被卡在中间无法继续向左右伸展已达到自适应，最后按需设置中间块的margin值来改变快间间隙即可。 基于纯float">
+<meta name="twitter:description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。 例如：高度固定为200px，两边固定为200px，中间自适应，效果如图：">
 <meta name="twitter:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/float.png">
 
 
@@ -378,7 +378,7 @@
 
       
         <p>三栏布局在前端开发中特别常见，即两端固定中间自适应。<br>下面就来介绍一下常用的三栏布局开发方式。</p>
-<p>例如：高度固定为200px，两边固定为200px，中间自适应，效果如图：<br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/float.png" alt="效果图"></p>
+<p>例如：高度固定为200px，两边固定为200px，中间自适应，效果如图：<br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/float.png" alt="效果图"><br><a id="more"></a></p>
 <h2 id="1-Float方法"><a href="#1-Float方法" class="headerlink" title="(1)Float方法"></a>(1)Float方法</h2><p><strong>原理</strong>：</p>
 <ul>
 <li>元素浮动后，脱离文档流。</li>
