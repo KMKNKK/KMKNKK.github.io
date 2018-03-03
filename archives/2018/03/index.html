@@ -79,17 +79,13 @@
 
 
 
-<meta name="description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。例如：高度固定为200px，两边固定为200px，中间自适应 - float基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧 原理：元素浮动后，脱离文档流，后面的元素（这里就指中">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CSS三栏布局">
-<meta property="og:url" content="http://kmknkk.xin/CSS三栏布局.html">
+<meta property="og:title" content="KMKNKK | MuffinFish">
+<meta property="og:url" content="http://kmknkk.xin/archives/2018/03/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。例如：高度固定为200px，两边固定为200px，中间自适应 - float基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧 原理：元素浮动后，脱离文档流，后面的元素（这里就指中间块部分）受浮动影响，设置受影响元素的margin值即可 12345678910">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-02T05:31:42.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS三栏布局">
-<meta name="twitter:description" content="三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。例如：高度固定为200px，两边固定为200px，中间自适应 - float基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧 原理：元素浮动后，脱离文档流，后面的元素（这里就指中间块部分）受浮动影响，设置受影响元素的margin值即可 12345678910">
+<meta name="twitter:title" content="KMKNKK | MuffinFish">
 
 
 
@@ -119,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/CSS三栏布局.html"/>
+  <link rel="canonical" href="http://kmknkk.xin/archives/2018/03/"/>
 
 
 
 
 
-  <title>CSS三栏布局 | KMKNKK | MuffinFish</title>
+  <title>归档 | KMKNKK | MuffinFish</title>
   
 
 
@@ -153,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband">
 	<a href="https://github.com/KMKNKK"><img style="opacity:0.8; position: absolute; top: 0; right: 0; border: 0; z-index:20;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 	</div>
@@ -283,41 +279,74 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-    
-    
-    <div class="post-block page">
-      <header class="post-header">
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-	<h1 class="post-title" itemprop="name headline">CSS三栏布局</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
+      <span class="archive-page-counter">
         
         
-          <p>三栏布局在前端开发中特别常见，即两端固定中间自适应。下面就来介绍一下常用的三栏布局开发方式。<br>例如：高度固定为200px，两边固定为200px，中间自适应</p>
-<h2 id="float"><a href="#float" class="headerlink" title="- float"></a>- float</h2><p>基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧</p>
-<p>原理：元素浮动后，脱离文档流，后面的元素（这里就指中间块部分）受浮动影响，设置受影响元素的margin值即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">	.left &#123;</span><br><span class="line">	    float: left;</span><br><span class="line">	    height: 200px;</span><br><span class="line">	    width: 200px;</span><br><span class="line">	    background-color: red;</span><br><span class="line">	&#125;</span><br><span class="line">	.right &#123;</span><br><span class="line">	    width: 200px;</span><br><span class="line">	    height: 200px;</span><br><span class="line">	    background-color: blue;</span><br><span class="line">	    float: right;</span><br><span class="line">	&#125;</span><br><span class="line">	.main &#123;</span><br><span class="line">	    margin-left: 220px;</span><br><span class="line">	    margin-right: 220px;</span><br><span class="line">	    height: 200px;</span><br><span class="line">	    background-color: green;</span><br><span class="line">	&#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>结果如图：<img src="" alt="float"></p>
+        
+          
+        
+        嗯..! 目前共计 26 篇日志。 继续努力。
+      </span>
+
+      
 
         
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2018">2018</h1>
+          </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/03/02/CSS三栏布局/" itemprop="url">
+              
+                <span itemprop="name">详解CSS实现三栏布局的七种方法</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-03-02T13:10:39+08:00"
+              content="2018-03-02" >
+          03-02
+        </time>
       </div>
+
+    </header>
+  </article>
+
+
+
       
-      
-      
+
     </div>
-    
-    
-    
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
@@ -325,15 +354,6 @@
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -354,17 +374,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -383,7 +394,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -451,22 +462,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#float"><span class="nav-number">1.</span> <span class="nav-text">- float</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -619,10 +614,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 
@@ -651,17 +642,6 @@
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 
