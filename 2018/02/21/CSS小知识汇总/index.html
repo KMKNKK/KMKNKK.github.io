@@ -86,12 +86,10 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="1. link和@import的区别 (1) link属于HTML标签，而@import由CSS提供 (2) 页面加载时，link会同时被加载，而@import引用的CSS会等到页面加载完时再加载 (3) import的IE版本要求为&amp;gt;IE5，而link无兼容问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E7%9F%A5%E8%AF%86/%E7%9B%92%E6%A8%A1%E5%9E%8B.jpg">
-<meta property="og:updated_time" content="2018-02-27T09:07:10.290Z">
+<meta property="og:updated_time" content="2018-03-05T04:30:04.640Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS小知识汇总">
 <meta name="twitter:description" content="1. link和@import的区别 (1) link属于HTML标签，而@import由CSS提供 (2) 页面加载时，link会同时被加载，而@import引用的CSS会等到页面加载完时再加载 (3) import的IE版本要求为&amp;gt;IE5，而link无兼容问题">
-<meta name="twitter:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E7%9F%A5%E8%AF%86/%E7%9B%92%E6%A8%A1%E5%9E%8B.jpg">
 
 
 
@@ -405,16 +403,7 @@
 
       
         <p><strong>1. link和@import的区别</strong><br> (1) link属于HTML标签，而@import由CSS提供<br> (2) 页面加载时，link会同时被加载，而@import引用的CSS会等到页面加载完时再加载<br> (3) import的IE版本要求为&gt;IE5，而link无兼容问题<br><a id="more"></a></p>
-<p><strong>2. 盒模型</strong><br>  盒模型包括：内容(content),填充(padding),边界(margin),边框(border)<br>  盒模型有两种：<code>IE盒模型</code> 和 <code>W3C盒模型</code>，如果DOCTYPE缺失，在ie6，ie7，ie8下会触发IE盒模型</p>
-<p>  W3C盒模型：<code>box-sizing:content-box;</code>&nbsp;width/height = content<br>  IE盒模型： <code>box-sizing:border-box;</code>&nbsp;width/height = border + padding + contentss</p>
-<p>  <img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/CSS%E7%9F%A5%E8%AF%86/%E7%9B%92%E6%A8%A1%E5%9E%8B.jpg"></p>
-<p><strong>3. repaint和reflow</strong><br>(1) repaint(重绘)：repaint发生更改时，元素外观被改变，且在没有改变布局的情况下发生，如改变outline，visibility，background color，不会影响到dom结构。</p>
-<p>(2) reflow (渲染)：与repaint区别就是他会影响dom的结构渲染，同时他会触发repaint，他会改变他本身与所有父辈元素(祖先)。<br>　　　　　　　　　　这种开销是非常昂贵的，导致性能下降是必然的，页面元素越多效果越明显。</p>
-<blockquote>
-<p>reflow常见情况：增删改DOM节点; 移动DOM的位置或是动画显示; 修改width、display等CSS样式; resize窗口或是滚动的时候; 修改网页默认字体;</p>
-</blockquote>
-<p>如：display:none会触发reflow和repaint，而visibility:hidden只会产生repaint</p>
-<p> <strong>4. 字体相关的CSS</strong><br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-transform</span> : <span class="selector-tag">capitalize</span>    首字母大写</span><br><span class="line"><span class="selector-tag">text-transform</span> : <span class="selector-tag">lowercase</span>     小写</span><br><span class="line"><span class="selector-tag">text-transform</span> : <span class="selector-tag">uppercase</span>     大写</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">font-weight</span> : <span class="selector-tag">bold</span>       粗体</span><br><span class="line"><span class="selector-tag">font-weight</span> : <span class="selector-tag">bolder</span>     更粗</span><br><span class="line"><span class="selector-tag">font-weight</span> : <span class="selector-tag">lighter</span>    细体</span><br><span class="line"><span class="selector-tag">font-style</span>  : <span class="selector-tag">italic</span>     斜体</span><br></pre></td></tr></table></figure></p>
+<p> <strong>2. 字体相关的CSS</strong><br> <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">text-transform</span> : <span class="selector-tag">capitalize</span>    首字母大写</span><br><span class="line"><span class="selector-tag">text-transform</span> : <span class="selector-tag">lowercase</span>     小写</span><br><span class="line"><span class="selector-tag">text-transform</span> : <span class="selector-tag">uppercase</span>     大写</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">font-weight</span> : <span class="selector-tag">bold</span>       粗体</span><br><span class="line"><span class="selector-tag">font-weight</span> : <span class="selector-tag">bolder</span>     更粗</span><br><span class="line"><span class="selector-tag">font-weight</span> : <span class="selector-tag">lighter</span>    细体</span><br><span class="line"><span class="selector-tag">font-style</span>  : <span class="selector-tag">italic</span>     斜体</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -534,7 +523,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
