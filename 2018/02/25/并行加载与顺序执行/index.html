@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="通常我们在写HTML页面的时候会将CSS放在&amp;lt;中引用，而JS这放在&amp;lt;body的末尾，这是为什么呢？ 首先，引入JS脚本我们会用到&amp;lt;script&amp;gt;标签，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T10:04:57.050Z">
+<meta property="og:updated_time" content="2018-03-08T10:55:55.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并行加载与顺序执行">
 <meta name="twitter:description" content="通常我们在写HTML页面的时候会将CSS放在&amp;lt;中引用，而JS这放在&amp;lt;body的末尾，这是为什么呢？ 首先，引入JS脚本我们会用到&amp;lt;script&amp;gt;标签，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascr">
@@ -405,9 +405,9 @@
         <p>通常我们在写HTML页面的时候会将CSS放在&lt;中引用，而JS这放在&lt;body的末尾，这是为什么呢？</p>
 <p>首先，引入JS脚本我们会用到<code>&lt;script&gt;</code>标签，我们先来看一下<code>&lt;script&gt;</code>标签的特性：</p>
 <blockquote>
-<p>当浏览器遇到(即内嵌)&lt;script&gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》</p>
-</blockquote>
-<h3 id="常用做法"><a href="#常用做法" class="headerlink" title="常用做法"></a>常用做法</h3><p>所以，为了避免在页面渲染中，因为解析script脚本而阻塞CSS文件和&amp;ltbody&gt;标签的加载，才出现了文章开头提到的CSS文件放在head中，script放在body的最后这种最常见做法。</p>
+<p>当浏览器遇到(即内嵌)&lt;script&gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》<br><a id="more"></a></p>
+<h3 id="常用做法"><a href="#常用做法" class="headerlink" title="常用做法"></a>常用做法</h3></blockquote>
+<p>所以，为了避免在页面渲染中，因为解析script脚本而阻塞CSS文件和&amp;ltbody&gt;标签的加载，才出现了文章开头提到的CSS文件放在head中，script放在body的最后这种最常见做法。</p>
 <h3 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h3><p>但是，上述做法仍旧有一些弊端。在老旧的浏览器中如(IE8以前的版本)，页面仍然是一个个加载而不是并行加载的，这大大影响了用户体验。</p>
 <p>于是有了<code>动态加载</code>：</p>
 <p>动态加载文件，即通过DOM，在任意地方创建并插入&lt;script&gt;标签:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> script  = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">script.src  = <span class="string">'file.js'</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br></pre></td></tr></table></figure></p>

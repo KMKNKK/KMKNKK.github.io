@@ -461,6 +461,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/前端-通信/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -489,25 +522,13 @@
 
       
         
-          <h3 id="浏览器解析"><a href="#浏览器解析" class="headerlink" title="浏览器解析"></a>浏览器解析</h3><h3 id="查询缓存"><a href="#查询缓存" class="headerlink" title="查询缓存"></a>查询缓存</h3><h3 id="DNS查询"><a href="#DNS查询" class="headerlink" title="DNS查询"></a>DNS查询</h3><ul>
+          <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/url%E8%BF%87%E7%A8%8B.jpg" alt="图源：知乎张秋怡"><br>图源：知乎-张秋怡</p>
+<h3 id="浏览器解析并查询缓存"><a href="#浏览器解析并查询缓存" class="headerlink" title="浏览器解析并查询缓存"></a>浏览器解析并查询缓存</h3><h3 id="DNS查询"><a href="#DNS查询" class="headerlink" title="DNS查询"></a>DNS查询</h3><ul>
 <li>DNS查询顺序如下，若其中一步成功则直接跳到建立链接部分：<ul>
 <li>浏览器自身DNS</li>
 <li>操作系统DNS</li>
 <li>本地hosts文件</li>
-<li>像域名服务器发送请求</li>
-</ul>
-</li>
-</ul>
-<h3 id="建立链接"><a href="#建立链接" class="headerlink" title="建立链接"></a>建立链接</h3><ul>
-<li>TCP三次握手(three-way handshaking)<ul>
-<li>发送方:SYN(synchronize)</li>
-<li>接收方:SYN/ACK(acknowledgement),确认信息传达</li>
-<li>发送方:ACK - 确认接收方在线可收消息，握手结束</li>
-<li>Accept √</li>
-</ul>
-</li>
-</ul>
-<p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg" alt="TCP三次握手"><br>TCP三次握手的的好处在于：发送方可以确认接收方仍然在线，不会因为白发送而浪费资源。<br>
+<li>像域名服务器发送请求
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/04/当我们在浏览器中输入一个URL后，发生了什么？/#more" rel="contents">
@@ -822,29 +843,17 @@
 
       
         
-          
-            <p>通常我们在写HTML页面的时候会将CSS放在&lt;中引用，而JS这放在&lt;body的末尾，这是为什么呢？</p>
+          <p>通常我们在写HTML页面的时候会将CSS放在&lt;中引用，而JS这放在&lt;body的末尾，这是为什么呢？</p>
 <p>首先，引入JS脚本我们会用到<code>&lt;script&gt;</code>标签，我们先来看一下<code>&lt;script&gt;</code>标签的特性：</p>
 <blockquote>
-<p>当浏览器遇到(即内嵌)&lt;script&gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》</p>
-</blockquote>
-<h3 id="常用做法"><a href="#常用做法" class="headerlink" title="常用做法"></a>常用做法</h3><p>所以，为了避免在页面渲染中，因为解析script脚本而阻塞CSS文件和&amp;ltbody&gt;标签的加载，才出现了文章开头提到的CSS文件放在head中，script放在body的最后这种最常见做法。</p>
-<h3 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h3><p>但是，上述做法仍旧有一些弊端。在老旧的浏览器中如(IE8以前的版本)，页面仍然是一个个加载而不是并行加载的，这大大影响了用户体验。</p>
-<p>于是有了<code>动态加载</code>：</p>
-<p>动态加载文件，即通过DOM，在任意地方创建并插入&lt;script&gt;标签:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> script  = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">script.src  = <span class="string">'file.js'</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br></pre></td></tr></table></figure></p>
-<p>这种方法的优点在于：</p>
-<blockquote>
-<p>无论在何时启动下载，文件的下载和执行过程不会阻塞页面其他进程(包括脚本加载)</p>
-</blockquote>
-<p>然而这种方法仍有缺陷：</p>
-<blockquote>
-<p>脚本会在下载完成后立即执行，这意味着多个脚本间的运行顺序无法保证(除了FF和Opera)</p>
-</blockquote>
-<p>针对这种情况有如下改进：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url,callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">if</span>(script.readyState)&#123; <span class="comment">//IE中不支持onload，支持onreadystatechange</span></span><br><span class="line">        <span class="comment">//IE</span></span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">"loaded"</span>||script.readyState==<span class="string">"complete"</span>) &#123;</span><br><span class="line">                script.onreadystatechange = <span class="literal">null</span>;</span><br><span class="line">                callback();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//其他浏览器</span></span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            callback();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上述代码改进的地方在于增加了一个回调函数，该函数会在相应脚本被加载完以后调用。以实现顺序加载，写法如下(假设file2依赖于file1，file3独立)：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">'file1.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    loadScript(<span class="string">'file2.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">loadScript(<span class="string">'file3.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="LABjs库"><a href="#LABjs库" class="headerlink" title="LABjs库"></a>LABjs库</h3><p>但这种方法仍然不够好，因为他的顺序执行是通过阻塞脚本来实现的，这时一个新的库出现了——<code>LABjs</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 页面其他内容 --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"LABjs.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &amp;LAB</span></span><br><span class="line"><span class="javascript">            .script(<span class="string">'file1.js'</span>)</span></span><br><span class="line"><span class="javascript">            .script(<span class="string">'file2.js'</span>)</span></span><br><span class="line"><span class="javascript">            .script(<span class="string">'file3.js'</span>);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-
-          
+<p>当浏览器遇到(即内嵌)&lt;script&gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/25/并行加载与顺序执行/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

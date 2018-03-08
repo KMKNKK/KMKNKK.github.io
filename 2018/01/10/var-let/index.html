@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="var存在变量提升：只提升声明语句，不提升赋值语句我们来看下面这段代码12345678var foo = &amp;#123;n:1&amp;#125;;(function(foo)&amp;#123;    console.log(foo.n);    foo.n = 3;    var foo = &amp;#12">
+<meta name="description" content="本篇内容：梳理var、let、const的用法及注意事项，内容参考阮一峰《ES6标准入门》  var存在变量提升：只提升声明语句，不提升赋值语句我们来看下面这段代码12345678var foo = &amp;#123;n:1&amp;#125;;(function(foo)&amp;#123;    console.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="var &amp; let &amp; const">
 <meta property="og:url" content="http://kmknkk.xin/2018/01/10/var-let/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="var存在变量提升：只提升声明语句，不提升赋值语句我们来看下面这段代码12345678var foo = &amp;#123;n:1&amp;#125;;(function(foo)&amp;#123;    console.log(foo.n);    foo.n = 3;    var foo = &amp;#123;n:2&amp;#125;;    console.log(foo.n);&amp;#125;(foo);console.l">
+<meta property="og:description" content="本篇内容：梳理var、let、const的用法及注意事项，内容参考阮一峰《ES6标准入门》  var存在变量提升：只提升声明语句，不提升赋值语句我们来看下面这段代码12345678var foo = &amp;#123;n:1&amp;#125;;(function(foo)&amp;#123;    console.log(foo.n);    foo.n = 3;    var foo = &amp;#123;n:2&amp;#1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T10:37:09.206Z">
+<meta property="og:updated_time" content="2018-03-08T10:58:04.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="var &amp; let &amp; const">
-<meta name="twitter:description" content="var存在变量提升：只提升声明语句，不提升赋值语句我们来看下面这段代码12345678var foo = &amp;#123;n:1&amp;#125;;(function(foo)&amp;#123;    console.log(foo.n);    foo.n = 3;    var foo = &amp;#123;n:2&amp;#125;;    console.log(foo.n);&amp;#125;(foo);console.l">
+<meta name="twitter:description" content="本篇内容：梳理var、let、const的用法及注意事项，内容参考阮一峰《ES6标准入门》  var存在变量提升：只提升声明语句，不提升赋值语句我们来看下面这段代码12345678var foo = &amp;#123;n:1&amp;#125;;(function(foo)&amp;#123;    console.log(foo.n);    foo.n = 3;    var foo = &amp;#123;n:2&amp;#1">
 
 
 
@@ -402,8 +402,12 @@
       
 
       
-        <h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><h4 id="存在变量提升：只提升声明语句，不提升赋值语句"><a href="#存在变量提升：只提升声明语句，不提升赋值语句" class="headerlink" title="存在变量提升：只提升声明语句，不提升赋值语句"></a>存在变量提升：只提升声明语句，不提升赋值语句</h4><p>我们来看下面这段代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">foo</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo.n);</span><br><span class="line">    foo.n = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">var</span> foo = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(foo.n);</span><br><span class="line">&#125;(foo);</span><br><span class="line"><span class="built_in">console</span>.log(foo.n);</span><br></pre></td></tr></table></figure></p>
+        <blockquote>
+<p>本篇内容：梳理var、let、const的用法及注意事项，内容参考阮一峰《ES6标准入门》</p>
+</blockquote>
+<h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><h4 id="存在变量提升：只提升声明语句，不提升赋值语句"><a href="#存在变量提升：只提升声明语句，不提升赋值语句" class="headerlink" title="存在变量提升：只提升声明语句，不提升赋值语句"></a>存在变量提升：只提升声明语句，不提升赋值语句</h4><p>我们来看下面这段代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">foo</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(foo.n);</span><br><span class="line">    foo.n = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">var</span> foo = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;;</span><br><span class="line">    <span class="built_in">console</span>.log(foo.n);</span><br><span class="line">&#125;(foo);</span><br><span class="line"><span class="built_in">console</span>.log(foo.n);</span><br></pre></td></tr></table></figure></p>
 <p>这段代码输出的结果是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>这是因为函数内var声明变量提升造成的，我们将上面的代码改造一下，等效为下面的代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">foo</span>)</span>&#123;          <span class="comment">// 此时foo指向外部变量</span></span><br><span class="line">    <span class="keyword">var</span> foo;             <span class="comment">// 变量提升,外部变量已声明，不做改变</span></span><br><span class="line">    <span class="built_in">console</span>.log(foo.n);  <span class="comment">// 1</span></span><br><span class="line">    foo.n = <span class="number">3</span>;           <span class="comment">// 外部变量改变，n=3</span></span><br><span class="line">    foo = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;;         <span class="comment">// foo指向改变为内部变量，并且n赋值为2</span></span><br><span class="line">    <span class="built_in">console</span>.log(foo.n)   <span class="comment">// 函数内部变量，2</span></span><br><span class="line">&#125;)(foo);</span><br><span class="line"><span class="built_in">console</span>.log(foo.n)       <span class="comment">// 3</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><p>####引入了块级作用域</p>
 <blockquote>
