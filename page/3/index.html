@@ -1107,7 +1107,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/23/前端安全/" itemprop="url">前端笔记（安全）：XSS防护</a></h1>
+                <a class="post-title-link" href="/2017/11/23/前端安全/" itemprop="url">前端安全：XSS和CSRF</a></h1>
         
 
         <div class="post-meta">
@@ -1192,175 +1192,22 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**重构中**/</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2017/11/01/前端笔记（前端框架）-Bootstrap环境配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="KMKNKK">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KMKNKK | MuffinFish">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/01/前端笔记（前端框架）-Bootstrap环境配置/" itemprop="url">前端笔记（前端框架）：Bootstrap环境配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-01T16:51:57+08:00">
-                2017-11-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/前端-前端框架/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-前端框架</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/image/TIM%E6%88%AA%E5%9B%BE20171126180312.png" width:"100"=""></p>
-<p>1、<strong>下载相关生产环境文件</strong></p>
-<ul>
-<li>分别到：<br><a href="http://v3.bootcss.com/getting-started/#download" target="_blank" rel="noopener">http://v3.bootcss.com/getting-started/#download</a>  <br><a href="http://jquery.com/download/" target="_blank" rel="noopener">http://jquery.com/download/</a><br>下载最新的Bootstrap、jQuery生产环境文件，因为Bootstrap.js依赖于jQuery.js。</li>
+            <h3 id="CSRF-Cross-site-request-forgery-跨站请求伪造"><a href="#CSRF-Cross-site-request-forgery-跨站请求伪造" class="headerlink" title="CSRF(Cross-site request forgery 跨站请求伪造)"></a>CSRF(Cross-site request forgery 跨站请求伪造)</h3><p><img src="" alt="CSRF图解"></p>
+<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>即网站B伪造一个网站A的接口链接引诱用户点击，获取受害用户对应网站A的cookie(用户曾登录过)。</p>
+<h4 id="防御："><a href="#防御：" class="headerlink" title="防御："></a>防御：</h4><ul>
+<li>Token验证：点击引诱链接只会泄露cookie而不会泄露Token</li>
+<li>Referer验证：页面来源验证，阻止其他站点的操作</li>
+<li>隐藏令牌：隐藏性的Token</li>
 </ul>
-<p><br></p>
-<ul>
-<li>如果觉得麻烦也可以直接到我的CSDN文件下载：<br><a href="http://download.csdn.net/download/qq_36113598/10048235" target="_blank" rel="noopener">http://download.csdn.net/download/qq_36113598/10048235</a></li>
+<h3 id="XSS-cross-site-scripting-跨站脚本攻击"><a href="#XSS-cross-site-scripting-跨站脚本攻击" class="headerlink" title="XSS(cross-site scripting 跨站脚本攻击)"></a>XSS(cross-site scripting 跨站脚本攻击)</h3><h4 id="原理：不需要登录认证，只需要向页面注入JS攻击脚本"><a href="#原理：不需要登录认证，只需要向页面注入JS攻击脚本" class="headerlink" title="原理：不需要登录认证，只需要向页面注入JS攻击脚本"></a>原理：不需要登录认证，只需要向页面注入<code>JS攻击脚本</code></h4><h4 id="反射型："><a href="#反射型：" class="headerlink" title="反射型："></a>反射型：</h4><p>发出请求时，XSS代码出现在URL中，作为输入提偶叫道服务器端，服务器端解析后响应，XSS代码随着响应内容一起回传给浏览器，最后浏览器解析执行XSS代码。</p>
+<h4 id="存储型："><a href="#存储型：" class="headerlink" title="存储型："></a>存储型：</h4><p>与反射型XSS区别在于，存储型XSS提交的代码会存储在服务器端(数据库，内存，文件系统等)，下次请求目标页面时不用再次提交XSS代码。</p>
+<h4 id="防御：让插入的XSS不可执行"><a href="#防御：让插入的XSS不可执行" class="headerlink" title="防御：让插入的XSS不可执行"></a>防御：让插入的XSS不可执行</h4><ul>
+<li>编码：十进制编码，转义字符编码等</li>
+<li>过滤：移除用户上传的DOM属性，如onerror等。移除用户上传的Style、Script、Iframe等节点。</li>
+<li>校正：避免对HTML直接解码。使用DOM Parse转换，校正不匹配的DOM标签</li>
 </ul>
-<p><br><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/01/前端笔记（前端框架）-Bootstrap环境配置/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+          
         
       
     </div>
@@ -1858,6 +1705,155 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2017/09/08/使用OkHttp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KMKNKK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KMKNKK | MuffinFish">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/08/使用OkHttp/" itemprop="url">使用OkHttp</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T22:24:39+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>写在最前面：用于个人学习，资料来源于《第一行代码》（郭霖 著）和 <a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0106/2275.html" target="_blank" rel="noopener">OkHttp教程</a></p>
+<hr>
+<h2 id="1-首先添加OkHttp库的依赖"><a href="#1-首先添加OkHttp库的依赖" class="headerlink" title="1. 首先添加OkHttp库的依赖"></a>1. 首先添加OkHttp库的依赖</h2><p><strong>在app/build.gradle里的dependencies闭包里加入最新版本的okhttp依赖</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    ...(省略部分)</span><br><span class="line">    compile &apos;com.squareup.okhttp3:okhttp:3.7.0&apos;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/08/使用OkHttp/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1912,7 +1908,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

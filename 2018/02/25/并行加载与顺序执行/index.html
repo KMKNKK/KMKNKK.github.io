@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="通常我们在写HTML页面的时候会将CSS放在&amp;lt;中引用，而JS这放在&amp;lt;body的末尾，这是为什么呢？ 首先，引入JS脚本我们会用到&amp;lt;script&amp;gt;标签，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;s">
+<meta name="description" content="首先，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Jav">
 <meta property="og:type" content="article">
-<meta property="og:title" content="并行加载与顺序执行">
+<meta property="og:title" content="script的异步、并行加载与顺序执行">
 <meta property="og:url" content="http://kmknkk.xin/2018/02/25/并行加载与顺序执行/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="通常我们在写HTML页面的时候会将CSS放在&amp;lt;中引用，而JS这放在&amp;lt;body的末尾，这是为什么呢？ 首先，引入JS脚本我们会用到&amp;lt;script&amp;gt;标签，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascr">
+<meta property="og:description" content="首先，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T10:55:55.959Z">
+<meta property="og:updated_time" content="2018-03-10T15:08:58.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="并行加载与顺序执行">
-<meta name="twitter:description" content="通常我们在写HTML页面的时候会将CSS放在&amp;lt;中引用，而JS这放在&amp;lt;body的末尾，这是为什么呢？ 首先，引入JS脚本我们会用到&amp;lt;script&amp;gt;标签，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascr">
+<meta name="twitter:title" content="script的异步、并行加载与顺序执行">
+<meta name="twitter:description" content="首先，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>并行加载与顺序执行 | KMKNKK | MuffinFish</title>
+  <title>script的异步、并行加载与顺序执行 | KMKNKK | MuffinFish</title>
   
 
 
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">并行加载与顺序执行</h1>
+          <h1 class="post-title" itemprop="name headline">script的异步、并行加载与顺序执行</h1>
         
 
         <div class="post-meta">
@@ -360,8 +360,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/前端-HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-HTML</span>
+                  <a href="/categories/前端/前端-性能优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-性能优化</span>
                   </a>
                 </span>
 
@@ -402,12 +402,12 @@
       
 
       
-        <p>通常我们在写HTML页面的时候会将CSS放在&lt;中引用，而JS这放在&lt;body的末尾，这是为什么呢？</p>
-<p>首先，引入JS脚本我们会用到<code>&lt;script&gt;</code>标签，我们先来看一下<code>&lt;script&gt;</code>标签的特性：</p>
+        <p>首先，我们先来看一下<code>&lt;script&gt;</code>标签的特性：</p>
 <blockquote>
-<p>当浏览器遇到(即内嵌)&lt;script&gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》<br><a id="more"></a></p>
-<h3 id="常用做法"><a href="#常用做法" class="headerlink" title="常用做法"></a>常用做法</h3></blockquote>
-<p>所以，为了避免在页面渲染中，因为解析script脚本而阻塞CSS文件和&amp;ltbody&gt;标签的加载，才出现了文章开头提到的CSS文件放在head中，script放在body的最后这种最常见做法。</p>
+<p>当浏览器遇到(即内嵌)&lt;script&gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="常用做法"><a href="#常用做法" class="headerlink" title="常用做法"></a>常用做法</h3><p>所以，为了避免在页面渲染中，因为解析script脚本而阻塞CSS文件和&amp;ltbody&gt;标签的加载，才出现了文章开头提到的CSS文件放在head中，script放在body的最后这种最常见做法。</p>
 <h3 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h3><p>但是，上述做法仍旧有一些弊端。在老旧的浏览器中如(IE8以前的版本)，页面仍然是一个个加载而不是并行加载的，这大大影响了用户体验。</p>
 <p>于是有了<code>动态加载</code>：</p>
 <p>动态加载文件，即通过DOM，在任意地方创建并插入&lt;script&gt;标签:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> script  = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">script.src  = <span class="string">'file.js'</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br></pre></td></tr></table></figure></p>
@@ -422,6 +422,8 @@
 <p>针对这种情况有如下改进：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url,callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">if</span>(script.readyState)&#123; <span class="comment">//IE中不支持onload，支持onreadystatechange</span></span><br><span class="line">        <span class="comment">//IE</span></span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(script.readyState == <span class="string">"loaded"</span>||script.readyState==<span class="string">"complete"</span>) &#123;</span><br><span class="line">                script.onreadystatechange = <span class="literal">null</span>;</span><br><span class="line">                callback();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//其他浏览器</span></span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            callback();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上述代码改进的地方在于增加了一个回调函数，该函数会在相应脚本被加载完以后调用。以实现顺序加载，写法如下(假设file2依赖于file1，file3独立)：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">'file1.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    loadScript(<span class="string">'file2.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">loadScript(<span class="string">'file3.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br></pre></td></tr></table></figure></p>
 <h3 id="LABjs库"><a href="#LABjs库" class="headerlink" title="LABjs库"></a>LABjs库</h3><p>但这种方法仍然不够好，因为他的顺序执行是通过阻塞脚本来实现的，这时一个新的库出现了——<code>LABjs</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 页面其他内容 --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"LABjs.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &amp;LAB</span></span><br><span class="line"><span class="javascript">            .script(<span class="string">'file1.js'</span>)</span></span><br><span class="line"><span class="javascript">            .script(<span class="string">'file2.js'</span>)</span></span><br><span class="line"><span class="javascript">            .script(<span class="string">'file3.js'</span>);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h3><p>异步加载JS还有两种方式:<code>defer</code>和<code>async</code>,两种方法的使用方式都是直接在<code>&lt;script&gt;</code>标签中加入即可。共同之处在于两者都会在页面加载完后再按顺序加载，并且加载完后都会立即执行。不同之处在于：<br><code>defer</code>:执行的顺序和<code>&lt;script&gt;</code>加载开始顺序相同。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//即使script2比script1先加载完，执行的顺序也是script1 -&gt; script2</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/script1.js"</span> <span class="attr">defer</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/script2.js"</span> <span class="attr">defer</span>&gt;</span><span class="undefined"></span></span></span><br></pre></td></tr></table></figure></p>
+<p><code>async</code>:执行的顺序和<code>&lt;script&gt;</code>加载完的顺序相同。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//谁先加载完谁执行</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/script1.js"</span> <span class="attr">async</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/script2.js"</span> <span class="attr">async</span>&gt;</span><span class="undefined"></span></span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -550,7 +552,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用做法"><span class="nav-number">1.</span> <span class="nav-text">常用做法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态加载"><span class="nav-number">2.</span> <span class="nav-text">动态加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LABjs库"><span class="nav-number">3.</span> <span class="nav-text">LABjs库</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用做法"><span class="nav-number">1.</span> <span class="nav-text">常用做法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态加载"><span class="nav-number">2.</span> <span class="nav-text">动态加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LABjs库"><span class="nav-number">3.</span> <span class="nav-text">LABjs库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步加载"><span class="nav-number">4.</span> <span class="nav-text">异步加载</span></a></li></ol></div>
             
 
           </div>

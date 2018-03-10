@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1/**重构中**/">
+<meta name="description" content="CSRF(Cross-site request forgery 跨站请求伪造) 原理：即网站B伪造一个网站A的接口链接引诱用户点击，获取受害用户对应网站A的cookie(用户曾登录过)。 防御： Token验证：点击引诱链接只会泄露cookie而不会泄露Token Referer验证：页面来源验证，阻止其他站点的操作 ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端笔记（安全）：XSS防护">
+<meta property="og:title" content="前端安全：XSS和CSRF">
 <meta property="og:url" content="http://kmknkk.xin/2017/11/23/前端安全/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="1/**重构中**/">
+<meta property="og:description" content="CSRF(Cross-site request forgery 跨站请求伪造) 原理：即网站B伪造一个网站A的接口链接引诱用户点击，获取受害用户对应网站A的cookie(用户曾登录过)。 防御： Token验证：点击引诱链接只会泄露cookie而不会泄露Token Referer验证：页面来源验证，阻止其他站点的操作 隐藏令牌：隐藏性的Token  XSS(cross-site scripting">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-27T06:54:35.353Z">
+<meta property="og:updated_time" content="2018-03-10T13:48:30.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端笔记（安全）：XSS防护">
-<meta name="twitter:description" content="1/**重构中**/">
+<meta name="twitter:title" content="前端安全：XSS和CSRF">
+<meta name="twitter:description" content="CSRF(Cross-site request forgery 跨站请求伪造) 原理：即网站B伪造一个网站A的接口链接引诱用户点击，获取受害用户对应网站A的cookie(用户曾登录过)。 防御： Token验证：点击引诱链接只会泄露cookie而不会泄露Token Referer验证：页面来源验证，阻止其他站点的操作 隐藏令牌：隐藏性的Token  XSS(cross-site scripting">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>前端笔记（安全）：XSS防护 | KMKNKK | MuffinFish</title>
+  <title>前端安全：XSS和CSRF | KMKNKK | MuffinFish</title>
   
 
 
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">前端笔记（安全）：XSS防护</h1>
+          <h1 class="post-title" itemprop="name headline">前端安全：XSS和CSRF</h1>
         
 
         <div class="post-meta">
@@ -402,7 +402,20 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**重构中**/</span><br></pre></td></tr></table></figure>
+        <h3 id="CSRF-Cross-site-request-forgery-跨站请求伪造"><a href="#CSRF-Cross-site-request-forgery-跨站请求伪造" class="headerlink" title="CSRF(Cross-site request forgery 跨站请求伪造)"></a>CSRF(Cross-site request forgery 跨站请求伪造)</h3><p><img src="" alt="CSRF图解"></p>
+<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>即网站B伪造一个网站A的接口链接引诱用户点击，获取受害用户对应网站A的cookie(用户曾登录过)。</p>
+<h4 id="防御："><a href="#防御：" class="headerlink" title="防御："></a>防御：</h4><ul>
+<li>Token验证：点击引诱链接只会泄露cookie而不会泄露Token</li>
+<li>Referer验证：页面来源验证，阻止其他站点的操作</li>
+<li>隐藏令牌：隐藏性的Token</li>
+</ul>
+<h3 id="XSS-cross-site-scripting-跨站脚本攻击"><a href="#XSS-cross-site-scripting-跨站脚本攻击" class="headerlink" title="XSS(cross-site scripting 跨站脚本攻击)"></a>XSS(cross-site scripting 跨站脚本攻击)</h3><h4 id="原理：不需要登录认证，只需要向页面注入JS攻击脚本"><a href="#原理：不需要登录认证，只需要向页面注入JS攻击脚本" class="headerlink" title="原理：不需要登录认证，只需要向页面注入JS攻击脚本"></a>原理：不需要登录认证，只需要向页面注入<code>JS攻击脚本</code></h4><h4 id="反射型："><a href="#反射型：" class="headerlink" title="反射型："></a>反射型：</h4><p>发出请求时，XSS代码出现在URL中，作为输入提偶叫道服务器端，服务器端解析后响应，XSS代码随着响应内容一起回传给浏览器，最后浏览器解析执行XSS代码。</p>
+<h4 id="存储型："><a href="#存储型：" class="headerlink" title="存储型："></a>存储型：</h4><p>与反射型XSS区别在于，存储型XSS提交的代码会存储在服务器端(数据库，内存，文件系统等)，下次请求目标页面时不用再次提交XSS代码。</p>
+<h4 id="防御：让插入的XSS不可执行"><a href="#防御：让插入的XSS不可执行" class="headerlink" title="防御：让插入的XSS不可执行"></a>防御：让插入的XSS不可执行</h4><ul>
+<li>编码：十进制编码，转义字符编码等</li>
+<li>过滤：移除用户上传的DOM属性，如onerror等。移除用户上传的Style、Script、Iframe等节点。</li>
+<li>校正：避免对HTML直接解码。使用DOM Parse转换，校正不匹配的DOM标签</li>
+</ul>
 
       
     </div>
@@ -427,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/01/前端笔记（前端框架）-Bootstrap环境配置/" rel="next" title="前端笔记（前端框架）：Bootstrap环境配置">
-                <i class="fa fa-chevron-left"></i> 前端笔记（前端框架）：Bootstrap环境配置
+              <a href="/2017/10/29/前端笔记（CSS）：CSS的覆盖/" rel="next" title="前端笔记（CSS）：CSS的覆盖">
+                <i class="fa fa-chevron-left"></i> 前端笔记（CSS）：CSS的覆盖
               </a>
             
           </div>
@@ -502,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -522,7 +544,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -590,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF-Cross-site-request-forgery-跨站请求伪造"><span class="nav-number">1.</span> <span class="nav-text">CSRF(Cross-site request forgery 跨站请求伪造)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理："><span class="nav-number">1.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防御："><span class="nav-number">1.2.</span> <span class="nav-text">防御：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS-cross-site-scripting-跨站脚本攻击"><span class="nav-number">2.</span> <span class="nav-text">XSS(cross-site scripting 跨站脚本攻击)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理：不需要登录认证，只需要向页面注入JS攻击脚本"><span class="nav-number">2.1.</span> <span class="nav-text">原理：不需要登录认证，只需要向页面注入JS攻击脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射型："><span class="nav-number">2.2.</span> <span class="nav-text">反射型：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储型："><span class="nav-number">2.3.</span> <span class="nav-text">存储型：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防御：让插入的XSS不可执行"><span class="nav-number">2.4.</span> <span class="nav-text">防御：让插入的XSS不可执行</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
