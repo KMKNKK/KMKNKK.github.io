@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="什么是同源策略和限制？源：= 协议 + 域名 + 端口 同源策略：在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。 限制：当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：  Cookie、LocalStorage、IndexDB 无法读取 DOM 无法获得 AJAX请求无">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-08T03:27:41.673Z">
+<meta property="og:updated_time" content="2018-03-11T09:30:10.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同源策略及前后端(同源&#x2F;跨域)通信">
 <meta name="twitter:description" content="什么是同源策略和限制？源：= 协议 + 域名 + 端口 同源策略：在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。 限制：当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：  Cookie、LocalStorage、IndexDB 无法读取 DOM 无法获得 AJAX请求无">
@@ -337,6 +337,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/前端-通信/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -370,8 +403,8 @@
 
       
         <h2 id="什么是同源策略和限制？"><a href="#什么是同源策略和限制？" class="headerlink" title="什么是同源策略和限制？"></a>什么是同源策略和限制？</h2><p><code>源</code>：= 协议 + 域名 + 端口</p>
-<p><code>同源策略</code>：<br>在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。<br>这是一个用于隔离潜在恶意文件的关键的安全机制。</p>
-<p><code>限制</code>：<br>当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：</p>
+<p><code>同源策略</code>：在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。</p>
+<p><code>限制</code>：当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：</p>
 <ul>
 <li>Cookie、LocalStorage、IndexDB 无法读取</li>
 <li>DOM 无法获得</li>
@@ -384,18 +417,23 @@
 <p><strong>如何创建Ajax</strong></p>
 <ul>
 <li>XMLHttpRequest</li>
-<li>兼容性处理</li>
-<li>事件触发条件</li>
-<li>事件触发顺序</li>
+<li>兼容性处理 : <code>windows</code>下为<code>window.ActiveXObject(&#39;Microsoft.XMLHTTP&#39;)</code></li>
+<li>事件触发条件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Ajax实现</span></span><br><span class="line"><span class="keyword">var</span> xhr = XMLHttpRequest ? <span class="keyword">new</span> XMLHttpRequest() : <span class="keyword">new</span> <span class="built_in">window</span>.ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span>) &#123;</span><br><span class="line">            alert(xhr.responseText);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(<span class="string">"Request was unsuccessful: "</span> + xhr.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"example.txt"</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如何设置请求头? xhr.setRequestHeader(header, value);</span></span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line"></span><br><span class="line">xhr.send(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="跨域通信的几种方式"><a href="#跨域通信的几种方式" class="headerlink" title="跨域通信的几种方式"></a>跨域通信的几种方式</h2><ul>
-<li>JSONP<br>(1)动态创建一个<code>&lt;script&gt;</code>标签，发送给服务端一个包含回调名<code>callback</code>，并且在本地创建一个与回调名相同的全局函数<br>(2)服务端返回数据<br>(3)浏览器将返回的数据当成js来执行</li>
-</ul>
-<ul>
-<li>WebSocket     </li>
+<li><p>JSONP<br>(1)动态创建一个<code>&lt;script&gt;</code>标签，发送给服务端一个包含回调名<code>callback</code>，并且在本地创建一个与回调名相同的全局函数<br>(2)服务端返回数据<br>(3)浏览器将返回的数据当成js来执行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jsonp实现</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">url,func</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> _script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(url.indexOf(<span class="string">"?"</span>) === <span class="number">-1</span>)&#123;</span><br><span class="line">        script.src = url+<span class="string">"?callback="</span>+func; </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        script.src = url+<span class="string">"&amp;callback="</span>+func;</span><br><span class="line">    &#125;    </span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.body.insertBefore(_script,<span class="built_in">document</span>.body.firstChild);</span><br><span class="line">    script.onload = script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// onload</span></span><br><span class="line">        <span class="keyword">delete</span> _script;</span><br><span class="line">        script.parentNode.removeChild(_script);</span><br><span class="line">    &#125;</span><br><span class="line">    script.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// onerror</span></span><br><span class="line">        <span class="keyword">delete</span> _script;</span><br><span class="line">        script.parentNode.removeChild(_script);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">result</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>WebSocket     </p>
+</li>
 <li>CORS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//可以理解为支持跨域通信的AJAX</li>
-<li>Hash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//页面不刷新也能获取新资源</li>
-<li>postMessage&nbsp;&nbsp;&nbsp;//H5中新增的标准</li>
+<li><p>Hash&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//页面不刷新也能获取新资源,主要用于iframe</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用场景：当前页面A通过iframe嵌入了跨域的页面B</span></span><br><span class="line"><span class="comment">// A中伪代码如下</span></span><br><span class="line"><span class="keyword">var</span> B = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'iframe'</span>);</span><br><span class="line">B.src = B.src + <span class="string">'#'</span> + <span class="string">'data'</span>;</span><br><span class="line"><span class="comment">// B中伪代码如下</span></span><br><span class="line"><span class="built_in">window</span>.onhashchange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> data = <span class="built_in">window</span>.location.hash;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>postMessage&nbsp;&nbsp;&nbsp;//H5中新增的标准,主要用于iframe</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//窗口A(http:A.com)向跨域的窗口B(http://B.com)发送消息</span></span><br><span class="line"><span class="comment">//A窗口中</span></span><br><span class="line">B窗口对象.postMessage(<span class="string">'data'</span>,<span class="string">'http://B.com'</span>);</span><br><span class="line"><span class="comment">//在窗口B中监听</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.origin); <span class="comment">// http://A.com</span></span><br><span class="line">  <span class="built_in">console</span>.log(event.sourcr); <span class="comment">// Awindow</span></span><br><span class="line">  <span class="built_in">console</span>.log(event.data);   <span class="comment">// data</span></span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -525,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
