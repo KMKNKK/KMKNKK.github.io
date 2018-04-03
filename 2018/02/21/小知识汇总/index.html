@@ -82,11 +82,11 @@
 <meta name="description" content="HTML标签 &amp;lt;a&amp;gt;中不能再嵌套&amp;lt;a&amp;gt; &amp;lt;ul&amp;gt;中嵌套&amp;lt;li&amp;gt;构成无序列表 Unorderlist &amp;lt;ol&amp;gt;中嵌套&amp;lt;li&amp;gt;构成有序列表 Orderlis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="零散知识汇总">
-<meta property="og:url" content="http://kmknkk.xin/2018/02/21/CSS小知识汇总/index.html">
+<meta property="og:url" content="http://kmknkk.xin/2018/02/21/小知识汇总/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="HTML标签 &amp;lt;a&amp;gt;中不能再嵌套&amp;lt;a&amp;gt; &amp;lt;ul&amp;gt;中嵌套&amp;lt;li&amp;gt;构成无序列表 Unorderlist &amp;lt;ol&amp;gt;中嵌套&amp;lt;li&amp;gt;构成有序列表 Orderlist &amp;lt;dl&amp;gt;标签定义一个描述列表，与&amp;lt;dt&amp;gt;(定义项目名字)和&amp;lt;dd&amp;gt;(描述项目)一起使用 用法：(&amp;lt;dt&amp;gt;和&amp;lt;dd&amp;gt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T12:17:16.233Z">
+<meta property="og:updated_time" content="2018-03-20T14:03:19.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="零散知识汇总">
 <meta name="twitter:description" content="HTML标签 &amp;lt;a&amp;gt;中不能再嵌套&amp;lt;a&amp;gt; &amp;lt;ul&amp;gt;中嵌套&amp;lt;li&amp;gt;构成无序列表 Unorderlist &amp;lt;ol&amp;gt;中嵌套&amp;lt;li&amp;gt;构成有序列表 Orderlist &amp;lt;dl&amp;gt;标签定义一个描述列表，与&amp;lt;dt&amp;gt;(定义项目名字)和&amp;lt;dd&amp;gt;(描述项目)一起使用 用法：(&amp;lt;dt&amp;gt;和&amp;lt;dd&amp;gt">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2018/02/21/CSS小知识汇总/"/>
+  <link rel="canonical" href="http://kmknkk.xin/2018/02/21/小知识汇总/"/>
 
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/CSS小知识汇总/">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/小知识汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
@@ -425,6 +425,7 @@
 <h4 id="快速数组乱序"><a href="#快速数组乱序" class="headerlink" title="快速数组乱序"></a>快速数组乱序</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> temArr = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>].sort(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.radom() &gt; <span class="number">0.5</span> ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h4 id="求数组最大最小值之差"><a href="#求数组最大最小值之差" class="headerlink" title="求数组最大最小值之差"></a>求数组最大最小值之差</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MaxMin</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.isArray(arr) ? <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>,arr) - <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>,arr) : <span class="built_in">console</span>.log(<span class="string">'Error'</span>) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="回文串判定-正序倒序相同"><a href="#回文串判定-正序倒序相同" class="headerlink" title="回文串判定(正序倒序相同)"></a>回文串判定(正序倒序相同)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isPalindromes = <span class="function"><span class="keyword">function</span>(<span class="params">param</span>) </span>&#123;</span><br><span class="line">    param = params.toString().toLowerCase().replace(<span class="regexp">/[\W_\s]/g</span>,<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">return</span> param === param.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="JS考题"><a href="#JS考题" class="headerlink" title="JS考题"></a>JS考题</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;,</span><br><span class="line">    b = &#123;<span class="attr">key</span>:<span class="string">'b'</span>&#125;,</span><br><span class="line">    c = &#123;<span class="attr">key</span>:<span class="string">'c'</span>&#125;;</span><br><span class="line"></span><br><span class="line">a[b] = <span class="number">123</span>;</span><br><span class="line">a[c] = <span class="number">465</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a[b]);   <span class="comment">// 输出456</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 原因：在a中,b和c均为[object Object],所以a[b] = 123; a[c] = 456;相当于都是在给[object Object]字段赋值，于是456覆盖了123</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -553,7 +554,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -631,7 +632,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签"><span class="nav-number">1.1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5中新的表单元素"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5中新的表单元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#置换元素"><span class="nav-number">1.3.</span> <span class="nav-text">置换元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#link和-import的区别"><span class="nav-number">2.1.</span> <span class="nav-text">link和@import的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体相关的CSS"><span class="nav-number">2.2.</span> <span class="nav-text">字体相关的CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可继承的样式"><span class="nav-number">2.3.</span> <span class="nav-text">可继承的样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null和undefined的异同"><span class="nav-number">3.1.</span> <span class="nav-text">null和undefined的异同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速数组去重且排序"><span class="nav-number">3.2.</span> <span class="nav-text">快速数组去重且排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速数组乱序"><span class="nav-number">3.3.</span> <span class="nav-text">快速数组乱序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求数组最大最小值之差"><span class="nav-number">3.4.</span> <span class="nav-text">求数组最大最小值之差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回文串判定-正序倒序相同"><span class="nav-number">3.5.</span> <span class="nav-text">回文串判定(正序倒序相同)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签"><span class="nav-number">1.1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML5中新的表单元素"><span class="nav-number">1.2.</span> <span class="nav-text">HTML5中新的表单元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#置换元素"><span class="nav-number">1.3.</span> <span class="nav-text">置换元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#link和-import的区别"><span class="nav-number">2.1.</span> <span class="nav-text">link和@import的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字体相关的CSS"><span class="nav-number">2.2.</span> <span class="nav-text">字体相关的CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可继承的样式"><span class="nav-number">2.3.</span> <span class="nav-text">可继承的样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.</span> <span class="nav-text">JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null和undefined的异同"><span class="nav-number">3.1.</span> <span class="nav-text">null和undefined的异同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速数组去重且排序"><span class="nav-number">3.2.</span> <span class="nav-text">快速数组去重且排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快速数组乱序"><span class="nav-number">3.3.</span> <span class="nav-text">快速数组乱序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#求数组最大最小值之差"><span class="nav-number">3.4.</span> <span class="nav-text">求数组最大最小值之差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回文串判定-正序倒序相同"><span class="nav-number">3.5.</span> <span class="nav-text">回文串判定(正序倒序相同)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS考题"><span class="nav-number">3.6.</span> <span class="nav-text">JS考题</span></a></li></ol></li></ol></div>
             
 
           </div>

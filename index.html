@@ -419,6 +419,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/04/03/HTTP-1-0-1-1-2-0-S/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KMKNKK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KMKNKK | MuffinFish">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/03/HTTP-1-0-1-1-2-0-S/" itemprop="url">HTTP 1.0→1.1→2.0 & HTTPS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T21:02:37+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/前端-通信/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="HTTP-1-0-→-HTTP-1-1"><a href="#HTTP-1-0-→-HTTP-1-1" class="headerlink" title="HTTP 1.0 → HTTP 1.1"></a>HTTP 1.0 → HTTP 1.1</h3><h4 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h4><p><code>HTTP 1.0</code>需要使用<code>keep-alive</code>参数来告知服务器建立长连接，而<code>HTTP 1.1</code>默认支持长连接，减少了TCP连接次数，节约开销。 </p>
+<h4 id="节约带宽"><a href="#节约带宽" class="headerlink" title="节约带宽"></a>节约带宽</h4><p><code>HTTP 1.1</code>支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。<br>当服务器返回401的时候，客户端就可以不用发送请求body了，这样节约了带宽。</p>
+<h4 id="HOST域"><a href="#HOST域" class="headerlink" title="HOST域"></a>HOST域</h4><p><code>HTTP 1.1</code>支持host域，服务端可以通过host域设置多个虚拟站点来共享一个ip和端口。</p>
+<h3 id="HTTP-1-1-→-HTTP-2-0"><a href="#HTTP-1-1-→-HTTP-2-0" class="headerlink" title="HTTP 1.1 → HTTP 2.0"></a>HTTP 1.1 → HTTP 2.0</h3><h4 id="多路复用"><a href="#多路复用" class="headerlink" title="多路复用"></a>多路复用</h4><p><code>HTTP 2.0</code>使用多路复用技术，使用一个TCP连接并发处理多个请求，不但节约了开销而且可处理请求的数量也比<code>HTTP 1.1</code>大了很多。</p>
+<blockquote>
+<p>TCP连接有一个预热和保护的过程，先检查数据是否传送成功，一旦成功过，则慢慢加大传输速度。因此使用一个连接可以大大提高数据传输效率。</p>
+<h4 id="头部压缩"><a href="#头部压缩" class="headerlink" title="头部压缩"></a>头部压缩</h4><p><code>HTTP 1.1</code>不支持header数据压缩，<code>HTTP 2.0</code>使用HPACK算法对header的数据进行压缩，使得数据传输更快。</p>
+<h4 id="服务器推送"><a href="#服务器推送" class="headerlink" title="服务器推送"></a>服务器推送</h4><p>当我们对支持<code>HTTP 2.0</code>的服务器请求数据额时候，服务器会顺便把一些客户端需要的资源一起推送到服务器，这种方式适用于加载静态资源，节约带宽。</p>
+<h3 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h3><h4 id="HTTP缺点"><a href="#HTTP缺点" class="headerlink" title="HTTP缺点"></a>HTTP缺点</h4><ul>
+<li>使用明文通信，内容可能会被窃听</li>
+<li>不验证通信双方身份，有可能遭遇伪装</li>
+<li>无法证明报文的完整性，内容可能遭到篡改<h4 id="HTTPS-HTTP-TLS-SSL加密-认证-完整性保护"><a href="#HTTPS-HTTP-TLS-SSL加密-认证-完整性保护" class="headerlink" title="HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护"></a>HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护</h4></li>
+<li>TLS/SSL内容加密</li>
+<li>数字证书验明身份</li>
+<li>MD5、SHA-1等散列值方法防止篡改</li>
+</ul>
+</blockquote>
+<p>虽然TLS/SSL采用公开密钥这种非对称加密方式，但是HTTPS并不是全部使用非对称加密，而是使用混合加密方式，即：公开密钥(非对称加密)+共享密钥(非对称加密)<br>因为公开密钥与共享密钥加密相比，其处理速度要慢很多。所以HTTPS冲锋利用了两者各自的优势，将多种方法组合起来用于通信。<strong>在交换密钥环节使用公开密钥加密方式，之后建立的通信交换报文阶段则使用共享密钥加密方式</strong><br><a href="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTTP%201.0-1.1-2.0-S/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.jpg" target="_blank" rel="noopener">混合加密方式</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/03/11/原型链和继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1065,7 +1235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/CSS小知识汇总/">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/小知识汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
@@ -1084,7 +1254,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/21/CSS小知识汇总/" itemprop="url">零散知识汇总</a></h1>
+                <a class="post-title-link" href="/2018/02/21/小知识汇总/" itemprop="url">零散知识汇总</a></h1>
         
 
         <div class="post-meta">
@@ -1160,7 +1330,7 @@
           <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p> &lt;a&gt;中不能再嵌套&lt;a&gt;<br> &lt;ul&gt;中嵌套&lt;li&gt;构成无序列表 Unorderlist<br> &lt;ol&gt;中嵌套&lt;li&gt;构成有序列表 Orderlist<br> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>A free, open source, cross-platform, graphical web browser<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/21/CSS小知识汇总/#more" rel="contents">
+            <a class="btn" href="/2018/02/21/小知识汇总/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1668,169 +1838,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/12/前后端通信/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="KMKNKK">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KMKNKK | MuffinFish">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/12/前后端通信/" itemprop="url">同源策略及前后端(同源/跨域)通信</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-12T15:25:50+08:00">
-                2018-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/前端-通信/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-通信</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="什么是同源策略和限制？"><a href="#什么是同源策略和限制？" class="headerlink" title="什么是同源策略和限制？"></a>什么是同源策略和限制？</h2><p><code>源</code>：= 协议 + 域名 + 端口</p>
-<p><code>同源策略</code>：在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。</p>
-<p><code>限制</code>：当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：</p>
-<ul>
-<li>Cookie、LocalStorage、IndexDB 无法读取</li>
-<li>DOM 无法获得</li>
-<li>AJAX请求无法发送
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/12/前后端通信/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1885,7 +1892,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

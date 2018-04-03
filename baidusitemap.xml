@@ -4,6 +4,108 @@
 
     
   <url>
+    <loc>http://kmknkk.xin/2018/04/03/HTTP-1-0-1-1-2-0-S/</loc>
+    <lastmod>2018-04-03T14:49:39.466Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 1.0→1.1→2.0 & HTTPS</title>
+        <pubTime>2018-04-03T13:02:37.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="前端-通信" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://kmknkk.xin/2018/02/21/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/</loc>
+    <lastmod>2018-04-03T14:39:51.243Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器缓存与客户端存储</title>
+        <pubTime>2018-02-21T04:26:14.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="前端-性能优化" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://kmknkk.xin/2018/01/10/var-let/</loc>
+    <lastmod>2018-04-03T14:30:21.940Z</lastmod>
+    <data>
+        <display>
+        <title>var & let & const</title>
+        <pubTime>2018-01-10T13:46:21.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="前端-JavaScript" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://kmknkk.xin/2018/02/12/%E5%89%8D%E5%90%8E%E7%AB%AF%E9%80%9A%E4%BF%A1/</loc>
+    <lastmod>2018-04-03T04:12:51.773Z</lastmod>
+    <data>
+        <display>
+        <title>同源策略及前后端(同源/跨域)通信</title>
+        <pubTime>2018-02-12T07:25:50.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="前端-通信" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-%E9%80%9A%E4%BF%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://kmknkk.xin/2018/02/21/%E5%B0%8F%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2018-03-20T14:03:19.800Z</lastmod>
+    <data>
+        <display>
+        <title>零散知识汇总</title>
+        <pubTime>2018-02-21T14:02:18.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://kmknkk.xin/2018/01/24/%E5%B8%B8%E7%94%A8%E5%A4%B4%E9%83%A8%E6%A0%87%E7%AD%BE/</loc>
     <lastmod>2018-03-13T13:23:20.163Z</lastmod>
     <data>
@@ -25,27 +127,6 @@
 
     
   <url>
-    <loc>http://kmknkk.xin/2018/02/21/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/</loc>
-    <lastmod>2018-03-13T13:18:34.494Z</lastmod>
-    <data>
-        <display>
-        <title>浏览器缓存与客户端存储</title>
-        <pubTime>2018-02-21T04:26:14.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="前端-性能优化" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://kmknkk.xin/2017/11/23/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2018-03-13T12:38:55.503Z</lastmod>
     <data>
@@ -60,45 +141,6 @@
           
              
               <breadCrumb title="前端-Web安全防护" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-Web%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://kmknkk.xin/2018/02/12/%E5%89%8D%E5%90%8E%E7%AB%AF%E9%80%9A%E4%BF%A1/</loc>
-    <lastmod>2018-03-13T12:24:22.682Z</lastmod>
-    <data>
-        <display>
-        <title>同源策略及前后端(同源/跨域)通信</title>
-        <pubTime>2018-02-12T07:25:50.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="前端-通信" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-%E9%80%9A%E4%BF%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://kmknkk.xin/2018/02/21/CSS%E5%B0%8F%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2018-03-13T12:17:16.233Z</lastmod>
-    <data>
-        <display>
-        <title>零散知识汇总</title>
-        <pubTime>2018-02-21T14:02:18.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
           
         </display>
     </data>
@@ -219,27 +261,6 @@
           
              
               <breadCrumb title="前端-性能优化" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://kmknkk.xin/2018/01/10/var-let/</loc>
-    <lastmod>2018-03-08T10:58:04.038Z</lastmod>
-    <data>
-        <display>
-        <title>var & let & const</title>
-        <pubTime>2018-01-10T13:46:21.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="前端" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="前端-JavaScript" url="http://kmknkk.xin/categories/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF-JavaScript/"/>
           
         </display>
     </data>

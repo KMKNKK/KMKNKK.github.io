@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="什么是同源策略和限制？源：= 协议 + 域名 + 端口 同源策略：在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。 限制：当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：  Cookie、LocalStorage、IndexDB 无法读取 DOM 无法获得 AJAX请求无">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T12:24:22.682Z">
+<meta property="og:updated_time" content="2018-04-03T04:12:51.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同源策略及前后端(同源&#x2F;跨域)通信">
 <meta name="twitter:description" content="什么是同源策略和限制？源：= 协议 + 域名 + 端口 同源策略：在MDN中有如下解释:同源策略限制从一个源加载的文档或脚本如何与来自另一个源的资源进行交互。这是一个用于隔离潜在恶意文件的关键的安全机制。 限制：当源不一样时，就产生了跨域。不是一个源的文档没有权利去操作另一个源的文档。具体表现为：  Cookie、LocalStorage、IndexDB 无法读取 DOM 无法获得 AJAX请求无">
@@ -433,8 +433,8 @@
 </li>
 <li><p><code>nginx反向代理</code>:主要使用了<code>nginx.conf</code>内的<code>proxy_pass http://xxx.xxx.xxx</code>,将所有请求代理到该域名，有利有弊。</p>
 </li>
-<li><code>WebSocket</code>:全双工通信方式     </li>
-<li><code>CORS</code>:可以理解为支持跨域通信的AJAX</li>
+<li><code>WebSocket</code>:全双工通信方式<br>主要原理是：基于HTTP向服务端发送WebSocket请求，服务端许可后返回101，客户端收到101，将协议换成WebSocket，建立连接。     </li>
+<li><code>CORS</code>:可以理解为支持跨域通信的AJAX<br>主要原理是：浏览器发现了有跨域的AJAX请求，就会自动添加一些附加的头部信息(一般为<code>Origin</code>)后发送给服务端，如果服务端允许CORS，则返回<code>Access-Control-Allow-Credentials</code>字段以及其他可选字段，如果没有该字段则说明出错。<br>完整原理：<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">阮一峰博客</a></li>
 </ul>
 
       
@@ -564,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

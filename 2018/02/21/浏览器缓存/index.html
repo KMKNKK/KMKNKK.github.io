@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="浏览器缓存的分类缓存主要分为强缓存和协商缓存，使用方法为在HTTP请求/响应中加入头部信息。 强缓存Expires: Expires:Thu,21 Jan 2017 23:23:23 GMT,服务器下发的资源绝对过期时间Cache-Control: Cache-Control:max-age=3600,由于客户端和服务器时间可能存在偏差，于是出现了这种方法。原理为规定相对于系统时间的一段时间，单位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T13:18:34.494Z">
+<meta property="og:updated_time" content="2018-04-03T14:39:51.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器缓存与客户端存储">
 <meta name="twitter:description" content="浏览器缓存的分类缓存主要分为强缓存和协商缓存，使用方法为在HTTP请求/响应中加入头部信息。 强缓存Expires: Expires:Thu,21 Jan 2017 23:23:23 GMT,服务器下发的资源绝对过期时间Cache-Control: Cache-Control:max-age=3600,由于客户端和服务器时间可能存在偏差，于是出现了这种方法。原理为规定相对于系统时间的一段时间，单位">
@@ -408,7 +408,7 @@
 <h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p><code>Last-Modified</code> <code>If-Modidied-Since</code> : <code>Last-Modified:Wed,26 Jan 2017 17:17:17 GMT</code>，客户端发送本地文件上次更新的时间，与服务器文件上次更新的时间作比较，如果不同则更新资源。</p>
 <p>但是上述方法有一个缺点: 有可能资源内容没更新，但是文件被修改了，这就导致了没必要的浪费，于是出现了下面的方法：</p>
 <p><code>Etag</code> <code>If-None-Match</code>: 也是使用客户端和服务端的文件信息比较，只不过这是比较类似于Hash的值，通过这种方法可以判断文件资源是否发生改变。</p>
-<h3 id="客户端存储"><a href="#客户端存储" class="headerlink" title="客户端存储"></a>客户端存储</h3><p>####localStorage和sessionStorage<br>两者均属于session，不同之处在于存储的有效期以及作用域不同。即：<code>数据可以存储多少时间</code>以及<code>谁拥有数据的访问权</code>。<br>有效期：</p>
+<h3 id="客户端存储"><a href="#客户端存储" class="headerlink" title="客户端存储"></a>客户端存储</h3><h4 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h4><p>两者均属于Session对象，不同之处在于存储的有效期以及作用域不同。即：<code>数据可以存储多少时间</code>以及<code>谁拥有数据的访问权</code>。<br>有效期：</p>
 <ul>
 <li><code>localStorage</code>:存储的数据是永久性的，除非用户删除否则会一直存在。</li>
 <li><code>sessionStorage</code>:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，即<code>会话关闭</code>那么所有通过<code>sessionStorage</code>存储的数据也会被删除。</li>
@@ -456,7 +456,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/21/CSS小知识汇总/" rel="prev" title="零散知识汇总">
+              <a href="/2018/02/21/小知识汇总/" rel="prev" title="零散知识汇总">
                 零散知识汇总 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -550,7 +550,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -628,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器缓存的分类"><span class="nav-number">1.</span> <span class="nav-text">浏览器缓存的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#强缓存"><span class="nav-number">1.1.</span> <span class="nav-text">强缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协商缓存"><span class="nav-number">1.2.</span> <span class="nav-text">协商缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.</span> <span class="nav-text">客户端存储</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器缓存的分类"><span class="nav-number">1.</span> <span class="nav-text">浏览器缓存的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#强缓存"><span class="nav-number">1.1.</span> <span class="nav-text">强缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协商缓存"><span class="nav-number">1.2.</span> <span class="nav-text">协商缓存</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端存储"><span class="nav-number">2.</span> <span class="nav-text">客户端存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#localStorage和sessionStorage"><span class="nav-number">2.1.</span> <span class="nav-text">localStorage和sessionStorage</span></a></li></ol></li></ol></div>
             
 
           </div>
