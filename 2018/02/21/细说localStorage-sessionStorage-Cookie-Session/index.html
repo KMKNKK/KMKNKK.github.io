@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionS">
+<meta name="description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。 session">
 <meta property="og:type" content="article">
-<meta property="og:title" content="细说localStorage,sessionStorage,Cookie,Session">
+<meta property="og:title" content="细说localStorage, sessionStorage, Cookie, Session">
 <meta property="og:url" content="http://kmknkk.xin/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被">
+<meta property="og:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-04T13:28:12.659Z">
+<meta property="og:updated_time" content="2018-04-04T13:35:38.940Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="细说localStorage,sessionStorage,Cookie,Session">
-<meta name="twitter:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被">
+<meta name="twitter:title" content="细说localStorage, sessionStorage, Cookie, Session">
+<meta name="twitter:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title>细说localStorage,sessionStorage,Cookie,Session | KMKNKK | MuffinFish</title>
+  <title>细说localStorage, sessionStorage, Cookie, Session | KMKNKK | MuffinFish</title>
   
 
 
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">细说localStorage,sessionStorage,Cookie,Session</h1>
+          <h1 class="post-title" itemprop="name headline">细说localStorage, sessionStorage, Cookie, Session</h1>
         
 
         <div class="post-meta">
@@ -405,18 +405,19 @@
         <h3 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h3><h4 id="两者的共同点在于："><a href="#两者的共同点在于：" class="headerlink" title="两者的共同点在于："></a>两者的共同点在于：</h4><p>1、存储大小均为5M左右<br>2、都有同源策略限制<br>3、仅在客户端中保存，不参与和服务器的通信</p>
 <h4 id="两者的不同点在于："><a href="#两者的不同点在于：" class="headerlink" title="两者的不同点在于："></a>两者的不同点在于：</h4><p>1、<code>生命周期</code> —— 数据可以存储多少时间</p>
 <ul>
-<li>localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。</li>
-<li>sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，那么所有通过 sessionStorage 存储的数据也会被删除。</li>
+<li>localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。</li>
+<li>sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，那么所有通过 sessionStorage 存储的数据也会被删除。</li>
 </ul>
 <p>2、<code>作用域</code> —— 谁拥有数据的访问权</p>
 <ul>
-<li>localStorage:在同一个浏览器内，<code>同源文档</code>之间共享localStorage数据，可以互相读取、覆盖。</li>
-<li>sessionStorage:与 localStorage 一样需要同一浏览器同源文档这一条件。不仅如此，sessionStorage 的作用域还被限定在了窗口中，也就是说，只有同一浏览器、同一窗口的同源文档才能共享数据。<a id="more"></a>
-为了更好的理解<code>sessionStorage</code>,我们来看个例子：</li>
+<li>localStorage: 在同一个浏览器内，<code>同源文档</code>之间共享 localStorage 数据，可以互相读取、覆盖。</li>
+<li>sessionStorage: 与 localStorage 一样需要同一浏览器同源文档这一条件。不仅如此，sessionStorage 的作用域还被限定在了窗口中，也就是说，只有同一浏览器、同一窗口的同源文档才能共享数据。<a id="more"></a>
+</li>
 </ul>
+<p>为了更好的理解<code>sessionStorage</code>,我们来看个例子：</p>
 <p>例如你在浏览器中打开了两个相同地址的页面A、B,虽然这两个页面的源完全相同，但是他们还是不能共享数据，因为他们是不同窗口中的。但是如果是一个窗口中，有两个同源的<code>iframe</code>元素的话，这两个<code>iframe</code>的 sessionStorage 是可以互通的。</p>
 <h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sessionStorage用法相同</span></span><br><span class="line">localStorage.setItem(<span class="string">"name"</span>,<span class="number">1</span>);   <span class="comment">// 以"x"为名字存储一个数值</span></span><br><span class="line">localStorage.getItem(<span class="string">"name"</span>);     <span class="comment">// 获取数值</span></span><br><span class="line">localStorage.key(i);              <span class="comment">// 获取第i对的名字</span></span><br><span class="line">localStorage.removeItem(<span class="string">"name"</span>);  <span class="comment">// 获取该对的值</span></span><br><span class="line">localStorage.clear();             <span class="comment">// 全部删除</span></span><br></pre></td></tr></table></figure>
-<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>Cookie是小甜饼的意思，主要有以下特点：</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>Cookie是小甜饼的意思，主要有以下特点：</p>
 <p>1、顾名思义，Cookie 确实非常小，它的大小限制为4KB左右</p>
 <p>2、主要用途是保存登录信息和标记用户(比如购物车)等，不过随着localStorage的出现，现在购物车的工作Cookie承担的较少了</p>
 <p>3、一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效</p>
@@ -649,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage和sessionStorage"><span class="nav-number">1.</span> <span class="nav-text">localStorage和sessionStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两者的共同点在于："><span class="nav-number">1.1.</span> <span class="nav-text">两者的共同点在于：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两者的不同点在于："><span class="nav-number">1.2.</span> <span class="nav-text">两者的不同点在于：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">1.3.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概念"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法-API"><span class="nav-number">2.0.2.</span> <span class="nav-text">用法(API)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">3.</span> <span class="nav-text">Session</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概念-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与Cookie的关系与区别："><span class="nav-number">3.1.</span> <span class="nav-text">与Cookie的关系与区别：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage和sessionStorage"><span class="nav-number">1.</span> <span class="nav-text">localStorage和sessionStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两者的共同点在于："><span class="nav-number">1.1.</span> <span class="nav-text">两者的共同点在于：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两者的不同点在于："><span class="nav-number">1.2.</span> <span class="nav-text">两者的不同点在于：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">1.3.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">2.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概念"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法-API"><span class="nav-number">2.0.2.</span> <span class="nav-text">用法(API)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">3.</span> <span class="nav-text">Session</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概念-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与Cookie的关系与区别："><span class="nav-number">3.1.</span> <span class="nav-text">与Cookie的关系与区别：</span></a></li></ol></li></ol></div>
             
 
           </div>
