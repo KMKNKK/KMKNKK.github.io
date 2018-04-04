@@ -1370,6 +1370,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KMKNKK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KMKNKK | MuffinFish">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/" itemprop="url">细说localStorage,sessionStorage,Cookie,Session</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T18:26:14+08:00">
+                2018-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/前端-性能优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-性能优化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h3><h4 id="两者的共同点在于："><a href="#两者的共同点在于：" class="headerlink" title="两者的共同点在于："></a>两者的共同点在于：</h4><p>1、存储大小均为5M左右<br>2、都有同源策略限制<br>3、仅在客户端中保存，不参与和服务器的通信</p>
+<h4 id="两者的不同点在于："><a href="#两者的不同点在于：" class="headerlink" title="两者的不同点在于："></a>两者的不同点在于：</h4><p>1、<code>生命周期</code> —— 数据可以存储多少时间</p>
+<ul>
+<li>localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。</li>
+<li>sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，那么所有通过 sessionStorage 存储的数据也会被删除。</li>
+</ul>
+<p>2、<code>作用域</code> —— 谁拥有数据的访问权</p>
+<ul>
+<li>localStorage:在同一个浏览器内，<code>同源文档</code>之间共享localStorage数据，可以互相读取、覆盖。</li>
+<li>sessionStorage:与 localStorage 一样需要同一浏览器同源文档这一条件。不仅如此，sessionStorage 的作用域还被限定在了窗口中，也就是说，只有同一浏览器、同一窗口的同源文档才能共享数据。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/浏览器缓存/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1389,7 +1555,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/21/浏览器缓存/" itemprop="url">浏览器缓存与客户端存储</a></h1>
+                <a class="post-title-link" href="/2018/02/21/浏览器缓存/" itemprop="url">浏览器缓存</a></h1>
         
 
         <div class="post-meta">
@@ -1473,9 +1639,8 @@
 
       
         
-          <h3 id="浏览器缓存的分类"><a href="#浏览器缓存的分类" class="headerlink" title="浏览器缓存的分类"></a>浏览器缓存的分类</h3><p>缓存主要分为强缓存和协商缓存，使用方法为在HTTP请求/响应中加入头部信息。</p>
-<h4 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h4><p><code>Expires</code>: <code>Expires:Thu,21 Jan 2017 23:23:23 GMT</code>,服务器下发的资源绝对过期时间<br><code>Cache-Control</code>: <code>Cache-Control:max-age=3600</code>,由于客户端和服务器时间可能存在偏差，于是出现了这种方法。原理为规定相对于系统时间的一段时间，单位为秒，表示在客户端在收到资源3600秒后资源失效</p>
-<p>当<code>Expires</code>和<code>Cache-Control</code>同时存在时，以<code>Cache-Control</code>为准<br>
+          <h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>缓存主要分为强缓存和协商缓存，使用方法为在HTTP请求/响应中加入头部信息。</p>
+<p>使用场景为：<br>1、浏览器需要资源A，当浏览器需要这个资源时会先检测本地是否有该资源的缓存<br>2、如果没有缓存则向服务器发出请求，服务器下发一个<code>强缓存</code><br>3、如果有缓存，则检测缓存是否过期，如果没过期则直接使用，如果过期了则进行<code>协商缓存</code><br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E7%BC%93%E5%AD%98/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82.png" alt=""><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/21/浏览器缓存/#more" rel="contents">
@@ -1677,156 +1842,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/18/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="KMKNKK">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/image/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="KMKNKK | MuffinFish">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/18/git/" itemprop="url">Git一些小tips</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T23:05:06+08:00">
-                2018-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git-Github/" itemprop="url" rel="index">
-                    <span itemprop="name">Git/Github</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>最近在和好基友用Github练习共同开发，期间发现了一些问题和一些有用的Tips，在这里挑一些比较有有用/有意思的小小总结一下。</p>
-</blockquote>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h2><p>起初没啥经验，<code>.gitignore</code>总是空空白白的，导致Git的文件过于冗余。</p>
-<p>并且<strong>很致命</strong>的一点是这会导致上传一些没必要的配置文件，而由于电脑环境变量或者轮子版本的不同，很可能会<strong>导致编译错误</strong>= =<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/18/git/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1881,7 +1896,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

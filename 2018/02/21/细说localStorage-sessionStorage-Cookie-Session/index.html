@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="google-site-verification: google60e882b24f42a350.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="KMKNKK | MuffinFish">
-<meta property="og:url" content="http://kmknkk.xin/google60e882b24f42a350.html">
+<meta name="description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="细说localStorage,sessionStorage,Cookie,Session">
+<meta property="og:url" content="http://kmknkk.xin/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="google-site-verification: google60e882b24f42a350.html">
+<meta property="og:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-18T11:36:04.372Z">
+<meta property="og:updated_time" content="2018-04-04T13:28:12.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KMKNKK | MuffinFish">
-<meta name="twitter:description" content="google-site-verification: google60e882b24f42a350.html">
+<meta name="twitter:title" content="细说localStorage,sessionStorage,Cookie,Session">
+<meta name="twitter:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/google60e882b24f42a350.html"/>
+  <link rel="canonical" href="http://kmknkk.xin/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/"/>
 
 
 
 
 
-  <title> | KMKNKK | MuffinFish</title>
+  <title>细说localStorage,sessionStorage,Cookie,Session | KMKNKK | MuffinFish</title>
   
 
 
@@ -285,33 +285,226 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/21/细说localStorage-sessionStorage-Cookie-Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KMKNKK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KMKNKK | MuffinFish">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          google-site-verification: google60e882b24f42a350.html
+          <h1 class="post-title" itemprop="name headline">细说localStorage,sessionStorage,Cookie,Session</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T18:26:14+08:00">
+                2018-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/前端-性能优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-性能优化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h3><h4 id="两者的共同点在于："><a href="#两者的共同点在于：" class="headerlink" title="两者的共同点在于："></a>两者的共同点在于：</h4><p>1、存储大小均为5M左右<br>2、都有同源策略限制<br>3、仅在客户端中保存，不参与和服务器的通信</p>
+<h4 id="两者的不同点在于："><a href="#两者的不同点在于：" class="headerlink" title="两者的不同点在于："></a>两者的不同点在于：</h4><p>1、<code>生命周期</code> —— 数据可以存储多少时间</p>
+<ul>
+<li>localStorage:存储的数据是永久性的，除非用户人为删除否则会一直存在。</li>
+<li>sessionStorage:与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，那么所有通过 sessionStorage 存储的数据也会被删除。</li>
+</ul>
+<p>2、<code>作用域</code> —— 谁拥有数据的访问权</p>
+<ul>
+<li>localStorage:在同一个浏览器内，<code>同源文档</code>之间共享localStorage数据，可以互相读取、覆盖。</li>
+<li>sessionStorage:与 localStorage 一样需要同一浏览器同源文档这一条件。不仅如此，sessionStorage 的作用域还被限定在了窗口中，也就是说，只有同一浏览器、同一窗口的同源文档才能共享数据。<a id="more"></a>
+为了更好的理解<code>sessionStorage</code>,我们来看个例子：</li>
+</ul>
+<p>例如你在浏览器中打开了两个相同地址的页面A、B,虽然这两个页面的源完全相同，但是他们还是不能共享数据，因为他们是不同窗口中的。但是如果是一个窗口中，有两个同源的<code>iframe</code>元素的话，这两个<code>iframe</code>的 sessionStorage 是可以互通的。</p>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sessionStorage用法相同</span></span><br><span class="line">localStorage.setItem(<span class="string">"name"</span>,<span class="number">1</span>);   <span class="comment">// 以"x"为名字存储一个数值</span></span><br><span class="line">localStorage.getItem(<span class="string">"name"</span>);     <span class="comment">// 获取数值</span></span><br><span class="line">localStorage.key(i);              <span class="comment">// 获取第i对的名字</span></span><br><span class="line">localStorage.removeItem(<span class="string">"name"</span>);  <span class="comment">// 获取该对的值</span></span><br><span class="line">localStorage.clear();             <span class="comment">// 全部删除</span></span><br></pre></td></tr></table></figure>
+<h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><h5 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h5><p>Cookie是小甜饼的意思，主要有以下特点：</p>
+<p>1、顾名思义，Cookie 确实非常小，它的大小限制为4KB左右</p>
+<p>2、主要用途是保存登录信息和标记用户(比如购物车)等，不过随着localStorage的出现，现在购物车的工作Cookie承担的较少了</p>
+<p>3、一般由服务器生成，可设置失效时间。如果在浏览器端生成Cookie，默认是关闭浏览器后失效</p>
+<p>4、每次都会携带在HTTP头中，如果使用cookie保存过多数据会带来性能问题</p>
+<p>5、原生API不如storage友好，需要自己封装函数</p>
+<h5 id="用法-API"><a href="#用法-API" class="headerlink" title="用法(API)"></a>用法(API)</h5><p>服务端向客户端发送的cookie(HTTP头,不带参数)：<br><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code> (name可选)</p>
+<p>服务端向客户端发送的cookie(HTTP头，带参数)：<br><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;;(可选参数1);(可选参数2)</code></p>
+<p>客户端设置cookie：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"&lt;cookie-name&gt;=&lt;cookie-value&gt;;(可选参数1);(可选参数2)"</span></span><br></pre></td></tr></table></figure></p>
+<p>可选参数：<br><code>Expires=&lt;date&gt;</code>：cookie的最长有效时间，若不设置则cookie生命期与会话期相同</p>
+<p><code>Max-Age=&lt;non-zero-digit&gt;</code>：cookie生成后失效的秒数</p>
+<p><code>Domain=&lt;domain-value&gt;</code>：指定cookie可以送达的主机域名，若一级域名设置了则二级域名也能获取。</p>
+<p><code>Path=&lt;path-value&gt;</code>：指定一个URL，例如指定path=/docs，则”/docs”、”/docs/Web/“、”/docs/Web/Http”均满足匹配条件</p>
+<p><code>Secure</code>：必须在请求使用SSL或HTTPS协议的时候cookie才回被发送到服务器</p>
+<p><code>HttpOnly</code>：客户端无法更改Cookie，客户端设置cookie时不能使用这个参数，一般是服务器端使用</p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: sessionid=aes7a8; HttpOnly; Path=/</span><br><span class="line"></span><br><span class="line">document.cookie = &quot;KMKNKK=1234;Sercure&quot;</span><br></pre></td></tr></table></figure></p>
+<p>可选前缀：<br><code>__Secure-</code>：以<code>__Secure-</code>为前缀的cookie，必须与secure属性一同设置，同时必须应用于安全页面（即使用HTTPS）</p>
+<p><code>__Host-</code>：以<code>__Host-</code>为前缀的cookie，必须与secure属性一同设置，同时必须应用于安全页面（即使用HTTPS）。必须不能设置domian属性（这样可以防止二级域名获取一级域名的cookie），path属性的值必须为”/“。</p>
+<p>前缀使用示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: __Secure-ID=123; Secure; Domain=example.com</span><br><span class="line">Set-Cookie: __Host-ID=123; Secure; Path=/</span><br><span class="line"></span><br><span class="line">document.cookie = &quot;__Secure-KMKNKK=1234;Sercure&quot;</span><br><span class="line">document.cookie = &quot;__Host-KMKNKK=1234;Sercure;path=/&quot;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><h5 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h5><p>Session是在无状态的HTTP协议下，服务端记录用户状态时用于标识具体用户的机制。它是在服务端保存的用来跟踪用户的状态的数据结构，可以保存在文件、数据库或者集群中。</p>
+<p>在浏览器关闭后这次的Session就消失了，下次打开就不再拥有这个Session。其实并不是Session消失了，而是Session ID变了，服务器端可能还是存着你上次的Session ID及其Session 信息，只是他们是无主状态，也许一段时间后会被删除。</p>
+<p>大多数的应用都是用Cookie来实现Session跟踪的，第一次创建Session的时候，服务端会在HTTP协议中告诉客户端，需要在Cookie里面记录一个SessionID，以后每次请求把这个会话ID发送到服务器</p>
+<h4 id="与Cookie的关系与区别："><a href="#与Cookie的关系与区别：" class="headerlink" title="与Cookie的关系与区别："></a>与Cookie的关系与区别：</h4><p>1、<code>Session</code>是在服务端保存的一个数据结构，用来跟踪用户的状态，这个数据可以保存在集群、数据库、文件中，<code>Cookie</code>是客户端保存用户信息的一种机制，用来记录用户的一些信息，也是实现Session的一种方式。</p>
+<p>2、<code>Cookie</code>的<code>安全性</code>一般，他人可通过分析存放在本地的<code>Cookie</code>并进行<code>Cookie</code>欺骗。在安全性第一的前提下，选择<code>Session</code>更优。重要交互信息比如权限等就要放在<code>Session</code>中，一般的信息记录放<code>Cookie</code>就好了。 </p>
+<p>3、单个<code>Cookie</code>保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个<code>Cookie</code>。 </p>
+<p>4、当访问增多时，<code>Session</code>会较大地占用服务器的性能。考虑到减轻服务器性能方面，应当适时使用<code>Cookie</code>。 </p>
+<p>5、<code>Session</code>的运行依赖<code>Session ID</code>，而<code>Session ID</code>是存在 Cookie 中的。也就是说，如果浏览器禁用了<code>Cookie</code>,<code>Session</code>也会失效（但是可以通过其它方式实现，比如在<code>url</code>中传递<code>Session ID</code>,即sid=xxxx）。 </p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/21/浏览器缓存/" rel="next" title="浏览器缓存">
+                <i class="fa fa-chevron-left"></i> 浏览器缓存
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/21/小知识汇总/" rel="prev" title="零散知识汇总">
+                零散知识汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async = "async" ></script>
+</div>
+
+      
+    </div>
   </div>
 
 
@@ -349,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -437,6 +639,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage和sessionStorage"><span class="nav-number">1.</span> <span class="nav-text">localStorage和sessionStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两者的共同点在于："><span class="nav-number">1.1.</span> <span class="nav-text">两者的共同点在于：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两者的不同点在于："><span class="nav-number">1.2.</span> <span class="nav-text">两者的不同点在于：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API"><span class="nav-number">1.3.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">2.</span> <span class="nav-text">cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概念"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用法-API"><span class="nav-number">2.0.2.</span> <span class="nav-text">用法(API)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">3.</span> <span class="nav-text">Session</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本概念-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与Cookie的关系与区别："><span class="nav-number">3.1.</span> <span class="nav-text">与Cookie的关系与区别：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
