@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-04T13:35:38.940Z">
+<meta property="og:updated_time" content="2018-04-09T08:07:59.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说localStorage, sessionStorage, Cookie, Session">
 <meta name="twitter:description" content="localStorage和sessionStorage两者的共同点在于：1、存储大小均为5M左右2、都有同源策略限制3、仅在客户端中保存，不参与和服务器的通信 两者的不同点在于：1、生命周期 —— 数据可以存储多少时间  localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。 sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签">
@@ -426,15 +426,16 @@
 <h5 id="用法-API"><a href="#用法-API" class="headerlink" title="用法(API)"></a>用法(API)</h5><p>服务端向客户端发送的cookie(HTTP头,不带参数)：<br><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;</code> (name可选)</p>
 <p>服务端向客户端发送的cookie(HTTP头，带参数)：<br><code>Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;;(可选参数1);(可选参数2)</code></p>
 <p>客户端设置cookie：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.cookie = <span class="string">"&lt;cookie-name&gt;=&lt;cookie-value&gt;;(可选参数1);(可选参数2)"</span></span><br></pre></td></tr></table></figure></p>
-<p>可选参数：<br><code>Expires=&lt;date&gt;</code>：cookie的最长有效时间，若不设置则cookie生命期与会话期相同</p>
+<p>可选参数：</p>
+<p><code>Expires=&lt;date&gt;</code>：cookie的最长有效时间，若不设置则cookie生命期与会话期相同</p>
 <p><code>Max-Age=&lt;non-zero-digit&gt;</code>：cookie生成后失效的秒数</p>
 <p><code>Domain=&lt;domain-value&gt;</code>：指定cookie可以送达的主机域名，若一级域名设置了则二级域名也能获取。</p>
-<p><code>Path=&lt;path-value&gt;</code>：指定一个URL，例如指定path=/docs，则”/docs”、”/docs/Web/“、”/docs/Web/Http”均满足匹配条件</p>
-<p><code>Secure</code>：必须在请求使用SSL或HTTPS协议的时候cookie才回被发送到服务器</p>
+<p><code>Path=&lt;path-value&gt;</code>：指定一个URL，例如’path=/docs’，则’/docs’、’/docs/Web/‘、’/docs/Web/Http’均满足匹配条件</p>
+<p><code>Secure</code>：必须在请求使用SSL或HTTPS协议的时候cookie才会被发送到服务器</p>
 <p><code>HttpOnly</code>：客户端无法更改Cookie，客户端设置cookie时不能使用这个参数，一般是服务器端使用</p>
 <p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: sessionid=aes7a8; HttpOnly; Path=/</span><br><span class="line"></span><br><span class="line">document.cookie = &quot;KMKNKK=1234;Sercure&quot;</span><br></pre></td></tr></table></figure></p>
 <p>可选前缀：<br><code>__Secure-</code>：以<code>__Secure-</code>为前缀的cookie，必须与secure属性一同设置，同时必须应用于安全页面（即使用HTTPS）</p>
-<p><code>__Host-</code>：以<code>__Host-</code>为前缀的cookie，必须与secure属性一同设置，同时必须应用于安全页面（即使用HTTPS）。必须不能设置domian属性（这样可以防止二级域名获取一级域名的cookie），path属性的值必须为”/“。</p>
+<p><code>__Host-</code>：以<code>__Host-</code>为前缀的cookie，必须与secure属性一同设置，同时必须应用于安全页面（即使用HTTPS）。必须不能设置domian属性（这样可以防止二级域名获取一级域名的cookie），path属性的值必须为’/‘。</p>
 <p>前缀使用示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: __Secure-ID=123; Secure; Domain=example.com</span><br><span class="line">Set-Cookie: __Host-ID=123; Secure; Path=/</span><br><span class="line"></span><br><span class="line">document.cookie = &quot;__Secure-KMKNKK=1234;Sercure&quot;</span><br><span class="line">document.cookie = &quot;__Host-KMKNKK=1234;Sercure;path=/&quot;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><h5 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h5><p>Session是在无状态的HTTP协议下，服务端记录用户状态时用于标识具体用户的机制。它是在服务端保存的用来跟踪用户的状态的数据结构，可以保存在文件、数据库或者集群中。</p>
 <p>在浏览器关闭后这次的Session就消失了，下次打开就不再拥有这个Session。其实并不是Session消失了，而是Session ID变了，服务器端可能还是存着你上次的Session ID及其Session 信息，只是他们是无主状态，也许一段时间后会被删除。</p>
@@ -572,7 +573,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

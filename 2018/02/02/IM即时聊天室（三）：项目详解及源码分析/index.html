@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。   PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课">
+<meta name="description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。  聊天室在线地址：点此进入  PS: 这是我网络编程课的一个小作业，因为博主比较懒所">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IM即时聊天室（三）：项目详解及源码分析">
 <meta property="og:url" content="http://kmknkk.xin/2018/02/02/IM即时聊天室（三）：项目详解及源码分析/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。   PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）">
+<meta property="og:description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。  聊天室在线地址：点此进入  PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/5.gif">
 <meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png">
-<meta property="og:updated_time" content="2018-02-27T09:03:10.203Z">
+<meta property="og:updated_time" content="2018-04-08T04:07:15.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IM即时聊天室（三）：项目详解及源码分析">
-<meta name="twitter:description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。   PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）">
+<meta name="twitter:description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。  聊天室在线地址：点此进入  PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）">
 <meta name="twitter:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif">
 
 
@@ -410,6 +410,7 @@
 <p>之前我们在 <a href="http://kmknkk.xin/2017/12/18/IM%E5%8D%B3%E6%97%B6%E8%81%8A%E5%A4%A9%E5%AE%A4%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWebSocket/">IM即时聊天室（一）：WebSocket</a> 和 <a href="http://kmknkk.xin/2017/12/21/IM%E5%8D%B3%E6%97%B6%E8%81%8A%E5%A4%A9%E5%AE%A4%EF%BC%88%E4%BA%8C%EF%BC%89-Socket-io/">IM即时聊天室（二）: Socket.io + Node.js
 </a>两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。</p>
 </blockquote>
+<p>聊天室在线地址：<a href="http://47.94.86.217/Chatroom-WebSocket/" target="_blank" rel="noopener">点此进入</a></p>
 <hr>
 <p>PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）</p>
 <hr>
@@ -447,7 +448,7 @@
 <p> 图片传输部分我本来是想用Base64编码，先在客户端读取图片二进制信息并编成Base64格式发送给服务端，服务端转发后别的客户端接收后解码。</p>
 <p> 但是后面放弃了这一方式，因为直接传输二进制信息太慢了，于是改用了HTML5的Filereader方法。</p>
 <p> 这个方法有个优点就是其中的readAsDataURL函数可以直接将图片二进制信息转成URL格式，这样子我只用发送并转发一个简短的URL，客户端直接根据URL加载图片，省去了大量传输和解码时间。</p>
-<p> 关键代码：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//图片发送</span><br><span class="line">document.getElementById(&apos;sendImage&apos;).addEventListener(&apos;change&apos;, </span><br><span class="line">function() &#123;</span><br><span class="line">	</span><br><span class="line">	//检查是否有文件被选中</span><br><span class="line">	if (this.files.length != 0) &#123;</span><br><span class="line">		//获取文件并用FileReader进行读取</span><br><span class="line">		var file = this.files[0],</span><br><span class="line">		reader = new FileReader();</span><br><span class="line">		if (!reader) &#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	reader.onload = function(e) &#123;</span><br><span class="line">		//读取成功，发送到服务器</span><br><span class="line">		socket.emit(&apos;sendImg&apos;,&#123;</span><br><span class="line">			username:uname,</span><br><span class="line">			image: e.target.result,</span><br><span class="line">			date:new Date().toTimeString().substr(0, 8),headnum:headnum</span><br><span class="line">		    &#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">		reader.readAsDataURL(file);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
+<p> 关键代码：<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//图片发送</span><br><span class="line">document.getElementById(&apos;sendImage&apos;).addEventListener(&apos;change&apos;, </span><br><span class="line">function() &#123;</span><br><span class="line">	</span><br><span class="line">	//检查是否有文件被选中</span><br><span class="line">	if (this.files.length != 0) &#123;</span><br><span class="line">		//获取文件并用FileReader进行读取</span><br><span class="line">		var file   = this.files[0],</span><br><span class="line">		    reader = new FileReader();</span><br><span class="line">	</span><br><span class="line">		if (!reader)  return;</span><br><span class="line">	</span><br><span class="line">	reader.onload = function(e) &#123;</span><br><span class="line">		//读取成功，发送到服务器</span><br><span class="line">		socket.emit(&apos;sendImg&apos;,&#123;</span><br><span class="line">			username:uname,</span><br><span class="line">			image: e.target.result,</span><br><span class="line">			date:new Date().toTimeString().substr(0, 8),headnum:headnum</span><br><span class="line">		    &#125;);</span><br><span class="line">		&#125;;</span><br><span class="line">		reader.readAsDataURL(file);</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
 <p>(5)头像选择/表情包传输<br>头像和表情已经预先放置在客户端中，用户在选择以后将产生特定格式的代码，放置到要发送的信息当中。</p>
 <p> 别的客户端接收到的消息时候，先用正则表达式检索信息中是否存在该格式代码，若有则加载相应的头像/表情，以达到效果。</p>
 <p> 关键代码，以表情为例：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//emoji</span><br><span class="line">document.getElementById(&apos;emojiWrapper&apos;).addEventListener(&apos;click&apos;, </span><br><span class="line">function(e) &#123;</span><br><span class="line"></span><br><span class="line">	//获取被点击的对象</span><br><span class="line">	var target = e.target;</span><br><span class="line"></span><br><span class="line">	if (target.nodeName.toLowerCase() == &apos;img&apos;) &#123;   //如果是表情图像则发送</span><br><span class="line">		var sendtxt = document.getElementById(&apos;sendtxt&apos;);</span><br><span class="line">		sendtxt.focus();</span><br><span class="line">		sendtxt.value = sendtxt.value + &apos;[emoji:&apos; + target.num + &apos;]&apos;;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
@@ -613,7 +614,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
