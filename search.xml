@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CSS实现垂直水平居中]]></title>
+    <url>%2F2018%2F04%2F16%2FCSS%E5%AE%9E%E7%8E%B0%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%2F</url>
+    <content type="text"><![CDATA[行内元素1、text-align:center;height = line-height;2、Flex布局，设置父元素display:flex;justify-content:center;3、table-cell 块级元素知道宽高实现垂直水平居中(1) position:absolute + margin:auto原理：将元素设置成position:absolute，并且将left、top、bottom、right设置为0，margin设置为auto。此时元素就会自动侵占父元素剩余空间，并且上/下，左/右占比相当，实现垂直水平居中。1234567891011.test &#123; width: 200px; height: 200px; background: green; position:absolute; left:0; top: 0; bottom: 0; right: 0; margin: auto; &#125; (2) position:absolute + 负margin特点：由于不设置宽高margin无效，无法实现不知道宽高水平居中，但是兼容性很好。原理：将元素设置成position:absolute，并且将left和top设置成50%。此时元素的左上角为页面正中心，也就是说元素在页面正中心的右下方，偏移距离就是元素本身的宽/高。然后通过设置负的margin(绝对值为元素的宽/高的一半)，把元素“拉”回来，从而达到居中效果。12345678910.test &#123; width:200px; height: 200px; background:green; position: absolute; left:50%; top:50%; margin-left:-100px; margin-top:-100px; &#125; 块级元素不知道宽高实现垂直水平居中(同样适用于知道宽高的场景)(1) transform原理：与absolute + 负margin相同，但是由于margin在不定义height/width的情况下会失效，所以无法适用于不知道宽高的场景。兼容性不好(IE8+)123456789.test &#123; width: 200px; height: 200px; background: green; position:absolute; left:50%; /* 定位父级的50% */ top:50%; transform: translate(-50%,-50%); /*自己的50% */&#125; (2) 万能的flex特点：方便易用，兼容性不足注意flex方法是对父级元素设置display:flex1234567.test &#123; height:600px; display:flex; justify-content:center; align-items:center; /* 只要三句话就可以实现不定宽高水平垂直居中 */&#125; (3) table-cell特点：兼容性好，但是性能差，浏览器绘制时间长，不利于SEO1234567891011121314151617/*table-cell实现居中将父盒子设置为table-cell元素，设置text-align:center,vertical-align: middle;子盒子设置为inline-block元素*/.tableCell&#123; display: table;&#125;.tableCell .container&#123; display: table-cell; text-align: center; vertical-align: middle;&#125;.tableCell .innerBox&#123; display: inline-block;&#125;]]></content>
+      <categories>
+        <category>前端</category>
+        <category>前端-CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[协议知识汇总]]></title>
     <url>%2F2018%2F04%2F11%2FTCP-UDP%2F</url>
     <content type="text"><![CDATA[TCP和UDP的区别1、TCP是面向连接的协议，UDP是无连接的协议2、TCP可靠，UDP不可靠3、TCP有序(主要通过消息包排序实现)，UDP无序4、TCP无界，UDP有界5、TCP有拥塞控制，UDP没有6、TCP较重量级且传输速率较慢;UDP较轻量级，传输速率较快。]]></content>
