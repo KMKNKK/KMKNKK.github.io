@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.jpg">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/mozilla.jpg">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/render-tree-construction.png">
-<meta property="og:updated_time" content="2018-06-10T06:54:29.416Z">
+<meta property="og:updated_time" content="2018-06-10T07:22:43.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当我们在浏览器中输入一个URL后，发生了什么？">
 <meta name="twitter:description" content="写在开头：这篇文章被我归入博客性能优化类别，是因为我认为如果我们要优化网站性能、提升用户体验，首要目标就是要知道用户在本地请求并加载你的网页的过程中，到底发生了什么，在此基础上我们才能更好的优化网页。  图源：知乎-张秋怡 浏览器解析并查询缓存DNS查询 DNS查询顺序如下，若其中一步成功则直接跳到建立链接部分： 浏览器自身DNS 操作系统DNS 本地hosts文件 向域名服务器发送请求">
@@ -487,11 +487,11 @@
 <li>绘制(Paint): GPU根据每个渲染层(Layers)的位图绘制每个点，即像素填充,并且将所以渲染层缓存，如果下次页面变动但是渲染层没变就不会触发重绘。</li>
 <li>层级合成(Compositing): 顾名思义，即处理多层渲染层之间的关系，将其合成为一个完整的页面。</li>
 </ul>
-<h4 id="重绘和重排"><a href="#重绘和重排" class="headerlink" title="重绘和重排"></a>重绘和重排</h4><p>重绘（repaint）:</p>
+<h4 id="重绘和重排"><a href="#重绘和重排" class="headerlink" title="重绘和重排"></a>重绘和重排</h4><p><code>重绘（repaint）</code>:</p>
 <ul>
 <li>元素视觉表现属性被改变即触发重绘，如改变visibility，color等，不会影响到dom结构</li>
 </ul>
-<p>reflow（重排） :</p>
+<p><code>reflow（重排）</code>:</p>
 <ul>
 <li>与repaint区别就是：所有影响dom的元素布局的事件都会触发重排。同时也会触发repaint。</li>
 <li>这种开销是非常昂贵的，导致性能下降是必然的，页面元素越多效果越明显。</li>
@@ -505,8 +505,7 @@
 <li>修改网页默认字体(不建议)</li>
 <li>display:none会触发reflow和repaint，而visibility:hidden只会产生repaint</li>
 </ul>
-<p>显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种：</p>
-<ul>
+<h5 id="显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种："><a href="#显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种：" class="headerlink" title="显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种："></a>显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种：</h5><ul>
 <li>压缩DOM深度，以免内层元素改变而导致多个外层都改变。</li>
 <li>对于没用的元素，尽量设置为<code>display:none</code>，减轻绘制压力。</li>
 <li>在对DOM进行大量元素操作时，我们可以使用利用DocumentFragment对象进行操作，最后再一次性装载进DOM结构中。</li>
@@ -724,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析并查询缓存"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析并查询缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS查询"><span class="nav-number">2.</span> <span class="nav-text">DNS查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立链接"><span class="nav-number">3.</span> <span class="nav-text">建立链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送HTTP请求"><span class="nav-number">4.</span> <span class="nav-text">发送HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器发送响应"><span class="nav-number">5.</span> <span class="nav-text">服务器发送响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端收到页面，浏览器渲染页面"><span class="nav-number">6.</span> <span class="nav-text">客户端收到页面，浏览器渲染页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析HTML"><span class="nav-number">7.</span> <span class="nav-text">解析HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器渲染"><span class="nav-number">8.</span> <span class="nav-text">浏览器渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面的渲染过程"><span class="nav-number">8.1.</span> <span class="nav-text">页面的渲染过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重绘和重排"><span class="nav-number">8.2.</span> <span class="nav-text">重绘和重排</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM渲染层-Layers-与GPU硬件加速"><span class="nav-number">8.3.</span> <span class="nav-text">DOM渲染层(Layers)与GPU硬件加速</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析并查询缓存"><span class="nav-number">1.</span> <span class="nav-text">浏览器解析并查询缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS查询"><span class="nav-number">2.</span> <span class="nav-text">DNS查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立链接"><span class="nav-number">3.</span> <span class="nav-text">建立链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送HTTP请求"><span class="nav-number">4.</span> <span class="nav-text">发送HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器发送响应"><span class="nav-number">5.</span> <span class="nav-text">服务器发送响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端收到页面，浏览器渲染页面"><span class="nav-number">6.</span> <span class="nav-text">客户端收到页面，浏览器渲染页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析HTML"><span class="nav-number">7.</span> <span class="nav-text">解析HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器渲染"><span class="nav-number">8.</span> <span class="nav-text">浏览器渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面的渲染过程"><span class="nav-number">8.1.</span> <span class="nav-text">页面的渲染过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重绘和重排"><span class="nav-number">8.2.</span> <span class="nav-text">重绘和重排</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种："><span class="nav-number">8.2.1.</span> <span class="nav-text">显而易见，要提高页面性能，首要目标就是减少重绘重排，具体方法包括当不限于以下几种：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM渲染层-Layers-与GPU硬件加速"><span class="nav-number">8.3.</span> <span class="nav-text">DOM渲染层(Layers)与GPU硬件加速</span></a></li></ol></li></ol></div>
             
 
           </div>

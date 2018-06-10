@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="本文主要是总结一下页面性能优化的主要方式。  1、资源压缩合并、减少HTTP请求2、非核心代码异步加载3、利用浏览器缓存4、使用CDN5、预解析DNS12&amp;lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot;&amp;gt;&amp;lt;link rel=&quot;dns-prefetch&quot; href=&quot;//prefetch.com&quot;&amp;gt; 6、错误监控">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T06:34:07.647Z">
+<meta property="og:updated_time" content="2018-06-10T07:23:03.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="页面性能优化方式总结">
 <meta name="twitter:description" content="本文主要是总结一下页面性能优化的主要方式。  1、资源压缩合并、减少HTTP请求2、非核心代码异步加载3、利用浏览器缓存4、使用CDN5、预解析DNS12&amp;lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot;&amp;gt;&amp;lt;link rel=&quot;dns-prefetch&quot; href=&quot;//prefetch.com&quot;&amp;gt; 6、错误监控">
@@ -411,7 +411,7 @@
 <h5 id="资源加载错误"><a href="#资源加载错误" class="headerlink" title="资源加载错误"></a>资源加载错误</h5><p>(1)object.onerror ：资源文件出错时会触发object.onerror，但不会向上冒泡触发window.onerror<br>(2)performance.getEntries() ：获取成功加载的资源文件，使用全部文件减去没加载的就是加载出错的文件<br>(3)Error事件捕获 ：注意是捕获不是冒泡，参数为true<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获'</span>, e);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></p>
 <h5 id="跨域时的JS运行错误"><a href="#跨域时的JS运行错误" class="headerlink" title="跨域时的JS运行错误"></a>跨域时的JS运行错误</h5><p>1、在<code>script</code>标签上增加<code>crossorigin</code>属性<br>2、设置js资源响应头<code>Access-Control-Allow-Origin:*|域名</code></p>
 <h4 id="错误上报"><a href="#错误上报" class="headerlink" title="错误上报"></a>错误上报</h4><p>利用<code>image</code>对象上报错误<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Image()).src = <span class="string">"路径"</span>; <span class="comment">//一行代码即可实现资源上报</span></span><br></pre></td></tr></table></figure></p>
-<p>7、<a href="">加速浏览器的渲染</a></p>
+<p>7、<a href="http://kmknkk.xin/2018/06/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/#more">加速浏览器的渲染</a></p>
 
       
     </div>
