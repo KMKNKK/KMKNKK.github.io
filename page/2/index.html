@@ -386,7 +386,7 @@
 
       
         
-          <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p> &lt;a&gt;中不能再嵌套&lt;a&gt;<br> &lt;ul&gt;中嵌套&lt;li&gt;构成无序列表 Unorderlist<br> &lt;ol&gt;中嵌套&lt;li&gt;构成有序列表 Orderlist<br> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>A free, open source, cross-platform, graphical web browser<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+          <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p> &lt;a&gt;中不能再嵌套&lt;a&gt;<br> &lt;ul&gt;中嵌套&lt;li&gt;构成无序列表 Unorderlist<br> &lt;ol&gt;中嵌套&lt;li&gt;构成有序列表 Orderlist<br> &lt;dl&gt;标签定义一个描述列表，与&lt;dt&gt;(定义项目名字)和&lt;dd&gt;(描述项目)一起使用<br> 用法：(&lt;dt&gt;和&lt;dd&gt;可为任意个)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>Firefox<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>A free, open source, cross-platform, graphical web browser<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/02/21/小知识汇总/#more" rel="contents">
@@ -543,8 +543,8 @@
 
       
         
-          <h3 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h3><h4 id="两者的共同点在于："><a href="#两者的共同点在于：" class="headerlink" title="两者的共同点在于："></a>两者的共同点在于：</h4><p>1、存储大小均为5M左右<br>2、都有同源策略限制<br>3、仅在客户端中保存，不参与和服务器的通信</p>
-<h4 id="两者的不同点在于："><a href="#两者的不同点在于：" class="headerlink" title="两者的不同点在于："></a>两者的不同点在于：</h4><p>1、<code>生命周期</code> —— 数据可以存储多少时间</p>
+          <h2 id="localStorage和sessionStorage"><a href="#localStorage和sessionStorage" class="headerlink" title="localStorage和sessionStorage"></a>localStorage和sessionStorage</h2><h3 id="两者的共同点在于："><a href="#两者的共同点在于：" class="headerlink" title="两者的共同点在于："></a>两者的共同点在于：</h3><p>1、存储大小均为5M左右<br>2、都有同源策略限制<br>3、仅在客户端中保存，不参与和服务器的通信</p>
+<h3 id="两者的不同点在于："><a href="#两者的不同点在于：" class="headerlink" title="两者的不同点在于："></a>两者的不同点在于：</h3><p>1、<code>生命周期</code> —— 数据可以存储多少时间</p>
 <ul>
 <li>localStorage: 存储的数据是永久性的，除非用户人为删除否则会一直存在。</li>
 <li>sessionStorage: 与存储数据的脚本所在的标签页的有效期是相同的。一旦窗口或者标签页被关闭，那么所有通过 sessionStorage 存储的数据也会被删除。</li>
@@ -709,7 +709,7 @@
 
       
         
-          <h3 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h3><p>缓存主要分为强缓存和协商缓存，使用方法为在HTTP请求/响应中加入头部信息。</p>
+          <h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><p>缓存主要分为强缓存和协商缓存，使用方法为在HTTP请求/响应中加入头部信息。</p>
 <p>使用场景为：<br>1、浏览器需要资源A，当浏览器需要这个资源时会先检测本地是否有该资源的缓存<br>2、如果没有缓存则向服务器发出请求，服务器下发一个<code>强缓存</code><br>3、如果有缓存，则检测缓存是否过期，如果没过期则直接使用，如果过期了则进行<code>协商缓存</code><br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E7%BC%93%E5%AD%98/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82.png" alt=""><br>
           <!--noindex-->
           <div class="post-button text-center">
@@ -873,10 +873,10 @@
 </blockquote>
 <p>1、资源压缩合并、减少HTTP请求<br>2、<a href="http://kmknkk.xin/2018/02/25/%E5%B9%B6%E8%A1%8C%E5%8A%A0%E8%BD%BD%E4%B8%8E%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C/">非核心代码异步加载</a><br>3、<a href="..\21\浏览器缓存\index.html">利用浏览器缓存</a><br>4、使用CDN<br>5、预解析DNS<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"x-dns-prefetch-control"</span> <span class="attr">content</span>=<span class="string">"on"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"//prefetch.com"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>6、错误监控</p>
-<h4 id="前端错误分类"><a href="#前端错误分类" class="headerlink" title="前端错误分类"></a>前端错误分类</h4><h5 id="即时运行错误"><a href="#即时运行错误" class="headerlink" title="即时运行错误"></a>即时运行错误</h5><p>(1)try..catch  (2)window.onerror ：只能捕获即时运行错误，不能捕获资源加载错误</p>
-<h5 id="资源加载错误"><a href="#资源加载错误" class="headerlink" title="资源加载错误"></a>资源加载错误</h5><p>(1)object.onerror ：资源文件出错时会触发object.onerror，但不会向上冒泡触发window.onerror<br>(2)performance.getEntries() ：获取成功加载的资源文件，使用全部文件减去没加载的就是加载出错的文件<br>(3)Error事件捕获 ：注意是捕获不是冒泡，参数为true<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获'</span>, e);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></p>
-<h5 id="跨域时的JS运行错误"><a href="#跨域时的JS运行错误" class="headerlink" title="跨域时的JS运行错误"></a>跨域时的JS运行错误</h5><p>1、在<code>script</code>标签上增加<code>crossorigin</code>属性<br>2、设置js资源响应头<code>Access-Control-Allow-Origin:*|域名</code></p>
-<h4 id="错误上报"><a href="#错误上报" class="headerlink" title="错误上报"></a>错误上报</h4><p>利用<code>image</code>对象上报错误<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Image()).src = <span class="string">"路径"</span>; <span class="comment">//一行代码即可实现资源上报</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="前端错误分类"><a href="#前端错误分类" class="headerlink" title="前端错误分类"></a>前端错误分类</h3><h3 id="即时运行错误"><a href="#即时运行错误" class="headerlink" title="即时运行错误"></a>即时运行错误</h3><p>(1)try..catch  (2)window.onerror ：只能捕获即时运行错误，不能捕获资源加载错误</p>
+<h3 id="资源加载错误"><a href="#资源加载错误" class="headerlink" title="资源加载错误"></a>资源加载错误</h3><p>(1)object.onerror ：资源文件出错时会触发object.onerror，但不会向上冒泡触发window.onerror<br>(2)performance.getEntries() ：获取成功加载的资源文件，使用全部文件减去没加载的就是加载出错的文件<br>(3)Error事件捕获 ：注意是捕获不是冒泡，参数为true<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'捕获'</span>, e);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="跨域时的JS运行错误"><a href="#跨域时的JS运行错误" class="headerlink" title="跨域时的JS运行错误"></a>跨域时的JS运行错误</h3><p>1、在<code>script</code>标签上增加<code>crossorigin</code>属性<br>2、设置js资源响应头<code>Access-Control-Allow-Origin:*|域名</code></p>
+<h3 id="错误上报"><a href="#错误上报" class="headerlink" title="错误上报"></a>错误上报</h3><p>利用<code>image</code>对象上报错误<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">new</span> Image()).src = <span class="string">"路径"</span>; <span class="comment">//一行代码即可实现资源上报</span></span><br></pre></td></tr></table></figure></p>
 <p>7、<a href="http://kmknkk.xin/2018/06/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93/#more">加速浏览器的渲染</a></p>
 
           
@@ -1342,7 +1342,7 @@
 
       
         
-          <h2 id="什么是标签语义化"><a href="#什么是标签语义化" class="headerlink" title="什么是标签语义化"></a>什么是标签语义化</h2><h3 id="标签的语义"><a href="#标签的语义" class="headerlink" title="标签的语义"></a>标签的语义</h3><p>通过标签判断内容语义，例如根据&lt;h1&gt;标签我们呢能够判断出该内容是标题，根据&lt;p&gt;标签判断出该内容是段落，根据&lt;input&gt;标签判断出该内容是输入框等</p>
+          <h2 id="什么是标签语义化"><a href="#什么是标签语义化" class="headerlink" title="什么是标签语义化"></a>什么是标签语义化</h2><h2 id="标签的语义"><a href="#标签的语义" class="headerlink" title="标签的语义"></a>标签的语义</h2><p>通过标签判断内容语义，例如根据&lt;h1&gt;标签我们呢能够判断出该内容是标题，根据&lt;p&gt;标签判断出该内容是段落，根据&lt;input&gt;标签判断出该内容是输入框等</p>
 <p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTML/%E6%A0%87%E7%AD%BE%E8%AF%AD%E4%B9%89%E5%8C%96.jpg" alt="语义化标签结构"><br>
           <!--noindex-->
           <div class="post-button text-center">
