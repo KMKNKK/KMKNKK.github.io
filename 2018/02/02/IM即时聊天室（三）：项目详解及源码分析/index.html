@@ -86,14 +86,14 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。  聊天室在线地址：点此进入  PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif">
-<meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/5.gif">
-<meta property="og:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png">
-<meta property="og:updated_time" content="2018-04-08T04:07:15.088Z">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/5.gif">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png">
+<meta property="og:updated_time" content="2018-06-10T06:54:29.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IM即时聊天室（三）：项目详解及源码分析">
 <meta name="twitter:description" content="之前我们在 IM即时聊天室（一）：WebSocket 和 IM即时聊天室（二）: Socket.io + Node.js 两篇文章中介绍了搭建一个IM的所需的技术栈和通信原理。那在这篇文章里我们就来详细说一下具体的应用并提供完整源码。  聊天室在线地址：点此进入  PS: 这是我网络编程课的一个小作业，因为博主比较懒所以这篇文章的大部分由我的课程报告组成（逃）">
-<meta name="twitter:image" content="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif">
+<meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif">
 
 
 
@@ -426,7 +426,7 @@
 <li><p>客户端程序和服务器程序通过网络交换聊天的字符串内容（其中表情和头像为特殊格式代码，图片为转码后获得的URL格式）</p>
 </li>
 </ol>
-<p><strong>话不多说，先看程序效果展示：</strong><br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif" alt="这里写图片描述"><br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/5.gif" alt="这里写图片描述"></p>
+<p><strong>话不多说，先看程序效果展示：</strong><br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/6.gif" alt="这里写图片描述"><br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/5.gif" alt="这里写图片描述"></p>
 <h2 id="技术实现"><a href="#技术实现" class="headerlink" title="技术实现"></a>技术实现</h2><p>(1)通信协议选择<br>Balabalabala…  详见下面两篇文章<br><a href="http://kmknkk.xin/2017/12/18/IM%E5%8D%B3%E6%97%B6%E8%81%8A%E5%A4%A9%E5%AE%A4%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWebSocket/">IM即时聊天室（一）：WebSocket</a><br><a href="http://kmknkk.xin/2017/12/21/IM%E5%8D%B3%E6%97%B6%E8%81%8A%E5%A4%A9%E5%AE%A4%EF%BC%88%E4%BA%8C%EF%BC%89-Socket-io/">IM即时聊天室（二）：Socket.io + Node.js
 </a></p>
 <p>(2)客户端<br> UI界面：HTML+CSS+Bootstrap自适应</p>
@@ -434,7 +434,7 @@
 <p> 消息的发送和接收：Socket.io</p>
 <p> <strong>PS：由于客户端代码太太太太太多了，我只挑比较有特点的的讲一下</strong></p>
 <p> 登录啥的就不讲了，大概思路就是开始时隐藏聊天界面，登录成功后隐藏登录界面显出聊天界面，源码里有完整的注释</p>
-<p> 先贴一下客户端代码大致结构图：<br><img src="http://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png" alt="这里写图片描述"></p>
+<p> 先贴一下客户端代码大致结构图：<br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/IM/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png" alt="这里写图片描述"></p>
 <p> 比较有意思的代码是我仿照微信做了一个回到最新消息处的功能。</p>
 <p> 当我们在聊天时，我们会希望最新的消息实时显示出来，但是当我们在看历史消息时，可不希望被强行定位到最新消息处。并且在查看历史消息时，可以通过按钮回到最新消息处。</p>
 <p> 于是我们就要判断用户在查看历史消息还是正在聊天，方法就是判断最新的消息是否出现在了用户窗口里。</p>

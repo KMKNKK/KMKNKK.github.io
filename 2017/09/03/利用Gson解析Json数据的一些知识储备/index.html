@@ -86,15 +86,15 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="1、利用GsonFormat直接创建JSON语句对应的JavaBean">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20171001151345413?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171001151402999?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171001152832070?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20171001153543670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-02-27T06:43:41.920Z">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson1.gif">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson2.gif">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson3.gif">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson4.gif">
+<meta property="og:updated_time" content="2018-06-10T07:06:24.143Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Gson解析Json数据的一些知识储备">
 <meta name="twitter:description" content="1、利用GsonFormat直接创建JSON语句对应的JavaBean">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20171001151345413?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson1.gif">
 
 
 
@@ -397,16 +397,16 @@
 
       
         <p><strong>1、利用GsonFormat直接创建JSON语句对应的JavaBean</strong></p>
-<p><img src="http://img.blog.csdn.net/20171001151345413?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p><img src="http://img.blog.csdn.net/20171001151402999?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><a id="more"></a></p>
+<p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson1.gif" alt="这里写图片描述"></p>
+<p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson2.gif" alt="这里写图片描述"><br><a id="more"></a></p>
 <p><strong>2、由于JSON语句里不能使用大写解析出的JavaBean变量名全为小写，而有时我们需要将部分变量名改为大写或其他名字，可使用如下方法：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@SerializedName(&quot;n&quot;)</span><br><span class="line">private String userName;   </span><br><span class="line">//将Json传回来的n更改为userName；</span><br></pre></td></tr></table></figure>
 <p><strong>3、使用Gson解析Json语句，生成实体类（比如下面的News类）</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public static News parseJsonWithGson(final String requestText)&#123;       </span><br><span class="line">       Gson gson = new Gson();</span><br><span class="line">       return gson.fromJson(requestText, News.class);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 <p>调用这个方法以后就会生成Json对应的JavaBean了，接下来就可以愉快的调用里面的参数啦，当然前提是要导入了Gson的包，如：compile ‘com.google.code.gson:gson:2.8.0’，最新的依赖包请执行查询。</p>
 <p><strong>4、完整流程展示：</strong></p>
-<p>首先，从api获取Json数据如下：<br><img src="http://img.blog.csdn.net/20171001152832070?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>然后，用Gsonformat解析出对应的JavaBean：<br><img src="http://img.blog.csdn.net/20171001153543670?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzYxMTM1OTg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>首先，从api获取Json数据如下：<br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson3.gif" alt="这里写图片描述"></p>
+<p>然后，用Gsonformat解析出对应的JavaBean：<br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Gson/Gson4.gif" alt="这里写图片描述"></p>
 <p>接着调用Gson，生成对应实体：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">final NList nlist = Utility.parseJsonWithGsonN(responseText);   </span><br><span class="line">//用Gson处理javaon数据，并传回NewsList实例中</span><br></pre></td></tr></table></figure>
 <p>最后根据JavaBean的结构愉快地调用nlist里面的内容就好啦~</p>
