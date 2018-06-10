@@ -79,18 +79,15 @@
 
 
 
-<meta name="description" content="写在前面 : 摘自第一行代码，仅用作学习 一、访问 : https://git-for-windows.github.io/ 下载git for windows  二、打开Git Bash配置下身份：   12git config --global user.name &amp;quot;Tony&amp;quot;g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Windows下用Git&#x2F;Github托管代码">
-<meta property="og:url" content="http://kmknkk.xin/2017/10/02/Windows下用Git-Github托管代码/index.html">
+<meta property="og:title" content="用Git&#x2F;Github托管代码">
+<meta property="og:url" content="http://kmknkk.xin/2017/10/02/用Git-Github托管代码/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="写在前面 : 摘自第一行代码，仅用作学习 一、访问 : https://git-for-windows.github.io/ 下载git for windows  二、打开Git Bash配置下身份：   12git config --global user.name &amp;quot;Tony&amp;quot;git config --golbal user.email &amp;quot;tony@gmail.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/timg.gif">
-<meta property="og:updated_time" content="2018-06-10T06:54:29.775Z">
+<meta property="og:updated_time" content="2018-06-10T11:07:40.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows下用Git&#x2F;Github托管代码">
-<meta name="twitter:description" content="写在前面 : 摘自第一行代码，仅用作学习 一、访问 : https://git-for-windows.github.io/ 下载git for windows  二、打开Git Bash配置下身份：   12git config --global user.name &amp;quot;Tony&amp;quot;git config --golbal user.email &amp;quot;tony@gmail.">
+<meta name="twitter:title" content="用Git&#x2F;Github托管代码">
 <meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/timg.gif">
 
 
@@ -121,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2017/10/02/Windows下用Git-Github托管代码/"/>
+  <link rel="canonical" href="http://kmknkk.xin/2017/10/02/用Git-Github托管代码/"/>
 
 
 
 
 
-  <title>Windows下用Git/Github托管代码 | KMKNKK | MuffinFish</title>
+  <title>用Git/Github托管代码 | KMKNKK | MuffinFish</title>
   
 
 
@@ -299,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2017/10/02/Windows下用Git-Github托管代码/">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2017/10/02/用Git-Github托管代码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
@@ -316,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Windows下用Git/Github托管代码</h1>
+          <h1 class="post-title" itemprop="name headline">用Git/Github托管代码</h1>
         
 
         <div class="post-meta">
@@ -393,36 +390,18 @@
       
 
       
-        <p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/timg.gif" alt="这里写图片描述"></p>
-<p>写在前面 : 摘自第一行代码，仅用作学习</p>
-<p>一、访问 : <a href="https://git-for-windows.github.io/" target="_blank" rel="noopener">https://git-for-windows.github.io/</a> 下载git for windows </p>
-<p>二、打开Git Bash配置下身份：  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Tony&quot;</span><br><span class="line">git config --golbal user.email &quot;tony@gmail.com&quot;</span><br></pre></td></tr></table></figure>
-<p>验证是否创建成功：仅需将用户名和邮箱去掉<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name </span><br><span class="line">git config --golbal user.email</span><br></pre></td></tr></table></figure></p>
+        <p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/timg.gif" alt="这里写图片描述"><br><a id="more"></a></p>
+<h3 id="打开Git-Bash配置下身份："><a href="#打开Git-Bash配置下身份：" class="headerlink" title="打开Git Bash配置下身份："></a>打开Git Bash配置下身份：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"Tony"</span></span><br><span class="line">git config --golbal user.email <span class="string">"tony@gmail.com"</span></span><br></pre></td></tr></table></figure>
+<p>验证是否创建成功：仅需将用户名和邮箱去掉<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name </span><br><span class="line">git config --golbal user.email</span><br></pre></td></tr></table></figure></p>
 <p>若创建成功则会打印出刚才创建的用户名和邮箱</p>
-<p>三、创建代码仓库</p>
-<p>进入到项目文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 项目文件夹位置</span><br></pre></td></tr></table></figure>
-<p>在这个目录下输入命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h3 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 <p>仓库创建完成后会在项目文件夹下生成一个隐藏的.Git文件夹，用于记录本地所有Git操作，可以通过ls -al命令来查看，如果想删除本地仓库直接删除这个隐藏文件夹就好了</p>
-<p>四、提交本地代码</p>
-<p>添加想要提交的某个文件/某个目录/全部文件分别对应：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add 文件名  / git add 目录名 / git add .</span><br></pre></td></tr></table></figure>
-<p>提交文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;first commit.&quot;</span><br></pre></td></tr></table></figure>
-<p>后面的描述信息可以任意更改，但一定要有。</p>
-<p> 五、创建和选择分支</p>
-<p>创建：<code>git branch 分支名</code>  选择分支：<code>git checkout 分支名</code></p>
-<p>将分支一的代码合并到主支上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge 分支一</span><br></pre></td></tr></table></figure>
-<p>删除分支：<code>git branch -D 分支名</code></p>
-<p>六、将代码托管到Github上</p>
-<p>在github上创建完项目后，用Git Bush进入到本地的文件夹，init以后，将github上的项目克隆到本地：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;github地址&gt;</span><br></pre></td></tr></table></figure>
-<p>将克隆下来的.gitgnore、LICENSE、README.md、.git这四个文件放到本项目文件夹中，覆盖原有项目。</p>
-<p>接着提交就好了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;First conmit.&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="常用git命令"><a href="#常用git命令" class="headerlink" title="常用git命令"></a>常用git命令</h3><h4 id="查看仓库状态"><a href="#查看仓库状态" class="headerlink" title="查看仓库状态"></a>查看仓库状态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git status 查看仓库与上次相比的状态</span><br><span class="line">git <span class="built_in">log</span>    查看仓库详细信息以及每次更改的记录</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">#### 提交本地代码</span></span><br><span class="line"></span><br><span class="line">添加想要提交的某个文件/某个目录/全部文件分别对应：</span><br></pre></td></tr></table></figure>
+<p>git add 文件名  / git add 目录名 / git add .<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提交文件：</span><br></pre></td></tr></table></figure></p>
+<p>git commit -m “first commit.”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">后面的描述信息可以任意更改，但一定要有。</span><br><span class="line"> </span><br><span class="line">#### 创建和选择分支</span><br><span class="line"></span><br><span class="line">创建：`git branch 分支名`  选择分支：`git checkout 分支名`</span><br><span class="line"></span><br><span class="line">将分支一的代码合并到主支上：</span><br></pre></td></tr></table></figure></p>
+<p>git checkout master<br>git merge 分支一<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[完整分支相关内容点此查看](http://kmknkk.xin/2017/12/26/git-fetch%E5%92%8Cpull/)</span><br><span class="line"></span><br><span class="line">#### 将代码托管到Github上</span><br><span class="line"></span><br><span class="line">在github上创建完项目后，用Git Bush进入到本地的文件夹，init以后，将github上的项目克隆到本地：</span><br></pre></td></tr></table></figure></p>
+<p>git clone <github地址><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将克隆下来的.gitgnore、LICENSE、README.md、.git这四个文件放到本项目文件夹中，覆盖原有项目。</span><br><span class="line"></span><br><span class="line">接着提交就好了：</span><br></pre></td></tr></table></figure></github地址></p>
+<p>git add .<br>git commit -m “First conmit.”<br>git push origin master<br>```</p>
 
       
     </div>
@@ -522,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -610,6 +598,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开Git-Bash配置下身份："><span class="nav-number">1.</span> <span class="nav-text">打开Git Bash配置下身份：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建代码仓库"><span class="nav-number">2.</span> <span class="nav-text">创建代码仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用git命令"><span class="nav-number">3.</span> <span class="nav-text">常用git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看仓库状态"><span class="nav-number">3.1.</span> <span class="nav-text">查看仓库状态</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
