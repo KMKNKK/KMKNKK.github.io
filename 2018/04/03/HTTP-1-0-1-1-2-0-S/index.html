@@ -87,7 +87,7 @@
 <meta property="og:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回4">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTTP%201.0-1.1-2.0-S/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.jpg">
-<meta property="og:updated_time" content="2018-06-10T14:26:28.855Z">
+<meta property="og:updated_time" content="2018-07-02T16:41:33.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 1.0→1.1→2.0 &amp; HTTPS">
 <meta name="twitter:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回4">
@@ -420,7 +420,7 @@
 </ul>
 <h3 id="HTTPS-HTTP-TLS-SSL加密-认证-完整性保护"><a href="#HTTPS-HTTP-TLS-SSL加密-认证-完整性保护" class="headerlink" title="HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护"></a>HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护</h3><ul>
 <li>TLS/SSL内容加密</li>
-<li>数字证书验明身份</li>
+<li>数字证书(CA)验明身份: 防范中间人攻击</li>
 <li>MD5、SHA-1等散列值方法防止篡改</li>
 </ul>
 <p>虽然TLS/SSL采用公开密钥这种非对称加密方式，但是HTTPS并不是全部使用非对称加密，而是使用混合加密方式，即：公开密钥(非对称加密)+共享密钥(非对称加密)<br>因为公开密钥与共享密钥加密相比，其处理速度要慢很多。所以HTTPS冲锋利用了两者各自的优势，将多种方法组合起来用于通信。<strong>在交换密钥环节使用公开密钥加密方式，之后建立的通信交换报文阶段则使用共享密钥加密方式</strong></p>
