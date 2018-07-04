@@ -79,13 +79,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="KMKNKK | MuffinFish">
-<meta property="og:url" content="http://kmknkk.xin/categories/前端/前端-HTML/index.html">
+<meta name="description" content="由于JavaScript的this不同于C++、JAVA等语言，在开发中容易造成一些困扰，故总结一下Javascript中的this知识，以免踩坑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详解JavaScript中的this指向">
+<meta property="og:url" content="http://kmknkk.xin/2018/07/04/大话this/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
+<meta property="og:description" content="由于JavaScript的this不同于C++、JAVA等语言，在开发中容易造成一些困扰，故总结一下Javascript中的this知识，以免踩坑。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/this/this.jpg">
+<meta property="og:updated_time" content="2018-07-04T15:58:59.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KMKNKK | MuffinFish">
+<meta name="twitter:title" content="详解JavaScript中的this指向">
+<meta name="twitter:description" content="由于JavaScript的this不同于C++、JAVA等语言，在开发中容易造成一些困扰，故总结一下Javascript中的this知识，以免踩坑。">
+<meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/this/this.jpg">
 
 
 
@@ -115,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/categories/前端/前端-HTML/"/>
+  <link rel="canonical" href="http://kmknkk.xin/2018/07/04/大话this/"/>
 
 
 
 
 
-  <title>分类: 前端-HTML | KMKNKK | MuffinFish</title>
+  <title>详解JavaScript中的this指向 | KMKNKK | MuffinFish</title>
   
 
 
@@ -149,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 	<a href="https://github.com/KMKNKK"><img style="opacity:0.8; position: absolute; top: 0; right: 0; border: 0; z-index:20;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
 	</div>
@@ -279,83 +285,200 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>前端-HTML<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/07/04/大话this/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KMKNKK">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KMKNKK | MuffinFish">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/02/06/HTML标签语义化/" itemprop="url">
-              
-                <span itemprop="name">理解HTML标签语义化</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">详解JavaScript中的this指向</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-06T15:28:06+08:00"
-              content="2018-02-06" >
-          02-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T21:31:26+08:00">
+                2018-07-04
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/前端-JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">前端-JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/24/常用头部标签/" itemprop="url">
-              
-                <span itemprop="name">HTML常用头部标签</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-24T17:17:42+08:00"
-              content="2018-01-24" >
-          01-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <blockquote>
+<p>由于JavaScript的<code>this</code>不同于C++、JAVA等语言，在开发中容易造成一些困扰，故总结一下Javascript中的<code>this</code>知识，以免踩坑。</p>
+</blockquote>
+<p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/this/this.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a>this指向问题</h2><h3 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h3><p><code>this</code>的指向不是由函数定义在哪个对象里面决定的，而是函数执行时由谁”唤醒”或者说调用来决定的，即调用时才对<code>this</code>做绑定，而不是定义时。</p>
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><p>如果用babel解析后可以发现，箭头函数本身并没有<code>this</code>，而是按照词法作用域来绑定上下文。所以箭头函数的<code>this</code>实际上指向的是原来的上下文（向上找一层）。<br>并且不同于一般的this绑定，箭头函数的<code>this</code>指向是在定义时确定（绑定上下文）的，并且一旦确定就不会被改变。</p>
+<h3 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h3><p>立即执行函数的<code>this</code>指向window。但在严格模式下，其<code>this</code>指向undefined</p>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><p>例子来源: 《你不知道的JavaScript（上卷）》<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"Jay Global"</span>;</span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'Jay Person'</span>,</span><br><span class="line">    details: &#123;</span><br><span class="line">        name: <span class="string">'Jay Details'</span>,</span><br><span class="line">        print: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    print: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * result: Jay Details</span></span><br><span class="line"><span class="comment"> * reason: 这里的print是由person.details调用的，所以this的指向为details</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="built_in">console</span>.log(person.details.print());</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * result: Jay Person</span></span><br><span class="line"><span class="comment"> * reason: 这里的print是由person调用的，所以this的指向为person</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="built_in">console</span>.log(person.print());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name1 = person.print;</span><br><span class="line"><span class="keyword">var</span> name2 = person.details;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * result: Jay Global</span></span><br><span class="line"><span class="comment"> * reason: 这里的name1实际上就是一个function，无调用对象。</span></span><br><span class="line"><span class="comment"> *         也可以看作是window调用的，所以this指向window。</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line">name1();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * result: Jay Detail</span></span><br><span class="line"><span class="comment"> * reason: 这里的name2是一个Object，所以是name2调用了自身的一个函数。</span></span><br><span class="line"><span class="comment"> *         该函数的this指向name2这个对象。</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line">name2.print();</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改this的指向"><a href="#修改this的指向" class="headerlink" title="修改this的指向"></a>修改this的指向</h2><p>修改<code>this</code>的指向，主要有以下三方法： call、apply、bind</p>
+<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p>语法：<code>func.bind(this, [arg1, arg2...])</code></p>
+<p>bind方法由函数调用，接收一个对象参数以及其他参数（可选）。bind会将func的<code>this</code>指向绑定的第一个参数上，后续传入的参数会绑定到func里作为传入参数。最后返回一个<code>this</code>经过改变的func。</p>
+<p>应用场景：1、函数柯里化 2、函数借用（如下例）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> show = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.show) </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = &#123;</span><br><span class="line">    show: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> c = a.bind(b);</span><br><span class="line"></span><br><span class="line">c(); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
+<p>PS: bind的兼容性不好，ES3不支持，但我们可以手动创建一个bind：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bind函数ES3实现</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Function</span>.prototype.bind) &#123;</span><br><span class="line">    <span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">o<span class="regexp">/*,args*/</span></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// 将this和arguments的值保存至变量中,以便在后面的嵌套函数中调用</span></span><br><span class="line">        <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> boundArgs = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// bind()返回一个函数</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 创建一个实参列表，将传入bind()的第二个及后续的实参都传入这个函数</span></span><br><span class="line">            <span class="keyword">var</span> args = [], i;</span><br><span class="line">            <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; boundArgs.length; i++) args.push(boundArgs[i]);</span><br><span class="line">            <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) args.push(<span class="built_in">arguments</span>[i]);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> self.apply(o, args);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="call-amp-apply"><a href="#call-amp-apply" class="headerlink" title="call &amp; apply"></a>call &amp; apply</h3><p>语法：<code>func.call(this, [arg1, arg2...])</code>、<code>apply.bind(this, [Array])</code></p>
+<p>1、call和apply用法与bind大致相同，不同之处在于call和apply使用后会立即执行更改<code>this</code>指向后的函数，而不是像bind那样返回<br>2、call和apply的区别在于：call除了第一个参数以外，可以像bind那样接收多个参数进行绑定。而apply则是接收一个数组。</p>
+<p>apply由于可以接收数组，更适合用于数目可变的参数绑定。<br>但是由于多了一步解析数组参数的过程，会比call处理速度稍稍慢些，因此在参数少且不变的情况下建议用call。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/10/性能优化-浏览器渲染/" rel="next" title="性能优化：浏览器渲染">
+                <i class="fa fa-chevron-left"></i> 性能优化：浏览器渲染
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -363,6 +486,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -383,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -471,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#this指向问题"><span class="nav-number">1.</span> <span class="nav-text">this指向问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一般情况"><span class="nav-number">1.1.</span> <span class="nav-text">一般情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">1.2.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即执行函数"><span class="nav-number">1.3.</span> <span class="nav-text">立即执行函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-number">1.4.</span> <span class="nav-text">example</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改this的指向"><span class="nav-number">2.</span> <span class="nav-text">修改this的指向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-number">2.1.</span> <span class="nav-text">bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#call-amp-apply"><span class="nav-number">2.2.</span> <span class="nav-text">call & apply</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -623,6 +780,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -651,6 +812,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
