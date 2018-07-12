@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.jpg">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/mozilla.jpg">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E8%BE%93%E5%85%A5URL/render-tree-construction.png">
-<meta property="og:updated_time" content="2018-06-10T14:26:28.596Z">
+<meta property="og:updated_time" content="2018-07-12T16:26:34.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当我们在浏览器中输入一个URL后，发生了什么？">
 <meta name="twitter:description" content="写在开头：这篇文章被我归入博客性能优化类别，是因为我认为如果我们要优化网站性能、提升用户体验，首要目标就是要知道用户在本地请求并加载你的网页的过程中，到底发生了什么，在此基础上我们才能更好的优化网页。  图源：知乎-张秋怡 浏览器解析并查询缓存DNS查询 DNS查询顺序如下，若其中一步成功则直接跳到建立链接部分： 浏览器自身DNS 操作系统DNS 本地hosts文件 向域名服务器发送请求">
@@ -442,9 +442,15 @@
 <li>空行(CR+LF)</li>
 <li>报文主体</li>
 </ul>
-<p>注意:<br>1.HTTP是<code>无连接</code>、<code>无状态</code>的，即HTTP在传输完成后就会断开，并且下一次登录时不会记录上次的登录状态。<br>从HTTP/1.1开始才支持持久连接，即通信一次以后连接不中断。</p>
+<p>注意:<br>1.HTTP是<code>无连接</code>、<code>无状态</code>的，即HTTP在传输完成后就会断开(HTTP1.1以前)，并且不会记录访问者的状态。</p>
+<p>从HTTP/1.1开始才默认支持持久化连接，即通信一次以后连接不中断，HTTP/1.0需要手动设置：keep-alive。</p>
+<p>正常来说，HTTP请求、响应方式为每请求一次就响应一次:</p>
 <blockquote>
-<p>正常为请求一次响应一次:<br>请求1 -&gt; 响应1 -&gt; 请求2 -&gt; 响应2 -&gt; 请求3 -&gt; 响应3<br>若采用持久连接请求管线化方式：<br>请求1 -&gt; 请求2 -&gt; 请求3 -&gt; 响应1 -&gt; 响应2 -&gt; 响应3</p>
+<p>请求1 -&gt; 响应1 -&gt; 请求2 -&gt; 响应2 -&gt; 请求3 -&gt; 响应3</p>
+</blockquote>
+<p>若采用持久连接请求管线化方式：</p>
+<blockquote>
+<p>请求1 -&gt; 请求2 -&gt; 请求3 -&gt; 响应1 -&gt; 响应2 -&gt; 响应3</p>
 </blockquote>
 <p>使用管线化的条件：</p>
 <ul>
@@ -645,7 +651,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">41</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
