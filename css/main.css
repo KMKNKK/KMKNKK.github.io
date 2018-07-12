@@ -439,9 +439,13 @@ body {
   height: 100%;
 }
 .container {
-  margin-left: -12%;
   position: relative;
   min-height: 100%;
+}
+@media (min-width: 992px) {
+  .container {
+    margin-left: -12%;
+  }
 }
 .header-inner {
   margin: 0 auto;
@@ -471,6 +475,12 @@ body {
   bottom: 0;
   width: 100%;
   min-height: 50px;
+}
+@media (min-width: 992px) {
+  .footer {
+    left: 26.5%;
+    width: 0;
+  }
 }
 .footer-inner {
   box-sizing: border-box;
@@ -1835,7 +1845,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e095c8;
+  background: #376798;
 }
 .links-of-blogroll {
   font-size: 13px;
