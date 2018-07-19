@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="首先，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T14:26:29.311Z">
+<meta property="og:updated_time" content="2018-07-19T15:34:11.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="script的异步、并行加载与顺序执行">
 <meta name="twitter:description" content="首先，我们先来看一下&amp;lt;script&amp;gt;标签的特性：  当浏览器遇到(即内嵌)&amp;lt;script&amp;gt;标签时，当前浏览器无从获知Javascript是否会修改页面内容，因此，此时浏览器会停止处理页面，先执行Javascript代码，然后再继续解析和渲染页面。——《高性能Javascript》">
@@ -410,7 +410,7 @@
 <h2 id="常用做法"><a href="#常用做法" class="headerlink" title="常用做法"></a>常用做法</h2><p>所以，为了避免在页面渲染中，因为解析script脚本而阻塞CSS文件和&amp;ltbody&gt;标签的加载，才出现了文章开头提到的CSS文件放在head中，script放在body的最后这种最常见做法。</p>
 <h2 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h2><p>但是，上述做法仍旧有一些弊端。在老旧的浏览器中如(IE8以前的版本)，页面仍然是一个个加载而不是并行加载的，这大大影响了用户体验。</p>
 <p>于是有了<code>动态加载</code>：</p>
-<p>动态加载文件，即通过DOM，在任意地方创建并插入&lt;script&gt;标签:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> script  = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">script.src  = <span class="string">'file.js'</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script);</span><br></pre></td></tr></table></figure></p>
+<p>动态加载文件，即通过DOM，在任意地方创建并插入&lt;script&gt;标签:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _script  = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    _script.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">    _script.src  = <span class="string">'file.js'</span>;</span><br><span class="line">    <span class="keyword">let</span> firstScript = <span class="built_in">document</span>.getElementByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];</span><br><span class="line">    firstScript.parentNode.insertBefore(_script, firstScript);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
 <p>这种方法的优点在于：</p>
 <blockquote>
 <p>无论在何时启动下载，文件的下载和执行过程不会阻塞页面其他进程(包括脚本加载)</p>
@@ -552,7 +552,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -563,7 +563,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
