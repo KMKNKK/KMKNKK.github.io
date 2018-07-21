@@ -79,18 +79,15 @@
 
 
 
-<meta name="description" content="理解原型链如上图，是一个原型链的一部分。我们来通过这个图解释一下原型链:(以下obj代指所有对象，Origin代指对象的原型)  每个obj都有一个constructor，通过prototype指向它的Origin constructor可以通过new操作符生成一个obj 每个obj又都有一个___proto__指向它">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型链和继承">
 <meta property="og:url" content="http://kmknkk.xin/2018/03/11/原型链和继承/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="理解原型链如上图，是一个原型链的一部分。我们来通过这个图解释一下原型链:(以下obj代指所有对象，Origin代指对象的原型)  每个obj都有一个constructor，通过prototype指向它的Origin constructor可以通过new操作符生成一个obj 每个obj又都有一个___proto__指向它的Origin,obj是Origin的实例对象 而它的Origin本质也是对象">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB.jpg">
-<meta property="og:updated_time" content="2018-06-10T14:26:29.310Z">
+<meta property="og:updated_time" content="2018-07-21T15:24:01.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型链和继承">
-<meta name="twitter:description" content="理解原型链如上图，是一个原型链的一部分。我们来通过这个图解释一下原型链:(以下obj代指所有对象，Origin代指对象的原型)  每个obj都有一个constructor，通过prototype指向它的Origin constructor可以通过new操作符生成一个obj 每个obj又都有一个___proto__指向它的Origin,obj是Origin的实例对象 而它的Origin本质也是对象">
 <meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB.jpg">
 
 
@@ -405,14 +402,14 @@
 
       
         <p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB.jpg" alt="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB.jpg"></p>
+<a id="more"></a>
 <h2 id="理解原型链"><a href="#理解原型链" class="headerlink" title="理解原型链"></a>理解原型链</h2><p>如上图，是一个原型链的一部分。我们来通过这个图解释一下原型链:(以下obj代指所有对象，Origin代指对象的原型)</p>
 <ul>
 <li>每个obj都有一个<code>constructor</code>，通过<code>prototype</code>指向它的Origin</li>
 <li><code>constructor</code>可以通过<code>new</code>操作符生成一个obj</li>
 <li>每个obj又都有一个<code>___proto__</code>指向它的Origin,obj是Origin的<code>实例对象</code></li>
 <li>而它的Origin本质也是对象，所以Origin也有<code>__proto__</code>属性指向Origin的Origin</li>
-<li>层层向上,直到指向<code>Object</code>为止,而每个Origin又都有<code>constructor</code>和<code>实例对象</code>(obj),这样就构成了一条原型链<a id="more"></a>
-</li>
+<li>层层向上,直到指向<code>Object</code>为止,而每个Origin又都有<code>constructor</code>和<code>实例对象</code>(obj),这样就构成了一条原型链</li>
 </ul>
 <h2 id="原型链引申出来的几个问题："><a href="#原型链引申出来的几个问题：" class="headerlink" title="原型链引申出来的几个问题："></a>原型链引申出来的几个问题：</h2><p>Q1: 在原型链上Object再往上是什么?<br>A:  由于Object已经到顶了，所以<code>Object.prototype.__proto__ === null</code></p>
 <p>Q2: 哪种情况下<strong>proto</strong>和prototype的指向是同一个?<br>A:  由于function也是对象，所以有constructor，而constructor本质也是function，所以:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">func.__proto__ === func.constructor.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
