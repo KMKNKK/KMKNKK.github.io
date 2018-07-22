@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="从三月初开始投第一份简历开始，到五月拿到百度offer，历时三个月的春招也告一段落了。期间一直没有时间更博，拿到百度offer后也咸鱼了一段时间，推了几家面试和offer，现在对春招考到的题做个总结和梳理吧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-21T15:17:41.845Z">
+<meta property="og:updated_time" content="2018-07-22T05:24:29.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018春招面试">
 <meta name="twitter:description" content="从三月初开始投第一份简历开始，到五月拿到百度offer，历时三个月的春招也告一段落了。期间一直没有时间更博，拿到百度offer后也咸鱼了一段时间，推了几家面试和offer，现在对春招考到的题做个总结和梳理吧。">
@@ -374,25 +374,31 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><ul>
-<li>行内元素和块级元素有哪些？<code>image</code>属于什么元素？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">常见的行内元素</span><br><span class="line">常见的块级元素</span><br></pre></td></tr></table></figure>
+<li>行内元素和块级元素有哪些？<code>image</code>属于什么元素？<blockquote>
+<p>这个问题之前有总结过一篇文章：<a href="http://kmknkk.xin/2018/01/05/CSS-%E5%85%83%E7%B4%A0%E5%92%8C%E5%AE%9A%E4%BD%8D/">元素和定位</a></p>
+</blockquote>
 </li>
 </ul>
 <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><ul>
 <li><p>CSS优先级</p>
+<blockquote>
+<p>同样总结了文章：<a href="http://kmknkk.xin/2017/10/29/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0%EF%BC%88CSS%EF%BC%89%EF%BC%9ACSS%E7%9A%84%E8%A6%86%E7%9B%96/">CSS的覆盖</a></p>
+</blockquote>
 </li>
-<li><p>垂直水平居中<br>  知道宽高和不知道宽高<br>  宽高不同的情况<br>  分析一下兼容性问题<br>  一个元素不设置width和height，margin有用吗？</p>
+<li><p>垂直水平居中 <a href="http://kmknkk.xin/2018/04/16/CSS%E5%AE%9E%E7%8E%B0%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/">文章地址</a><br>  知道宽高和不知道宽高<br>  宽高不同的情况<br>  分析一下兼容性问题<br>  一个元素不设置width和height，margin有用吗？</p>
 </li>
-<li><p>实现一个三栏布局，中间自适应<br>  分析兼容性问题</p>
+<li><p>实现一个三栏布局，中间自适应 <a href="http://kmknkk.xin/2018/03/02/CSS%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80/">文章地址</a><br>  分析兼容性问题</p>
 </li>
 <li><p>margin坍塌原理</p>
 </li>
 <li><p>清除浮动</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clear</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"."</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">visibility</span>: hidden;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">	<span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clear</span> &#123;</span><br><span class="line"> <span class="attribute">zoom</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>CSS3<br>  1、动画(重点)</p>
+<li><p>CSS3<br>  1、动画(重点) <a href="http://kmknkk.xin/2018/07/10/CSS3%E5%8A%A8%E7%94%BB/">文章地址</a></p>
 <pre><code>CSS的旋转锚点在哪? 如何改变旋转锚点?
 </code></pre></li>
-<li><p>如何处理CSS的兼容性问题<a href="https://juejin.im/post/5b3da006e51d4518f140edb2" target="_blank" rel="noopener">参考资料</a><br>  1、postcss-loader（包含Autoprefixer、cssnext插件)，一般写在style-loader和css-loader后面。<a href="https://webpack.docschina.org/loaders/postcss-loader/#src/components/Sidebar/Sidebar.jsx" target="_blank" rel="noopener">具体参考1</a>、<a href="https://www.zhihu.com/question/28622861" target="_blank" rel="noopener">具体参考2</a>。<br>  其中cssnext相当于CSS的babel，包括了Autoprefixer的core，相比于Autoprefixer多了对CSS4等新特性的转义。<br>  2、浏览器hack（较麻烦）<br>  判断 IE 浏览器版本</p>
+<li><p>如何处理CSS的兼容性问题<a href="https://juejin.im/post/5b3da006e51d4518f140edb2" target="_blank" rel="noopener">参考资料</a><br>  1、postcss-loader（包含Autoprefixer、cssnext插件)，一般写在style-loader和css-loader后面。<a href="https://webpack.docschina.org/loaders/postcss-loader/#src/components/Sidebar/Sidebar.jsx" target="_blank" rel="noopener">具体参考1</a>、<a href="https://www.zhihu.com/question/28622861" target="_blank" rel="noopener">具体参考2</a>。<br>  其中cssnext相当于CSS的babel，包括了Autoprefixer的core，相比于Autoprefixer多了对CSS4等新特性的转义。</p>
+<p>  2、浏览器hack（较麻烦）<br>  判断 IE 浏览器版本</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> IE <span class="number">8</span>]&gt; ie8 &lt;![endif]--&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!--[<span class="keyword">if</span> IE <span class="number">9</span>]&gt; 骚气的 ie9 浏览器 &lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
 <p>  判断是否是 Safari 浏览器</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Safari */</span></span><br><span class="line"><span class="keyword">var</span> isSafari = <span class="regexp">/a/</span>.__proto__==<span class="string">'//'</span>;</span><br></pre></td></tr></table></figure>
@@ -430,11 +436,18 @@
 </li>
 <li><p>跨域方法有哪些？(CORS、jsonp、WebSocket、postMessage、Hash、Nginx反向代理)<br>  JSONP的原理是什么？除了script标签还可以通过什么标签实现？</p>
 </li>
-<li><p>JS提取search里的参数</p>
+<li><p>JS提取URL里的参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUrlParam</span>(<span class="params">sUrl, sKey</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line">    sUrl.replace(<span class="regexp">/\??(\w+)=(\w+)&amp;?/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">matchString, first, second</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (result[first] !== <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">let</span> alreadyExisted = result[first];</span><br><span class="line">            result[first] = [].concat(alreadyExisted, second);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            result[first] = second;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">if</span> (sKey === <span class="keyword">void</span> <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> result[sKey] || <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查找两个节点的最近的一个共同父节点，可以包括节点自身</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span>(<span class="params">oNode1, oNode2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>( ; oNode1; oNode1 = oNode1.parentNode)&#123;</span><br><span class="line">        <span class="keyword">if</span>(oNode1.contains(oNode2))&#123;</span><br><span class="line">            <span class="keyword">return</span> oNode1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>用JS模拟一个双向链表</p>
 </li>
 <li><p>bind、apply、call的区别以及bind的实现</p>
+<blockquote>
+<p><a href="http://kmknkk.xin/2018/07/04/%E5%A4%A7%E8%AF%9Dthis/">博客地址</a></p>
+</blockquote>
 </li>
 </ul>
 <h1 id="移动端"><a href="#移动端" class="headerlink" title="移动端"></a>移动端</h1><ul>
