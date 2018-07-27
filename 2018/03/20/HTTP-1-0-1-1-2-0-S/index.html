@@ -87,7 +87,7 @@
 <meta property="og:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回4">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTTP%201.0-1.1-2.0-S/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.jpg">
-<meta property="og:updated_time" content="2018-07-21T15:56:17.107Z">
+<meta property="og:updated_time" content="2018-07-27T15:39:39.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 1.0→1.1→2.0 &amp; HTTPS">
 <meta name="twitter:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回4">
@@ -282,7 +282,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content" style="position: relative">
             
 
   <div id="posts" class="posts-expand">
@@ -413,18 +413,57 @@
 </blockquote>
 <h3 id="头部压缩"><a href="#头部压缩" class="headerlink" title="头部压缩"></a>头部压缩</h3><p><code>HTTP 1.1</code>不支持header数据压缩，<code>HTTP 2.0</code>使用HPACK算法对header的数据进行压缩，使得数据传输更快。</p>
 <h3 id="服务器推送"><a href="#服务器推送" class="headerlink" title="服务器推送"></a>服务器推送</h3><p>当我们对支持<code>HTTP 2.0</code>的服务器请求数据额时候，服务器会顺便把一些客户端需要的资源一起推送到服务器，这种方式适用于加载静态资源，节约带宽。</p>
-<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><h3 id="HTTP的缺点"><a href="#HTTP的缺点" class="headerlink" title="HTTP的缺点"></a>HTTP的缺点</h3><ul>
+<h2 id="HTTPS-HTTP-TLS-SSL加密-认证-完整性保护"><a href="#HTTPS-HTTP-TLS-SSL加密-认证-完整性保护" class="headerlink" title="HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护"></a>HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护</h2><p>在讲 HTTPS 之前，我们先来看看 HTTP 有哪些不足：</p>
+<ul>
 <li>使用明文通信，内容可能会被窃听</li>
 <li>不验证通信双方身份，有可能遭遇伪装</li>
 <li>无法证明报文的完整性，内容可能遭到篡改</li>
 </ul>
-<h3 id="HTTPS-HTTP-TLS-SSL加密-认证-完整性保护"><a href="#HTTPS-HTTP-TLS-SSL加密-认证-完整性保护" class="headerlink" title="HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护"></a>HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护</h3><ul>
+<p>为了解决这些不足，HTTPS 应运而生，其相比 HTTP 多了以下特性：</p>
+<ul>
 <li>TLS/SSL内容加密</li>
 <li>数字证书(CA)验明身份: 防范中间人攻击</li>
-<li>MD5、SHA-1等散列值方法防止篡改</li>
+<li>MD5、SHA-1等散列值方法防止信息篡改</li>
 </ul>
-<p>虽然TLS/SSL采用公开密钥这种非对称加密方式，但是HTTPS并不是全部使用非对称加密，而是使用混合加密方式，即：公开密钥(非对称加密)+共享密钥(非对称加密)<br>因为公开密钥与共享密钥加密相比，其处理速度要慢很多。所以HTTPS冲锋利用了两者各自的优势，将多种方法组合起来用于通信。<strong>在交换密钥环节使用公开密钥加密方式，之后建立的通信交换报文阶段则使用共享密钥加密方式</strong></p>
+<p>虽然TLS/SSL采用公开密钥这种非对称加密方式，但是HTTPS并不是全部使用非对称加密，而是使用混合加密方式，即：公开密钥(非对称加密)+共享密钥(非对称加密)</p>
+<p>因为公开密钥与共享密钥加密相比，其处理速度要慢很多。所以HTTPS冲锋利用了两者各自的优势，将多种方法组合起来用于通信。<strong>在交换密钥环节使用公开密钥加密方式，之后建立的通信交换报文阶段则使用共享密钥加密方式</strong></p>
 <p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTTP%201.0-1.1-2.0-S/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.jpg" alt="混合加密方式"></p>
+<p>通常我们会认为，使用HTTPS会导致网站加载速度变慢。实际上，只要我们合理优化使用HTTPS过程，使用HTTPS可能会比使用HTTP还快！</p>
+<h3 id="使用HTTPS相比于HTTP所增加的延迟点："><a href="#使用HTTPS相比于HTTP所增加的延迟点：" class="headerlink" title="使用HTTPS相比于HTTP所增加的延迟点："></a>使用HTTPS相比于HTTP所增加的延迟点：</h3><ul>
+<li><p>HTTP 302 跳转到 HTTPS 的耗时</p>
+</li>
+<li><p>CPU 进行 RSA 加解密运算的耗时</p>
+</li>
+<li><p>请求和验证 CA 所花的时间</p>
+</li>
+</ul>
+<h3 id="对应的优化方式："><a href="#对应的优化方式：" class="headerlink" title="对应的优化方式："></a>对应的优化方式：</h3><ul>
+<li><p>使用 HSTS 技术，去掉从80跳转到443的跳转(HSTS使用的是内部307跳转技术，不会产生多余的网络请求) PS：302 和 307 效果相同，只是307强制使用post</p>
+</li>
+<li><p>使用专门的加解密硬件处理加解密，减轻CPU负担。这样不仅减少了处理时间，所能承受的qps也会增加。</p>
+</li>
+<li><p>减少证书链，减少 CA 请求时间</p>
+</li>
+<li><p>session复用，减少建立连接的次数</p>
+</li>
+</ul>
+<h3 id="HTTPS自身对于性能的优化"><a href="#HTTPS自身对于性能的优化" class="headerlink" title="HTTPS自身对于性能的优化"></a>HTTPS自身对于性能的优化</h3><ul>
+<li><p>SSL压缩：除去 HTTP 的数据压缩，SSL 对于数据也有一次压缩，减少了传输时间</p>
+</li>
+<li><p>使用HTTP/2：要使用HTTP/2就必须要使用 SSL/TLS，HTTPS 显然是最适合使用的</p>
+</li>
+</ul>
+<p>使用 HTTP/2 的好处包括但不限于：</p>
+<ul>
+<li><p>多路复用</p>
+<p>  <code>HTTP 2.0</code>使用多路复用技术，使用一个TCP连接并发处理多个请求，不但节约了开销而且可处理请求的数量也比<code>HTTP 1.1</code>大了很多。</p>
+<p>  TCP连接有一个预热和保护的过程，先检查数据是否传送成功，一旦成功过，则慢慢加大传输速度。因此使用一个连接可以大大提高数据传输效率。</p>
+</li>
+<li><p>头部压缩<br> <code>HTTP 1.1</code>不支持header数据压缩，<code>HTTP 2.0</code>使用HPACK算法对header的数据进行压缩，使得数据传输更快。</p>
+</li>
+<li><p>服务器推送<br> 当我们对支持<code>HTTP 2.0</code>的服务器请求数据额时候，服务器会顺便把一些客户端需要的资源一起推送到服务器，这种方式适用于加载静态资源，节约带宽。</p>
+</li>
+</ul>
 
       
     </div>
@@ -490,6 +529,52 @@
   </div>
 
 
+						<footer id="footer" class="footer" style="left: 0">
+							<div class="footer-inner" style="width: 100%">
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+  <span class="with-love">
+    <i class="fa fa-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+								
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+	 
+      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      个小伙伴
+	
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+								
+							</div>
+						</footer>
           </div>
           
 
@@ -564,7 +649,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -631,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-1-0-→-HTTP-1-1"><span class="nav-number">1.</span> <span class="nav-text">HTTP 1.0 → HTTP 1.1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#长连接"><span class="nav-number">1.1.</span> <span class="nav-text">长连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节约带宽"><span class="nav-number">1.2.</span> <span class="nav-text">节约带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOST域"><span class="nav-number">1.3.</span> <span class="nav-text">HOST域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-1-1-→-HTTP-2-0"><span class="nav-number">2.</span> <span class="nav-text">HTTP 1.1 → HTTP 2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多路复用"><span class="nav-number">2.1.</span> <span class="nav-text">多路复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头部压缩"><span class="nav-number">2.2.</span> <span class="nav-text">头部压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器推送"><span class="nav-number">2.3.</span> <span class="nav-text">服务器推送</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">3.</span> <span class="nav-text">HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP的缺点"><span class="nav-number">3.1.</span> <span class="nav-text">HTTP的缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS-HTTP-TLS-SSL加密-认证-完整性保护"><span class="nav-number">3.2.</span> <span class="nav-text">HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-1-0-→-HTTP-1-1"><span class="nav-number">1.</span> <span class="nav-text">HTTP 1.0 → HTTP 1.1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#长连接"><span class="nav-number">1.1.</span> <span class="nav-text">长连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节约带宽"><span class="nav-number">1.2.</span> <span class="nav-text">节约带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HOST域"><span class="nav-number">1.3.</span> <span class="nav-text">HOST域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-1-1-→-HTTP-2-0"><span class="nav-number">2.</span> <span class="nav-text">HTTP 1.1 → HTTP 2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多路复用"><span class="nav-number">2.1.</span> <span class="nav-text">多路复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#头部压缩"><span class="nav-number">2.2.</span> <span class="nav-text">头部压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器推送"><span class="nav-number">2.3.</span> <span class="nav-text">服务器推送</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS-HTTP-TLS-SSL加密-认证-完整性保护"><span class="nav-number">3.</span> <span class="nav-text">HTTPS = HTTP + TLS/SSL加密 + 认证 + 完整性保护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用HTTPS相比于HTTP所增加的延迟点："><span class="nav-number">3.1.</span> <span class="nav-text">使用HTTPS相比于HTTP所增加的延迟点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对应的优化方式："><span class="nav-number">3.2.</span> <span class="nav-text">对应的优化方式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS自身对于性能的优化"><span class="nav-number">3.3.</span> <span class="nav-text">HTTPS自身对于性能的优化</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -649,52 +734,6 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner" >
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
-  <span class="with-love">
-    <i class="fa fa-plane"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-	 
-      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      个小伙伴
-	
-    </span>
-  
-
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
 
     
 

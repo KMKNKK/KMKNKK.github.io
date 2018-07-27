@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://raw.githubusercontent.com/KMKNKK/React-component-cycle/master/src/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AF%A6%E7%BB%86%E7%89%88.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/KMKNKK/React-component-cycle/master/src/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%BC%94%E7%A4%BA.gif">
-<meta property="og:updated_time" content="2018-07-22T16:57:37.323Z">
+<meta property="og:updated_time" content="2018-07-22T17:00:03.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探究React的生命周期">
 <meta name="twitter:description" content="React-component-cycleReact的生命周期（这里指的是初版的生命周期，而非新的React生命周期）主要由挂载，运行，卸载三个阶段构成，驱动着View层更新，接下来我们来详细看看这几个阶段都发生了什么。 123456- Mounting(挂载阶段)     - Updating(运行阶段)           - Unmounting(卸载阶段)- getDefaultProps">
@@ -283,7 +283,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content" style="position: relative">
             
 
   <div id="posts" class="posts-expand">
@@ -406,7 +406,7 @@
 
       
         <h3 id="React-component-cycle"><a href="#React-component-cycle" class="headerlink" title="React-component-cycle"></a>React-component-cycle</h3><p>React的生命周期（这里指的是初版的生命周期，而非新的React生命周期）主要由<code>挂载</code>，<code>运行</code>，<code>卸载</code>三个阶段构成，驱动着View层更新，接下来我们来详细看看这几个阶段都发生了什么。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- Mounting(挂载阶段)     - Updating(运行阶段)           - Unmounting(卸载阶段)</span><br><span class="line">- getDefaultProps       - componentWillReceiveProps	 - componentWillUnmount</span><br><span class="line">- getInitialState       - shouldComponentUpdate</span><br><span class="line">- componentWillMount    - componentWillUpdate</span><br><span class="line">- render                - render</span><br><span class="line">- componentDidMount     - componentDidUpdate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- Mounting(挂载阶段)     - Updating(运行阶段)           - Unmounting(卸载阶段)</span><br><span class="line">- getDefaultProps       - componentWillReceiveProps	   - componentWillUnmount</span><br><span class="line">- getInitialState       - shouldComponentUpdate</span><br><span class="line">- componentWillMount    - componentWillUpdate</span><br><span class="line">- render                - render</span><br><span class="line">- componentDidMount     - componentDidUpdate</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p><img src="https://raw.githubusercontent.com/KMKNKK/React-component-cycle/master/src/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E8%AF%A6%E7%BB%86%E7%89%88.png" alt=""></p>
 <blockquote>
@@ -523,6 +523,52 @@
   </div>
 
 
+						<footer id="footer" class="footer" style="left: 0">
+							<div class="footer-inner" style="width: 100%">
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+  <span class="with-love">
+    <i class="fa fa-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+								
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+	 
+      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      个小伙伴
+	
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+								
+							</div>
+						</footer>
           </div>
           
 
@@ -597,7 +643,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -682,52 +728,6 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner" >
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
-  <span class="with-love">
-    <i class="fa fa-plane"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-	 
-      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      个小伙伴
-	
-    </span>
-  
-
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
 
     
 

@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="从三月初开始投第一份简历开始，到五月拿到百度offer，历时三个月的春招也告一段落了。期间一直没有时间更博，拿到百度offer后也咸鱼了一段时间，推了几家面试和offer，现在对春招考到的题做个总结和梳理吧。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-22T05:24:29.718Z">
+<meta property="og:updated_time" content="2018-07-27T15:39:39.330Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2018春招面试">
 <meta name="twitter:description" content="从三月初开始投第一份简历开始，到五月拿到百度offer，历时三个月的春招也告一段落了。期间一直没有时间更博，拿到百度offer后也咸鱼了一段时间，推了几家面试和offer，现在对春招考到的题做个总结和梳理吧。">
@@ -280,7 +280,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content" style="position: relative">
             
 
   <div id="posts" class="posts-expand">
@@ -484,6 +484,7 @@
 <li><p>cookie、session、localStorage、sessionStorage的区别<br>  如果有两个同源页面A、B同时打开，在A里面修改localStorage，B能实时获取吗?<br>  一个一级域名的cookie，其二级域名一定能获得吗?</p>
 </li>
 <li><p>event loop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">浏览器:</span><br><span class="line">主线程 -&gt; 所有microtask(promise等) -&gt; 一个macrotask(setTimeout、setInterval) —&gt; 所有microtask(promise等)</span><br><span class="line"></span><br><span class="line">node:</span><br><span class="line"></span><br><span class="line">   ┌───────────────────────┐</span><br><span class="line">┌─&gt;│        timers         │&lt;————— 执行 setTimeout()、setInterval() 的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     I/O callbacks     │&lt;————— 执行几乎所有的回调，除了 close callbacks 以及 timers 调度的回调和 setImmediate() 调度的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     idle, prepare     │&lt;————— 内部调用，可忽略</span><br><span class="line">│  └──────────┬────────────┘     </span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|             |                   ┌───────────────┐</span><br><span class="line">│  ┌──────────┴────────────┐      │   incoming:   │ - (retrieve new I/O events; node will block here when appropriate)</span><br><span class="line">│  │         poll          │&lt;─────┤  connections, │ </span><br><span class="line">│  └──────────┬────────────┘      │   data, etc.  │ </span><br><span class="line">│             |                   |               | </span><br><span class="line">|             |                   └───────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|  ┌──────────┴────────────┐      </span><br><span class="line">│  │        check          │&lt;————— setImmediate() 的回调将会在这个阶段执行</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">└──┤    close callbacks    │&lt;————— socket.on(&apos;close&apos;, ...)</span><br><span class="line">   └───────────────────────┘</span><br><span class="line"></span><br><span class="line">poll阶段：</span><br><span class="line">当进入到poll阶段，并且没有timers被调用的时候，会发生下面的情况:</span><br><span class="line">    如果poll队列不为空：</span><br><span class="line">        Event Loop 将同步的执行poll queue里的callback（新的I/O事件），直到queue为空或者执行的callback到达上线。</span><br><span class="line">    如果poll队列为空:</span><br><span class="line">        如果脚本调用了setImmediate(), Event Loop将会结束poll阶段并且进入到check阶段执行setImmediate()的回调。</span><br><span class="line">        如果脚本没有被setImmediate()调用，Event Loop将会等待回调（新的I/O事件）被添加到队列中，然后立即执行它们。</span><br><span class="line"></span><br><span class="line">当进入到poll阶段，并且调用了timers的话，会发生下面的情况:</span><br><span class="line">    一旦poll queue是空的话，Event Loop会检查是否timers, 如果有1个或多个timers时间已经到达，Event Loop将会回到timer阶段并执行那些timer的callback(即进入到下一次tick)。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">优先级：</span><br><span class="line"></span><br><span class="line">Next Tick Queue &gt; MicroTask Queue</span><br><span class="line"></span><br><span class="line">setTimeout、setInterval &gt; setImmediate</span><br><span class="line"></span><br><span class="line">PS: </span><br><span class="line"></span><br><span class="line">由于timer需要从红黑树中取出定时器来判断时间是否到了，时间复杂度为O(lg(n))，故如果想立即异步执行一个事件，最好不要用setTimeout(func, 0)。而是使用process.nextTick()来完成。</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>浏览器是如何通过你的代码去找到指定的元素的？</p>
 </li>
@@ -584,6 +585,52 @@
   </div>
 
 
+						<footer id="footer" class="footer" style="left: 0">
+							<div class="footer-inner" style="width: 100%">
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+  <span class="with-love">
+    <i class="fa fa-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+								
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+	 
+      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      个小伙伴
+	
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+								
+							</div>
+						</footer>
           </div>
           
 
@@ -658,7 +705,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -743,52 +790,6 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner" >
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
-  <span class="with-love">
-    <i class="fa fa-plane"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-	 
-      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      个小伙伴
-	
-    </span>
-  
-
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
 
     
 

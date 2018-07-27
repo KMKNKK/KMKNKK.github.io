@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Node的特性单线程异步I/O特性的所带来的优点/缺点高并发Node支持高并发的原因：异步I/O这个特性使得Node无需等待I/O完成就可以进行下一步操作， 1// 待更新 分布式Node架构Nginx(负载均衡、调度) -&amp;gt; Node集群 -&amp;gt; Redis(同步状态)">
+<meta name="description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="learn the Node.js">
-<meta property="og:url" content="http://kmknkk.xin/2018/02/17/learn-the-Node-js/index.html">
+<meta property="og:url" content="http://kmknkk.xin/2018/07/25/learn-the-Node-js/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="Node的特性单线程异步I/O特性的所带来的优点/缺点高并发Node支持高并发的原因：异步I/O这个特性使得Node无需等待I/O完成就可以进行下一步操作， 1// 待更新 分布式Node架构Nginx(负载均衡、调度) -&amp;gt; Node集群 -&amp;gt; Redis(同步状态)">
+<meta property="og:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-22T16:42:46.297Z">
+<meta property="og:updated_time" content="2018-07-27T15:39:39.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learn the Node.js">
-<meta name="twitter:description" content="Node的特性单线程异步I/O特性的所带来的优点/缺点高并发Node支持高并发的原因：异步I/O这个特性使得Node无需等待I/O完成就可以进行下一步操作， 1// 待更新 分布式Node架构Nginx(负载均衡、调度) -&amp;gt; Node集群 -&amp;gt; Redis(同步状态)">
+<meta name="twitter:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
 
 
 
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2018/02/17/learn-the-Node-js/"/>
+  <link rel="canonical" href="http://kmknkk.xin/2018/07/25/learn-the-Node-js/"/>
 
 
 
@@ -280,7 +280,7 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          <div id="content" class="content" style="position: relative">
             
 
   <div id="posts" class="posts-expand">
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/02/17/learn-the-Node-js/">
+    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/07/25/learn-the-Node-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-17T11:25:41+08:00">
-                2018-02-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-25T11:25:41+08:00">
+                2018-07-25
               </time>
             
 
@@ -391,9 +391,51 @@
       
 
       
-        <h2 id="Node的特性"><a href="#Node的特性" class="headerlink" title="Node的特性"></a>Node的特性</h2><h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><h3 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h3><h2 id="特性的所带来的优点-缺点"><a href="#特性的所带来的优点-缺点" class="headerlink" title="特性的所带来的优点/缺点"></a>特性的所带来的优点/缺点</h2><h3 id="高并发"><a href="#高并发" class="headerlink" title="高并发"></a>高并发</h3><p>Node支持高并发的原因：<code>异步I/O</code>这个特性使得Node无需等待I/O完成就可以进行下一步操作，</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 待更新</span></span><br></pre></td></tr></table></figure>
+        <h2 id="Node特性：高并发"><a href="#Node特性：高并发" class="headerlink" title="Node特性：高并发"></a>Node特性：高并发</h2><p>在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性：</p>
+<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><p>我们先来明确一个概念，即：node是<code>单线程</code>的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。</p>
+<p>单线程的好处就是：<br><a id="more"></a></p>
+<ul>
+<li>无需像多线程那样去关注线程之间的状态同步问题</li>
+<li>没有线程切换所带来的开销</li>
+<li>没有死锁存在</li>
+</ul>
+<p>当然单线程也有许多坏处：</p>
+<ul>
+<li>无法充分利用CPU</li>
+<li>大量计算占用CPU会导致应用阻塞，无法调用异步I/O（在下面会介绍异步I/O这个特性）</li>
+<li>错误会引起整个应用的退出</li>
+</ul>
+<p>关于第三点坏处，我跟小伙伴们也讨论过，认为主要的痛点就在于node不同于JAVA，它所实现的逻辑是以异步为主的。<br>这就导致了node无法像JAVA一样<code>方便地</code>使用 try/catch 来来捕获并绕过错误，因为无法确定异步任务会何时传回异常。<br>而在单线程环境下，绕不过错误就意味着导致应用退出，这是我们不愿意看到的。</p>
+<p>当然，在服务器资源丰富的当下，我们可以通过 pm2 或 nginx 这些工具，动态的判断服务状态。<br>在服务出错时隔离坏点服务器，将请求转发到正常服务器上，并重启坏点服务器以继续提供服务。但是这样对服务器资源的需求就会多许多。</p>
+<p>另一个解决方案就是 <code>cluster</code>：(待更新)</p>
+<h3 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h3><p>你可能会问，既然node是单线程的，事件全部在一个线程上处理，那不是应该效率很低吗？</p>
+<p>恰恰相反，node的性能很高。原因之一就是node具有<code>异步I/O</code>特性，每当有I/O请求发生时，node会提供给该请求一个I/O线程。</p>
+<p>然后node就不管这个I/O的操作过程了，而是继续执行主线程上的事件，只需要在该请求返回回调时在处理即可。也就是node省去了许多等待请求的时间。</p>
+<p>实际上不光是I/O操作，node的绝大多数操作都是以这种异步的方式进行的。node就像是一个团队的leader，它只需要告诉成员们如何正确的进行操作并接受反馈，不需要亲自进行操作，这使得他对事件处理的效率变得很高。</p>
+<h3 id="事务驱动"><a href="#事务驱动" class="headerlink" title="事务驱动"></a>事务驱动</h3><p>你可能又要问了，node怎么知道请求返回了回调，又应该何时去处理这些回调呢？</p>
+<p>答案就是node的另一特性：<code>事务驱动</code>，即主线程通过event loop事件循环触发的方式来运行程序</p>
+<p><strong>图解node环境下的Event loop：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">   ┌───────────────────────┐</span><br><span class="line">┌─&gt;│        timers         │&lt;————— 执行 setTimeout()、setInterval() 的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     I/O callbacks     │&lt;————— 执行几乎所有的回调，除了 close callbacks 以及 timers 调度的回调和 setImmediate() 调度的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     idle, prepare     │&lt;————— 内部调用，可忽略</span><br><span class="line">│  └──────────┬────────────┘     </span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|             |                   ┌───────────────┐</span><br><span class="line">│  ┌──────────┴────────────┐      │   incoming:   │ - (retrieve new I/O events; node will block here when appropriate)</span><br><span class="line">│  │         poll          │&lt;─────┤  connections, │ </span><br><span class="line">│  └──────────┬────────────┘      │   data, etc.  │ </span><br><span class="line">│             |                   |               | </span><br><span class="line">|             |                   └───────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|  ┌──────────┴────────────┐      </span><br><span class="line">│  │        check          │&lt;————— setImmediate() 的回调将会在这个阶段执行</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">└──┤    close callbacks    │&lt;————— socket.on(&apos;close&apos;, ...)</span><br><span class="line">   └───────────────────────┘</span><br></pre></td></tr></table></figure></p>
+<p><strong>poll阶段：</strong></p>
+<p>当进入到poll阶段，并且没有timers被调用的时候，会发生下面的情况:</p>
+<p>（1）如果poll队列不为空：</p>
+<ul>
+<li>Event Loop 将同步的执行poll queue里的callback（新的I/O事件），直到queue为空或者执行的callback到达上线。</li>
+</ul>
+<p>（2）如果poll队列为空:</p>
+<ul>
+<li>如果脚本调用了setImmediate(), Event Loop将会结束poll阶段并且进入到check阶段执行setImmediate()的回调。</li>
+<li>如果脚本没有被setImmediate()调用，Event Loop将会等待回调（新的I/O事件）被添加到队列中，然后立即执行它们。</li>
+</ul>
+<p>当进入到poll阶段，并且调用了timers的话，会发生下面的情况:</p>
+<ul>
+<li>一旦poll queue是空的话，Event Loop会检查是否timers, 如果有1个或多个timers时间已经到达，Event Loop将会回到timer阶段并执行那些timer的callback(即进入到下一次tick)。</li>
+</ul>
+<p><strong>优先级：</strong></p>
+<p>Next Tick Queue &gt; MicroTask Queue</p>
+<p>setTimeout、setInterval &gt; setImmediate</p>
+<p>由于timer需要从红黑树中取出定时器来判断时间是否到了，时间复杂度为O(lg(n))，故如果想立即异步执行一个事件，最好不要用 setTimeout(func, 0)。而是使用 process.nextTick() 来完成。</p>
 <h2 id="分布式Node架构"><a href="#分布式Node架构" class="headerlink" title="分布式Node架构"></a>分布式Node架构</h2><p>Nginx(负载均衡、调度) -&gt; Node集群 -&gt; Redis(同步状态)</p>
+<p>（待更新）</p>
 
       
     </div>
@@ -418,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/12/前后端通信/" rel="next" title="同源策略及前后端(同源/跨域)通信">
-                <i class="fa fa-chevron-left"></i> 同源策略及前后端(同源/跨域)通信
+              <a href="/2018/07/10/CSS3动画/" rel="next" title="CSS动画之初探API">
+                <i class="fa fa-chevron-left"></i> CSS动画之初探API
               </a>
             
           </div>
@@ -427,10 +469,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/18/git/" rel="prev" title="Git一些小tips">
-                Git一些小tips <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -459,6 +497,52 @@
   </div>
 
 
+						<footer id="footer" class="footer" style="left: 0">
+							<div class="footer-inner" style="width: 100%">
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+  <span class="with-love">
+    <i class="fa fa-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+								
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+	 
+      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      个小伙伴
+	
+    </span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+								
+							</div>
+						</footer>
           </div>
           
 
@@ -533,7 +617,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -600,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node的特性"><span class="nav-number">1.</span> <span class="nav-text">Node的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程"><span class="nav-number">1.1.</span> <span class="nav-text">单线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步I-O"><span class="nav-number">1.2.</span> <span class="nav-text">异步I/O</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特性的所带来的优点-缺点"><span class="nav-number">2.</span> <span class="nav-text">特性的所带来的优点/缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高并发"><span class="nav-number">2.1.</span> <span class="nav-text">高并发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式Node架构"><span class="nav-number">3.</span> <span class="nav-text">分布式Node架构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node特性：高并发"><span class="nav-number">1.</span> <span class="nav-text">Node特性：高并发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程"><span class="nav-number">1.1.</span> <span class="nav-text">单线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步I-O"><span class="nav-number">1.2.</span> <span class="nav-text">异步I/O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务驱动"><span class="nav-number">1.3.</span> <span class="nav-text">事务驱动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式Node架构"><span class="nav-number">2.</span> <span class="nav-text">分布式Node架构</span></a></li></ol></div>
             
 
           </div>
@@ -618,52 +702,6 @@
       </div>
     </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner" >
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
-  <span class="with-love">
-    <i class="fa fa-plane"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">KMKNKK</span>
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-	 
-      你好啊<i class="fa fa-heart"></i> &nbspKMKNKK的第
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      个小伙伴
-	
-    </span>
-  
-
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
 
     
 
