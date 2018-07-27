@@ -196,7 +196,7 @@ $(function(){
 			var target = e.target;
 			if (target.nodeName.toLowerCase() == 'img') {
 				headnum = e.target.num;
-				document.getElementById('defaultHead').setAttribute('src','http://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/user/user'+ headnum +'.jpg');				
+				document.getElementById('defaultHead').setAttribute('src','https://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/user/user'+ headnum +'.jpg');				
 				headportrait.style.display = 'none';
 			}
 			else {
@@ -223,7 +223,7 @@ $(function(){
 				
 			var headItem = document.createElement('img');
 
-			headItem.src = 'http://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/user/user' + i + '.jpg';
+			headItem.src = 'https://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/user/user' + i + '.jpg';
 		
 			headItem.num = i;
 		
@@ -265,7 +265,7 @@ $(function(){
 		for (let i = 0; i < 38; i++) {
 			
 			var emojiItem = document.createElement('img');
-			emojiItem.src = 'http://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/emoji/' + i + '.gif';
+			emojiItem.src = 'https://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/emoji/' + i + '.gif';
 			emojiItem.title = i;
 			emojiItem.num = i;
 		
@@ -344,7 +344,7 @@ $(function(){
 				if (emojiIndex > totalEmojiNum) {
 					result = result.replace(match[0], '[X]');
 				} else {
-					result = result.replace(match[0], '<img class="emoji" src="http://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/emoji/' + emojiIndex + '.gif" />');
+					result = result.replace(match[0], '<img class="emoji" src="https://kmknkk.oss-cn-beijing.aliyuncs.com/chat-img/emoji/' + emojiIndex + '.gif" />');
 				};
 			};
 			return result;
