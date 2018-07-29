@@ -86,10 +86,13 @@
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-27T15:39:39.299Z">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Mysql-Redis.jpg">
+<meta property="og:updated_time" content="2018-07-29T15:52:56.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="learn the Node.js">
 <meta name="twitter:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
+<meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg">
 
 
 
@@ -407,7 +410,7 @@
 </ul>
 <p>关于第三点坏处，我跟小伙伴们也讨论过，认为主要的痛点就在于node不同于JAVA，它所实现的逻辑是以异步为主的。<br>这就导致了node无法像JAVA一样<code>方便地</code>使用 try/catch 来来捕获并绕过错误，因为无法确定异步任务会何时传回异常。<br>而在单线程环境下，绕不过错误就意味着导致应用退出，这是我们不愿意看到的。</p>
 <p>当然，在服务器资源丰富的当下，我们可以通过 pm2 或 nginx 这些工具，动态的判断服务状态。<br>在服务出错时隔离坏点服务器，将请求转发到正常服务器上，并重启坏点服务器以继续提供服务。但是这样对服务器资源的需求就会多许多。</p>
-<p>另一个解决方案就是 <code>cluster</code>：(待更新)</p>
+<p><code>cluster</code>：(待更新)</p>
 <h3 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h3><p>你可能会问，既然node是单线程的，事件全部在一个线程上处理，那不是应该效率很低吗？</p>
 <p>恰恰相反，node的性能很高。原因之一就是node具有<code>异步I/O</code>特性，每当有I/O请求发生时，node会提供给该请求一个I/O线程。</p>
 <p>然后node就不管这个I/O的操作过程了，而是继续执行主线程上的事件，只需要在该请求返回回调时在处理即可。也就是node省去了许多等待请求的时间。</p>
@@ -434,8 +437,19 @@
 <p>Next Tick Queue &gt; MicroTask Queue</p>
 <p>setTimeout、setInterval &gt; setImmediate</p>
 <p>由于timer需要从红黑树中取出定时器来判断时间是否到了，时间复杂度为O(lg(n))，故如果想立即异步执行一个事件，最好不要用 setTimeout(func, 0)。而是使用 process.nextTick() 来完成。</p>
-<h2 id="分布式Node架构"><a href="#分布式Node架构" class="headerlink" title="分布式Node架构"></a>分布式Node架构</h2><p>Nginx(负载均衡、调度) -&gt; Node集群 -&gt; Redis(同步状态)</p>
-<p>（待更新）</p>
+<h2 id="分布式Node架构"><a href="#分布式Node架构" class="headerlink" title="分布式Node架构"></a>分布式Node架构</h2><p>我了解到的Node集群架构主要分为以下几个模块：</p>
+<blockquote>
+<p>Nginx(负载均衡、调度) -&gt; Node集群 -&gt; Redis(同步状态)</p>
+</blockquote>
+<p>按我的理解整理了一下整个架构图：<br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg" alt="Node集群架构"></p>
+<p>当然，这应该是比较理想状态下的架构方式。因为虽然 Redis 的读/写相当快，但这是因为其是将数据存储在内存池里，在内存上进行相关操作。</p>
+<p>这对于服务器的内存负荷是相当高的，所以通常我们还是会在架构中加入 Mysql，如下图：</p>
+<p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Mysql-Redis.jpg" alt="Mysql-Redis"></p>
+<p>先解释一下这幅图：<br>将数据先写入 Mysql，Node 需要数据时再去 Redis 读取，若没有找到再去 Mysql 里面查询想要的数据，并写入 Redis，下次使用时就可以直接去 Redis 里面查询了。</p>
+<p>加入 Mysql 相较于只在 Redis 里读/写的好处有：</p>
+<p>1、避免了短期内无用的数据写入 Redis，占用内存，减轻 Redis 负担</p>
+<p>2、在后期需要对数据进行特定查询、分析的时候（比如分析运营活动用户涨幅），SQL关系查询能提供很大的帮助</p>
+<p>当然在应对短时间大流量写入的时候，我们也可以直接将数据写入 Redis，以达到快速存储数据、增加服务器应对流量能力的目的，等流量下去了再单独将数据写入 Mysql。</p>
 
       
     </div>

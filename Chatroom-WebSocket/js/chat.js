@@ -6,13 +6,13 @@ $(function(){
 	var socket,
 	    ip = '47.94.86.217', // 可自行修改为你的服务端IP
 		headnum = 1,         // 用户默认头像
-		uname = null;        // 初始用户名为空
+		uname = null;
 
 	/*登录界面函数*/
 	login();
 
 	/*建立socket连接，使用websocket协议，端口号是服务器端监听端口号*/
-	socket = io('ws://'+ ip +':8081');
+	socket = io('ws://' + ip +':8081');
 	
 	/*主函数*/
 	function main(){
@@ -27,27 +27,12 @@ $(function(){
 			}
 	
 		$('.chat-wrap').hide();
-	
-
-		/*登录*/
-		$('.login-btn').click(function(){
-			uname = $.trim($('#loginName').val());
-			if(uname){
-				/*向服务端发送登录事件*/
-				socket.emit('login',{username:uname})
-			}else{
-				alert('请输入昵称')
-			}
-		})
-	
 		
 		/*发送消息*/
 		$('.sendBtn').click(function(){
 			sendMessage(socket);
 		});
 	
-		/*键盘回车事件*/
-		keydown();
 	
 		/*登录成功*/
 		socket.on('loginSuccess',function(data){
@@ -60,7 +45,9 @@ $(function(){
 		
 		/*登录失败*/
 		socket.on('loginFail',function(){
-			alert('昵称重复')
+			alert('昵称重复');
+			socket.close();
+			socket = io('ws://' + ip +':8081');
 		})
 	
 		/*新人加入提示*/
@@ -151,19 +138,61 @@ $(function(){
 		
 		//图片发送
 		document.getElementById('sendImage').addEventListener('change', function() {
+
+			var img = new Image();
+			var reader = new FileReader();
+
+			// 缩放图片需要的canvas
+			var canvas = document.createElement('canvas');
+			var context = canvas.getContext('2d');
+
+			// base64地址图片加载完毕后
+			img.onload = function () {
+				// 图片原始尺寸
+				var originWidth = this.width;
+				var originHeight = this.height;
+				// 最大尺寸限制
+				var maxWidth = 400, maxHeight = 400;
+				// 目标尺寸
+				var targetWidth = originWidth, targetHeight = originHeight;
+				// 图片尺寸超过400x400的限制
+				if (originWidth > maxWidth || originHeight > maxHeight) {
+					if (originWidth / originHeight > maxWidth / maxHeight) {
+						// 更宽，按照宽度限定尺寸
+						targetWidth = maxWidth;
+						targetHeight = Math.round(maxWidth * (originHeight / originWidth));
+					} else {
+						targetHeight = maxHeight;
+						targetWidth = Math.round(maxHeight * (originWidth / originHeight));
+					}
+				}
+					
+				// canvas对图片进行缩放
+				canvas.width = targetWidth;
+				canvas.height = targetHeight;
+				// 清除画布
+				context.clearRect(0, 0, targetWidth, targetHeight);
+				// 图片压缩
+				context.drawImage(img, 0, 0, targetWidth, targetHeight);
+				var result = canvas.toDataURL('image/jpeg');
+				console.log('result done!', result);
+				socket.emit('sendImg',{username:uname,image: result,date:new Date().toTimeString().substr(0, 8),headnum:headnum});
+			};
+
 			//检查是否有文件被选中
 			if (this.files.length != 0) {
 				//获取文件并用FileReader进行读取
 				for(let i = 0;i<this.files.length;i++){
-					var file = this.files[i],
-						reader = new FileReader();
+					var file = this.files[i];
+
 					if (!reader) {
 						return;
 					};
 					reader.onload = function(e) {
-						//读取成功，发送到服务器
-						socket.emit('sendImg',{username:uname,image: e.target.result,date:new Date().toTimeString().substr(0, 8),headnum:headnum});
-						
+						console.log('read')
+						img.src = e.target.result;
+						// //读取成功，发送到服务器
+						// socket.emit('sendImg',{username:uname,image: e.target.result,date:new Date().toTimeString().substr(0, 8),headnum:headnum});
 					};
 					reader.readAsDataURL(file);
 				};
@@ -207,9 +236,6 @@ $(function(){
 
 		//点击登录后，确认IP地址
 		$('.login-btn').click(function(){
-			//if(document.getElementById('loginIP').value)
-			//ip = document.getElementById('loginIP').value;
-			//进入主函数
 			main();
 		});
 	}
@@ -241,9 +267,6 @@ $(function(){
 			if(event.keyCode == 13 && $('#chat-wrap').css("display")==="none"){   //登录界面                
 				uname = $.trim($('#loginName').val());
 				if(uname){
-					//if(document.getElementById('loginIP').value)
-					//ip = document.getElementById('loginIP').value;
-					//进入主函数
 					main();		
 				}else{
 					alert('请输入昵称')
