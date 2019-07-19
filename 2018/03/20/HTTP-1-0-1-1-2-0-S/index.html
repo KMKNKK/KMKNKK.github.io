@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,11 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+  
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
@@ -68,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hello, World!" />
+  <meta name="keywords" content="Hello, World!">
 
 
 
@@ -79,18 +81,18 @@
 
 
 
-<meta name="description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返">
+<meta name="description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  但HTTP 1.0所保持的TCP每次只能处理一个请求，最典型的就是pipline管线化模型，虽然能一次性接收多个请求，但是还是得按顺序一次处理一个请求，这样很容易造成后续请求等待前序请求完成，造成阻塞，也就是我们常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP 1.0→1.1→2.0 &amp; HTTPS">
-<meta property="og:url" content="http://kmknkk.xin/2018/03/20/HTTP-1-0-1-1-2-0-S/index.html">
+<meta property="og:url" content="https://kmknkk.xin/2018/03/20/HTTP-1-0-1-1-2-0-S/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回4">
+<meta property="og:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  但HTTP 1.0所保持的TCP每次只能处理一个请求，最典型的就是pipline管线化模型，虽然能一次性接收多个请求，但是还是得按顺序一次处理一个请求，这样很容易造成后续请求等待前序请求完成，造成阻塞，也就是我们常">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTTP%201.0-1.1-2.0-S/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.jpg">
-<meta property="og:updated_time" content="2018-07-27T15:39:39.292Z">
+<meta property="og:updated_time" content="2019-04-09T03:06:53.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 1.0→1.1→2.0 &amp; HTTPS">
-<meta name="twitter:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  节约带宽HTTP 1.1支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回4">
+<meta name="twitter:description" content="HTTP 1.0 → HTTP 1.1长连接HTTP 1.0需要使用keep-alive参数来告知服务器建立长连接，而HTTP 1.1默认支持长连接，减少了TCP连接次数，节约开销。  但HTTP 1.0所保持的TCP每次只能处理一个请求，最典型的就是pipline管线化模型，虽然能一次性接收多个请求，但是还是得按顺序一次处理一个请求，这样很容易造成后续请求等待前序请求完成，造成阻塞，也就是我们常">
 <meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/HTTP%201.0-1.1-2.0-S/%E6%B7%B7%E5%90%88%E5%8A%A0%E5%AF%86%E6%96%B9%E5%BC%8F.jpg">
 
 
@@ -121,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2018/03/20/HTTP-1-0-1-1-2-0-S/"/>
+  <link rel="canonical" href="https://kmknkk.xin/2018/03/20/HTTP-1-0-1-1-2-0-S/">
 
 
 
@@ -166,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">KMKNKK | MuffinFish</span>
         <span class="logo-line-after"><i></i></span>
@@ -196,7 +198,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -206,7 +208,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -216,7 +218,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -226,7 +228,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -239,7 +241,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -260,9 +262,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -299,11 +299,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/03/20/HTTP-1-0-1-1-2-0-S/">
+    <link itemprop="mainEntityOfPage" href="https://kmknkk.xin/2018/03/20/HTTP-1-0-1-1-2-0-S/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg">
     </span>
 
@@ -339,7 +339,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -351,19 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/前端-通信/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-通信</span>
+                  <a href="/categories/Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Network</span>
                   </a>
                 </span>
 
@@ -383,7 +372,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-eye"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -405,8 +394,10 @@
 
       
         <h2 id="HTTP-1-0-→-HTTP-1-1"><a href="#HTTP-1-0-→-HTTP-1-1" class="headerlink" title="HTTP 1.0 → HTTP 1.1"></a>HTTP 1.0 → HTTP 1.1</h2><h3 id="长连接"><a href="#长连接" class="headerlink" title="长连接"></a>长连接</h3><p><code>HTTP 1.0</code>需要使用<code>keep-alive</code>参数来告知服务器建立长连接，而<code>HTTP 1.1</code>默认支持长连接，减少了TCP连接次数，节约开销。 </p>
-<h3 id="节约带宽"><a href="#节约带宽" class="headerlink" title="节约带宽"></a>节约带宽</h3><p><code>HTTP 1.1</code>支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。<br>当服务器返回401的时候，客户端就可以不用发送请求body了，这样节约了带宽。</p>
-<h3 id="HOST域"><a href="#HOST域" class="headerlink" title="HOST域"></a>HOST域</h3><p><code>HTTP 1.1</code>支持host域，服务端可以通过host域设置多个虚拟站点来共享一个ip和端口。<br><a id="more"></a></p>
+<p>但<code>HTTP 1.0</code>所保持的TCP每次只能处理一个请求，最典型的就是pipline管线化模型，虽然能一次性接收多个请求，但是还是得按顺序一次处理一个请求，这样很容易造成后续请求等待前序请求完成，造成阻塞，也就是我们常说的”线头阻塞”。<br>并且对于request和response，<code>HTTP 1.0</code>都是以文本的方式进行传输，这就导致数据必须按照顺序进行传输。</p>
+<h3 id="节约带宽"><a href="#节约带宽" class="headerlink" title="节约带宽"></a>节约带宽</h3><p><code>HTTP 1.1</code>支持只发送header信息(不带任何body信息)，如果服务器认为客户端有权限请求服务器，则返回100，否则返回401。客户端只有接收到100，才开始把请求body发到服务器。当服务器返回401的时候，客户端就可以不用发送请求body了，这样节约了带宽。</p>
+<h3 id="HOST域"><a href="#HOST域" class="headerlink" title="HOST域"></a>HOST域</h3><p><code>HTTP 1.1</code>支持host域，服务端可以通过host域设置多个虚拟站点来共享一个ip和端口。</p>
+<a id="more"></a>
 <h2 id="HTTP-1-1-→-HTTP-2-0"><a href="#HTTP-1-1-→-HTTP-2-0" class="headerlink" title="HTTP 1.1 → HTTP 2.0"></a>HTTP 1.1 → HTTP 2.0</h2><h3 id="多路复用"><a href="#多路复用" class="headerlink" title="多路复用"></a>多路复用</h3><p><code>HTTP 2.0</code>使用多路复用技术，使用一个TCP连接并发处理多个请求，不但节约了开销而且可处理请求的数量也比<code>HTTP 1.1</code>大了很多。</p>
 <blockquote>
 <p>TCP连接有一个预热和保护的过程，先检查数据是否传送成功，一旦成功过，则慢慢加大传输速度。因此使用一个连接可以大大提高数据传输效率。</p>
@@ -498,8 +489,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/16/CSS实现垂直水平居中/" rel="prev" title="CSS实现垂直水平居中">
-                CSS实现垂直水平居中 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/25/面试经历/" rel="prev" title="2018春招面试&秋招面试">
+                2018春招面试&秋招面试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +512,7 @@
       
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox">
-  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async = "async" ></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async="async"></script>
 </div>
 
       
@@ -531,7 +522,7 @@
 
 						<footer id="footer" class="footer" style="left: 0">
 							<div class="footer-inner" style="width: 100%">
-								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2019</span>
   <span class="with-love">
     <i class="fa fa-plane"></i>
   </span>
@@ -550,7 +541,7 @@
 
 								
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -583,7 +574,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3"></div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3" style="margin-top: 10%"></div>
     </div>
 
   
@@ -623,9 +614,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg"
-                alt="KMKNKK" />
+              <img class="site-author-image" itemprop="image" src="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg" alt="KMKNKK">
             
               <p class="site-author-name" itemprop="name">KMKNKK</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -638,7 +627,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -649,7 +638,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -671,9 +660,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://kmknkk.oss-cn-beijing.aliyuncs.com/mmqrcode1511677287205.png" target="_blank" title="Wechat">
+                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="知乎">
                     
-                      <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                      <i class="fa fa-fw fa-edit"></i>知乎</a>
                 </span>
               
                 <span class="links-of-author-item">

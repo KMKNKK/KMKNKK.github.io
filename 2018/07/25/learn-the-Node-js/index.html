@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,11 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+  
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
@@ -68,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hello, World!" />
+  <meta name="keywords" content="Hello, World!">
 
 
 
@@ -79,19 +81,21 @@
 
 
 
-<meta name="description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
+<meta name="description" content="Node特性：高并发在解释node为什么能够做到高并发之前，不妨先了解一下node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript主线程与其他线程（例如I/O线程）是无法共享状态的。 单线程的好处就是：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="learn the Node.js">
-<meta property="og:url" content="http://kmknkk.xin/2018/07/25/learn-the-Node-js/index.html">
+<meta property="og:title" content="Node.js：浅析高并发与分布式集群">
+<meta property="og:url" content="https://kmknkk.xin/2018/07/25/learn-the-Node-js/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
-<meta property="og:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
+<meta property="og:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，不妨先了解一下node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript主线程与其他线程（例如I/O线程）是无法共享状态的。 单线程的好处就是：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Mysql-Redis.jpg">
-<meta property="og:updated_time" content="2018-07-29T15:52:56.661Z">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/%E6%8E%A5%E5%85%A5%E5%B1%82.jpg">
+<meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/%E8%B4%9F%E8%BD%BD%E5%B1%82.jpg">
+<meta property="og:updated_time" content="2019-04-09T03:06:53.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="learn the Node.js">
-<meta name="twitter:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。 单线程的好处就是：">
+<meta name="twitter:title" content="Node.js：浅析高并发与分布式集群">
+<meta name="twitter:description" content="Node特性：高并发在解释node为什么能够做到高并发之前，不妨先了解一下node的其他几个特性： 单线程我们先来明确一个概念，即：node是单线程的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript主线程与其他线程（例如I/O线程）是无法共享状态的。 单线程的好处就是：">
 <meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg">
 
 
@@ -122,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2018/07/25/learn-the-Node-js/"/>
+  <link rel="canonical" href="https://kmknkk.xin/2018/07/25/learn-the-Node-js/">
 
 
 
 
 
-  <title>learn the Node.js | KMKNKK | MuffinFish</title>
+  <title>Node.js：浅析高并发与分布式集群 | KMKNKK | MuffinFish</title>
   
 
 
@@ -167,7 +171,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">KMKNKK | MuffinFish</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +201,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +211,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +221,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -227,7 +231,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -240,7 +244,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -261,9 +265,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -300,11 +302,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/07/25/learn-the-Node-js/">
+    <link itemprop="mainEntityOfPage" href="https://kmknkk.xin/2018/07/25/learn-the-Node-js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg">
     </span>
 
@@ -317,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">learn the Node.js</h1>
+          <h1 class="post-title" itemprop="name headline">Node.js：浅析高并发与分布式集群</h1>
         
 
         <div class="post-meta">
@@ -340,7 +342,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -352,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Node.js</span>
+                  <a href="/categories/Node/" itemprop="url" rel="index">
+                    <span itemprop="name">Node</span>
                   </a>
                 </span>
 
@@ -373,7 +375,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-eye"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -394,9 +396,10 @@
       
 
       
-        <h2 id="Node特性：高并发"><a href="#Node特性：高并发" class="headerlink" title="Node特性：高并发"></a>Node特性：高并发</h2><p>在解释node为什么能够做到高并发之前，我们先来看node的其他几个特性：</p>
-<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><p>我们先来明确一个概念，即：node是<code>单线程</code>的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript与其他线程是无法共享状态的。</p>
-<p>单线程的好处就是：<br><a id="more"></a></p>
+        <h2 id="Node特性：高并发"><a href="#Node特性：高并发" class="headerlink" title="Node特性：高并发"></a>Node特性：高并发</h2><p>在解释node为什么能够做到高并发之前，不妨先了解一下node的其他几个特性：</p>
+<h3 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h3><p>我们先来明确一个概念，即：node是<code>单线程</code>的，这一点与JavaScript在浏览器中的特性相同，并且在node中JavaScript主线程与其他线程（例如I/O线程）是无法共享状态的。</p>
+<p>单线程的好处就是：</p>
+<a id="more"></a>
 <ul>
 <li>无需像多线程那样去关注线程之间的状态同步问题</li>
 <li>没有线程切换所带来的开销</li>
@@ -404,20 +407,36 @@
 </ul>
 <p>当然单线程也有许多坏处：</p>
 <ul>
-<li>无法充分利用CPU</li>
-<li>大量计算占用CPU会导致应用阻塞，无法调用异步I/O（在下面会介绍异步I/O这个特性）</li>
+<li>无法充分利用多核CPU</li>
+<li>大量计算占用CPU会导致应用阻塞(即不适用CPU密集型)</li>
 <li>错误会引起整个应用的退出</li>
 </ul>
-<p>关于第三点坏处，我跟小伙伴们也讨论过，认为主要的痛点就在于node不同于JAVA，它所实现的逻辑是以异步为主的。<br>这就导致了node无法像JAVA一样<code>方便地</code>使用 try/catch 来来捕获并绕过错误，因为无法确定异步任务会何时传回异常。<br>而在单线程环境下，绕不过错误就意味着导致应用退出，这是我们不愿意看到的。</p>
-<p>当然，在服务器资源丰富的当下，我们可以通过 pm2 或 nginx 这些工具，动态的判断服务状态。<br>在服务出错时隔离坏点服务器，将请求转发到正常服务器上，并重启坏点服务器以继续提供服务。但是这样对服务器资源的需求就会多许多。</p>
-<p><code>cluster</code>：(待更新)</p>
-<h3 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h3><p>你可能会问，既然node是单线程的，事件全部在一个线程上处理，那不是应该效率很低吗？</p>
-<p>恰恰相反，node的性能很高。原因之一就是node具有<code>异步I/O</code>特性，每当有I/O请求发生时，node会提供给该请求一个I/O线程。</p>
-<p>然后node就不管这个I/O的操作过程了，而是继续执行主线程上的事件，只需要在该请求返回回调时在处理即可。也就是node省去了许多等待请求的时间。</p>
-<p>实际上不光是I/O操作，node的绝大多数操作都是以这种异步的方式进行的。node就像是一个团队的leader，它只需要告诉成员们如何正确的进行操作并接受反馈，不需要亲自进行操作，这使得他对事件处理的效率变得很高。</p>
+<p>不过在今天看来，这些坏处都已经不再是问题或者得到了适当的解决：</p>
+<p>(1) 创建进程 or 细分实例</p>
+<blockquote>
+<p>关于第一个问题，最直白解决方案就是使用<code>child_process核心模块</code>或者<code>cluster</code>：child_process 和 net 组合应用。我们可以通过在一台多核服务器上创建多个进程（通常使用<code>fork</code>操作）来充分利用每个核心，不过要处理好进程间通信问题。</p>
+<p>另一个方案是，我们可以将物理机器划分为多台单核的虚拟机，并通过pm2等工具，管理多台虚拟机形成一个集群架构，高效运行所需服务，至于每台机器间的通信（状态同步）我这里先按下不表，在下文的<code>Node分布式架构</code>中再做详细说明。</p>
+</blockquote>
+<p>(2) 时间片轮转</p>
+<blockquote>
+<p>关于第二点，我跟小伙伴讨论过后认为可以通过时间片轮转方式，在单线程上模拟多线程，适当减少应用阻塞的感觉（虽然这种方法不会真的像多线程那样节约时间）</p>
+</blockquote>
+<p>(3) 负载均衡、坏点监控/隔离</p>
+<blockquote>
+<p>至于第三点，我跟小伙伴们也讨论过，认为主要的痛点就在于node不同于JAVA，它所实现的逻辑是以异步为主的。</p>
+<p>这就导致了node无法像JAVA一样<code>方便地</code>使用 try/catch 来来捕获并绕过错误，因为无法确定异步任务会何时传回异常。而在单线程环境下，绕不过错误就意味着导致<code>应用退出</code>，重启恢复的间隙会导致服务中断，这是我们不愿意看到的。</p>
+<p>当然，在服务器资源丰富的当下，我们可以通过 pm2 或 nginx 这些工具，动态的判断服务状态。在服务出错时隔离坏点服务器，将请求转发到正常服务器上，并重启坏点服务器以继续提供服务。这也是<code>Node分布式架构</code>的一部分。</p>
+</blockquote>
+<h3 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h3><p>你可能会问，既然node是单线程的，事件全部在一个线程上处理，那不是应该效率很低、与高并发相悖吗？</p>
+<p>恰恰相反，node的性能很高。原因之一就是node具有<code>异步I/O</code>特性，每当有I/O请求发生时，node会提供给该请求一个I/O线程。然后node就不管这个I/O的操作过程了，而是继续执行主线程上的事件，只需要在该请求返回回调时在处理即可。也就是node省去了许多等待请求的时间。</p>
+<p><strong>这也是node支持高并发的重要原因之一</strong></p>
+<p>实际上不光是I/O操作，node的绝大多数操作都是以这种异步的方式进行的。它就像是一个组织者，无需事必躬亲，只需要告诉成员们如何正确的进行操作并接受反馈、处理关键步骤，就能使得整个团队高效运行。</p>
 <h3 id="事务驱动"><a href="#事务驱动" class="headerlink" title="事务驱动"></a>事务驱动</h3><p>你可能又要问了，node怎么知道请求返回了回调，又应该何时去处理这些回调呢？</p>
 <p>答案就是node的另一特性：<code>事务驱动</code>，即主线程通过event loop事件循环触发的方式来运行程序</p>
-<p><strong>图解node环境下的Event loop：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">   ┌───────────────────────┐</span><br><span class="line">┌─&gt;│        timers         │&lt;————— 执行 setTimeout()、setInterval() 的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     I/O callbacks     │&lt;————— 执行几乎所有的回调，除了 close callbacks 以及 timers 调度的回调和 setImmediate() 调度的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     idle, prepare     │&lt;————— 内部调用，可忽略</span><br><span class="line">│  └──────────┬────────────┘     </span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|             |                   ┌───────────────┐</span><br><span class="line">│  ┌──────────┴────────────┐      │   incoming:   │ - (retrieve new I/O events; node will block here when appropriate)</span><br><span class="line">│  │         poll          │&lt;─────┤  connections, │ </span><br><span class="line">│  └──────────┬────────────┘      │   data, etc.  │ </span><br><span class="line">│             |                   |               | </span><br><span class="line">|             |                   └───────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|  ┌──────────┴────────────┐      </span><br><span class="line">│  │        check          │&lt;————— setImmediate() 的回调将会在这个阶段执行</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">└──┤    close callbacks    │&lt;————— socket.on(&apos;close&apos;, ...)</span><br><span class="line">   └───────────────────────┘</span><br></pre></td></tr></table></figure></p>
+<p><strong>这是node支持高并发的另一重要原因</strong></p>
+<p>图解node环境下的Event loop：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">   ┌───────────────────────┐</span><br><span class="line">┌─&gt;│        timers         │&lt;————— 执行 setTimeout()、setInterval() 的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     I/O callbacks     │&lt;————— 执行几乎所有的回调，除了 close callbacks 以及 timers 调度的回调和 setImmediate() 调度的回调</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">│  │     idle, prepare     │&lt;————— 内部调用，可忽略</span><br><span class="line">│  └──────────┬────────────┘     </span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|             |                   ┌───────────────┐</span><br><span class="line">│  ┌──────────┴────────────┐      │   incoming:   │ - (retrieve new I/O events; node will block here when appropriate)</span><br><span class="line">│  │         poll          │&lt;─────┤  connections, │ </span><br><span class="line">│  └──────────┬────────────┘      │   data, etc.  │ </span><br><span class="line">│             |                   |               | </span><br><span class="line">|             |                   └───────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">|  ┌──────────┴────────────┐      </span><br><span class="line">│  │        check          │&lt;————— setImmediate() 的回调将会在这个阶段执行</span><br><span class="line">│  └──────────┬────────────┘</span><br><span class="line">|             |&lt;-- 执行所有 Next Tick Queue 以及 MicroTask Queue 的回调</span><br><span class="line">│  ┌──────────┴────────────┐</span><br><span class="line">└──┤    close callbacks    │&lt;————— socket.on(&apos;close&apos;, ...)</span><br><span class="line">   └───────────────────────┘</span><br></pre></td></tr></table></figure>
+
 <p><strong>poll阶段：</strong></p>
 <p>当进入到poll阶段，并且没有timers被调用的时候，会发生下面的情况:</p>
 <p>（1）如果poll队列不为空：</p>
@@ -427,29 +446,105 @@
 <p>（2）如果poll队列为空:</p>
 <ul>
 <li>如果脚本调用了setImmediate(), Event Loop将会结束poll阶段并且进入到check阶段执行setImmediate()的回调。</li>
-<li>如果脚本没有被setImmediate()调用，Event Loop将会等待回调（新的I/O事件）被添加到队列中，然后立即执行它们。</li>
+<li>如果脚本没有setImmediate()调用，Event Loop将会等待回调（新的I/O事件）被添加到队列中，然后立即执行它们。</li>
 </ul>
 <p>当进入到poll阶段，并且调用了timers的话，会发生下面的情况:</p>
 <ul>
 <li>一旦poll queue是空的话，Event Loop会检查是否timers, 如果有1个或多个timers时间已经到达，Event Loop将会回到timer阶段并执行那些timer的callback(即进入到下一次tick)。</li>
 </ul>
 <p><strong>优先级：</strong></p>
+<p>根据上面的图，我们不难得出：</p>
+<blockquote>
 <p>Next Tick Queue &gt; MicroTask Queue</p>
-<p>setTimeout、setInterval &gt; setImmediate</p>
-<p>由于timer需要从红黑树中取出定时器来判断时间是否到了，时间复杂度为O(lg(n))，故如果想立即异步执行一个事件，最好不要用 setTimeout(func, 0)。而是使用 process.nextTick() 来完成。</p>
+</blockquote>
+<p>那么setTimeout、setInterval和setImmediate谁快呢？</p>
+<blockquote>
+<p>答案是：不确定</p>
+</blockquote>
+<p>单单从执行图上看，如果两者都是在mian module里定义的，那么：setTimeout、setInterval &gt; setImmediate</p>
+<p>但是有两个条件制约了这一结论：</p>
+<ul>
+<li>event loop初始化需要一定时间</li>
+<li>setTimeout有最小毫秒数（一般认为最少1ms）</li>
+</ul>
+<p>所以当 event loop准备时间 &gt; setTimeout毫秒数时，进入timers检查时已有setTimeout的任务，故<code>timeout</code>先输出。反之则<code>immediate</code>先输出。</p>
+<p>如果是在poll阶段定义的setTimeout和setImmediate，那么<code>immediate</code>先于<code>timeout</code>输出。原因是在poll阶段，会先进入check阶段再进入timers阶段。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'./test.txt'</span>, <span class="string">'utf8'</span>, (err, data) =&gt; &#123;</span><br><span class="line">    setTimeout( <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'setTimeout'</span>);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">    setImmediate( <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'setImmediate'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * console:</span></span><br><span class="line"><span class="comment"> * &gt; setImmediate</span></span><br><span class="line"><span class="comment"> * &gt; setTimeout</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> **/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>多说一句：</strong><br>由于timer需要从红黑树中取出定时器来判断时间是否到了，时间复杂度为O(lg(n))，故如果想立即异步执行一个事件，最好不要用 setTimeout(func, 0)。而是使用 process.nextTick() 来完成。</p>
+<hr>
 <h2 id="分布式Node架构"><a href="#分布式Node架构" class="headerlink" title="分布式Node架构"></a>分布式Node架构</h2><p>我了解到的Node集群架构主要分为以下几个模块：</p>
 <blockquote>
 <p>Nginx(负载均衡、调度) -&gt; Node集群 -&gt; Redis(同步状态)</p>
 </blockquote>
-<p>按我的理解整理了一下整个架构图：<br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg" alt="Node集群架构"></p>
-<p>当然，这应该是比较理想状态下的架构方式。因为虽然 Redis 的读/写相当快，但这是因为其是将数据存储在内存池里，在内存上进行相关操作。</p>
+<p>按我的理解整理了一副图：</p>
+<p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Node%E9%9B%86%E7%BE%A4%E6%9E%B6%E6%9E%84.jpg" alt="Node集群架构"></p>
+<p>当然，这应该是比较理想状态下的架构方式。因为虽然 Redis 的读/写相当快，但这是因为其将数据存储在内存池里，在内存上进行相关操作。</p>
 <p>这对于服务器的内存负荷是相当高的，所以通常我们还是会在架构中加入 Mysql，如下图：</p>
 <p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/Mysql-Redis.jpg" alt="Mysql-Redis"></p>
-<p>先解释一下这幅图：<br>将数据先写入 Mysql，Node 需要数据时再去 Redis 读取，若没有找到再去 Mysql 里面查询想要的数据，并写入 Redis，下次使用时就可以直接去 Redis 里面查询了。</p>
+<p>先解释一下这幅图：<br>当用户数据到来时，将数据先写入 Mysql，Node 需要数据时再去 Redis 读取，若没有找到再去 Mysql 里面查询想要的数据，并写入 Redis，下次使用时就可以直接去 Redis 里面查询了。</p>
 <p>加入 Mysql 相较于只在 Redis 里读/写的好处有：</p>
-<p>1、避免了短期内无用的数据写入 Redis，占用内存，减轻 Redis 负担</p>
-<p>2、在后期需要对数据进行特定查询、分析的时候（比如分析运营活动用户涨幅），SQL关系查询能提供很大的帮助</p>
+<p>（1）避免了短期内无用的数据写入 Redis，占用内存，减轻 Redis 负担</p>
+<p>（2）在后期需要对数据进行特定查询、分析的时候（比如分析运营活动用户涨幅），SQL关系查询能提供很大的帮助</p>
 <p>当然在应对短时间大流量写入的时候，我们也可以直接将数据写入 Redis，以达到快速存储数据、增加服务器应对流量能力的目的，等流量下去了再单独将数据写入 Mysql。</p>
+<hr>
+<p>简单介绍完了大体的架构组成，接下来我们来细看每个部分的细节：</p>
+<h3 id="流量接入层"><a href="#流量接入层" class="headerlink" title="流量接入层"></a>流量接入层</h3><p>流量接入层所做的就是对所有接受的流量进行处理，提供了以下服务：</p>
+<ul>
+<li>流量缓冲</li>
+<li>分流和转发<br><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/%E6%8E%A5%E5%85%A5%E5%B1%82.jpg" alt></li>
+<li>超时检测<ul>
+<li>与用户建立连接超时</li>
+<li>读取用户body超时</li>
+<li>连接后端超时</li>
+<li>读后端响应头超时</li>
+<li>写响应超时</li>
+<li>与用户长连接超时 </li>
+</ul>
+</li>
+<li>集群健康检查/隔离坏点服务器<ul>
+<li>隔离坏点服务器并尝试修复/重启，直到该服务器恢复正常</li>
+</ul>
+</li>
+<li>失败重试机制<ul>
+<li>在请求转发到某集群某机器上，返回失败后，将该请求转发到该集群的别的机器，或者跨集群的机器上进行重试</li>
+</ul>
+</li>
+<li>连接池/会话保持机制<ul>
+<li>对于延迟敏感用户使用连接池机制，减少建立连接的时间</li>
+</ul>
+</li>
+<li>安全防护</li>
+<li>数据分析</li>
+</ul>
+<p>当转发到各个产品线后就到了负载层工作的时候了：将请求根据情况转发到各地机房</p>
+<p><img src="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/Node/%E8%B4%9F%E8%BD%BD%E5%B1%82.jpg" alt></p>
+<p>当然，这个平台并不止转发这一个功能，你可以把它理解为一个大型的私有云系统，提供以下服务：</p>
+<ul>
+<li>文件上传/服务线上部署</li>
+<li>线上配置修改</li>
+<li>设置定时任务</li>
+<li>线上系统监控/日志打印服务</li>
+<li>线上实例管理</li>
+<li>镜像中心</li>
+<li>等等…</li>
+</ul>
+<h3 id="Node集群层"><a href="#Node集群层" class="headerlink" title="Node集群层"></a>Node集群层</h3><p>这一层主要的工作是：</p>
+<p>（1）编写可靠的 Node 代码，为需求提供后端服务</p>
+<p>（2）编写高性能查询语句，与 Redis、Mysql 交互，提高查询效率</p>
+<p>（3）通过 Redis 同步集群里各个 Node 服务的状态</p>
+<p>（4）通过硬件管理平台，管理/监控物理机器的状态、管理IP地址等</p>
+<p>（当然这部分我只是粗浅地列列条目，还是需要时间来积累、深入理解）</p>
+<h3 id="数据库层"><a href="#数据库层" class="headerlink" title="数据库层"></a>数据库层</h3><p>这一层主要的工作是：</p>
+<p>（1）创建 Mysql 并设计相关页、表；建立必要的索引、外键，提升查询便利性</p>
+<p>（2）部署 redis 并向 Node 层提供相应接口</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然 Node 的单线程特性给其提供的服务带来了许多问题，但只要我们积极面对这些问题，用合理的方法（如使用 child_process 等模块或构建分布式集群）去解决他们，发挥 Node 的各种优势，就可以享受到它所带来的好处！</p>
+<p>待更新：</p>
+<ul>
+<li>Redis相关特性</li>
+<li>sql查询性能指标 &amp; 优化策略</li>
+<li>Node内存监控 &amp; 内存泄露排查/处理</li>
+</ul>
 
       
     </div>
@@ -503,7 +598,7 @@
       
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox">
-  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async = "async" ></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async="async"></script>
 </div>
 
       
@@ -513,7 +608,7 @@
 
 						<footer id="footer" class="footer" style="left: 0">
 							<div class="footer-inner" style="width: 100%">
-								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2019</span>
   <span class="with-love">
     <i class="fa fa-plane"></i>
   </span>
@@ -532,7 +627,7 @@
 
 								
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -565,7 +660,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3"></div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3" style="margin-top: 10%"></div>
     </div>
 
   
@@ -605,9 +700,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg"
-                alt="KMKNKK" />
+              <img class="site-author-image" itemprop="image" src="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg" alt="KMKNKK">
             
               <p class="site-author-name" itemprop="name">KMKNKK</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -620,7 +713,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -631,7 +724,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -653,9 +746,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://kmknkk.oss-cn-beijing.aliyuncs.com/mmqrcode1511677287205.png" target="_blank" title="Wechat">
+                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="知乎">
                     
-                      <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                      <i class="fa fa-fw fa-edit"></i>知乎</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -698,7 +791,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node特性：高并发"><span class="nav-number">1.</span> <span class="nav-text">Node特性：高并发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程"><span class="nav-number">1.1.</span> <span class="nav-text">单线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步I-O"><span class="nav-number">1.2.</span> <span class="nav-text">异步I/O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务驱动"><span class="nav-number">1.3.</span> <span class="nav-text">事务驱动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式Node架构"><span class="nav-number">2.</span> <span class="nav-text">分布式Node架构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node特性：高并发"><span class="nav-number">1.</span> <span class="nav-text">Node特性：高并发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单线程"><span class="nav-number">1.1.</span> <span class="nav-text">单线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步I-O"><span class="nav-number">1.2.</span> <span class="nav-text">异步I/O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务驱动"><span class="nav-number">1.3.</span> <span class="nav-text">事务驱动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布式Node架构"><span class="nav-number">2.</span> <span class="nav-text">分布式Node架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流量接入层"><span class="nav-number">2.1.</span> <span class="nav-text">流量接入层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node集群层"><span class="nav-number">2.2.</span> <span class="nav-text">Node集群层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库层"><span class="nav-number">2.3.</span> <span class="nav-text">数据库层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

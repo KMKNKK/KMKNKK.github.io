@@ -6,10 +6,10 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -40,7 +40,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -48,9 +48,11 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+  
 
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
@@ -68,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hello, World!" />
+  <meta name="keywords" content="Hello, World!">
 
 
 
@@ -81,11 +83,11 @@
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型链和继承">
-<meta property="og:url" content="http://kmknkk.xin/2018/03/11/原型链和继承/index.html">
+<meta property="og:url" content="https://kmknkk.xin/2018/03/11/原型链和继承/index.html">
 <meta property="og:site_name" content="KMKNKK | MuffinFish">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB.jpg">
-<meta property="og:updated_time" content="2018-07-29T16:16:52.734Z">
+<meta property="og:updated_time" content="2019-04-09T03:06:53.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型链和继承">
 <meta name="twitter:image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/Blog-image/%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%92%8C%E7%BB%A7%E6%89%BF/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%B1%BB.jpg">
@@ -118,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://kmknkk.xin/2018/03/11/原型链和继承/"/>
+  <link rel="canonical" href="https://kmknkk.xin/2018/03/11/原型链和继承/">
 
 
 
@@ -163,7 +165,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">KMKNKK | MuffinFish</span>
         <span class="logo-line-after"><i></i></span>
@@ -193,7 +195,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -203,7 +205,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -213,7 +215,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -223,7 +225,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -236,7 +238,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -257,9 +259,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -296,11 +296,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kmknkk.xin/2018/03/11/原型链和继承/">
+    <link itemprop="mainEntityOfPage" href="https://kmknkk.xin/2018/03/11/原型链和继承/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KMKNKK">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg">
     </span>
 
@@ -336,7 +336,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -348,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/FrontEnd/" itemprop="url" rel="index">
+                    <span itemprop="name">FrontEnd</span>
                   </a>
                 </span>
 
@@ -359,8 +359,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/前端-JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">前端-JavaScript</span>
+                  <a href="/categories/FrontEnd/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -380,7 +380,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-eye"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
           
 
@@ -412,18 +412,29 @@
 <li>层层向上,直到指向<code>Object</code>为止,而每个Origin又都有<code>constructor</code>和<code>实例对象</code>(obj),这样就构成了一条原型链</li>
 </ul>
 <h2 id="原型链引申出来的几个问题："><a href="#原型链引申出来的几个问题：" class="headerlink" title="原型链引申出来的几个问题："></a>原型链引申出来的几个问题：</h2><p>Q1: 在原型链上Object再往上是什么?<br>A:  由于Object已经到顶了，所以<code>Object.prototype.__proto__ === null</code></p>
-<p>Q2: 哪种情况下<strong>proto</strong>和prototype的指向是同一个?<br>A:  由于function也是对象，所以有constructor，而constructor本质也是function，所以:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">func.__proto__ === func.constructor.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>Q3: 判断Array有哪几种方法?<br>A:  除了<code>Object.prototype.toString.call(o) === &#39;[object Array]&#39;</code>这种万能方式以外，还有两种原型链方式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a instanceOf <span class="built_in">Array</span>      <span class="comment">// (true/false) 判断a对象的原型链中是否存在构造函数Array</span></span><br><span class="line">a.constructor === <span class="built_in">Array</span> <span class="comment">// (true/false) 直接判断a对象的构造函数是不是Array</span></span><br></pre></td></tr></table></figure></p>
+<p>Q2: 哪种情况下<strong>proto</strong>和prototype的指向是同一个?<br>A:  由于function也是对象，所以有constructor，而constructor本质也是function，所以:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">func.__proto__ === func.constructor.prototype <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>Q3: 判断Array有哪几种方法?<br>A:  除了<code>Object.prototype.toString.call(o) === &#39;[object Array]&#39;</code>这种万能方式以外，还有两种原型链方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a instanceOf <span class="built_in">Array</span>      <span class="comment">// (true/false) 判断a对象的原型链中是否存在构造函数Array</span></span><br><span class="line">a.constructor === <span class="built_in">Array</span> <span class="comment">// (true/false) 直接判断a对象的构造函数是不是Array</span></span><br></pre></td></tr></table></figure>
+
 <p>但是这两种方法有个缺陷：如果这个a对象是从别的页面获取的，比如<code>ifram</code>，那么会造成原型链断裂现象，可能导致数组检测出的结果是Object而不是Array。</p>
-<h3 id="扩展：new操作符的原理"><a href="#扩展：new操作符的原理" class="headerlink" title="扩展：new操作符的原理"></a>扩展：new操作符的原理</h3><p>（1）创建一个新对象，其原型为构造函数的prototype<br>（2）将构造函数的作用域赋给新对象（于是<code>this</code>指向这个新对象）<br>（3）执行构造函数中的代码（为该对象添加属性）<br>（4）返回新对象给实例<br>我们可以试着模拟一下<code>new</code>运算符过程：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _new(func) &#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="built_in">Object</span>.create(func.prototype);</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	* 第一步也可以写成：</span></span><br><span class="line"><span class="comment">	* var o = &#123;&#125;;</span></span><br><span class="line"><span class="comment">	* o.__proto__ === func.prototype</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="keyword">var</span> k = func.call(o);</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> k === <span class="built_in">Object</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> k;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> o;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="扩展：new操作符的原理"><a href="#扩展：new操作符的原理" class="headerlink" title="扩展：new操作符的原理"></a>扩展：new操作符的原理</h3><p>（1）创建一个新对象，其原型为构造函数的prototype<br>（2）将构造函数的作用域赋给新对象（于是<code>this</code>指向这个新对象）<br>（3）执行构造函数中的代码（为该对象添加属性）<br>（4）返回新对象给实例<br>我们可以试着模拟一下<code>new</code>运算符过程：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _new(func) &#123;</span><br><span class="line">	<span class="keyword">var</span> o = <span class="built_in">Object</span>.create(func.prototype);</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	* 第一步也可以写成：</span></span><br><span class="line"><span class="comment">	* var o = &#123;&#125;;</span></span><br><span class="line"><span class="comment">	* o.__proto__ === func.prototype</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="keyword">var</span> k = func.call(o);</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> k === <span class="built_in">Object</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> k;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> o;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h2><p>我们创建的每一个函数都有一个原型（prototype）属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
 <p>使用原型对象的好处是我们不必在构造函数中定义对象实例的信息，而是将这些信息直接添加到原型对象当中。如下例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义被继承的对象 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 往被继承对象中注入信息(实际上就是键值对) */</span></span><br><span class="line">Person.prototype.name    = <span class="string">"Sam"</span>;</span><br><span class="line">Person.prototype.age     = <span class="number">20</span>;</span><br><span class="line">Person.prototype.job     = <span class="string">"Software Engineer"</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</span><br><span class="line">person1.sayName();                 <span class="comment">// "Sam"</span></span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</span><br><span class="line">person2.sayName();			       <span class="comment">// "Sam"</span></span><br><span class="line"></span><br><span class="line">person1.sayName = person2.sayName  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义被继承的对象 */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 往被继承对象中注入信息(实际上就是键值对) */</span></span><br><span class="line">Person.prototype.name    = <span class="string">"Sam"</span>;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	alert(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Person1继承Person */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person1.prototype = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Person1继承Person */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person2.prototype = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person1();</span><br><span class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person2();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person1.name); <span class="comment">// Sam</span></span><br><span class="line"><span class="built_in">console</span>.log(person2.name); <span class="comment">// Sam</span></span><br><span class="line"><span class="built_in">console</span>.log(person1.sayName === person2.sayName); <span class="comment">// true, 共享原型链上的方法并且地址相同</span></span><br></pre></td></tr></table></figure>
+
 <p>这种方法很方便但是缺点也很明显：但是由于 person1 和 person2 只是继承于 Person，所以他们自身并没有属性，他们的属性都是来自于向上查找原型链得到的。</p>
 <p>也就是说：通过这种方法创建的实例，他们的的属性和方法是共享的。只要原型链上端的属性一改动，所有实例的属性都会改变。</p>
-<p><strong>所以一般我们结合着构造函数方式一起使用，让这些实例拥有自己的”私人属性”</strong></p>
+<h2 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h2><p>所以一般我们结合着构造函数方式一起使用，让这些实例拥有自己的”私人属性”。</p>
 <p>这种方式集两种模式之长，每个实例都会有自己的一份构造函数中的实例属性副本，同时又共享着原型中的方法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;        <span class="comment">//每个实例独有</span></span><br><span class="line">	<span class="keyword">this</span>.name    = name;</span><br><span class="line">	<span class="keyword">this</span>.age     = age;</span><br><span class="line">	<span class="keyword">this</span>.job     = job;</span><br><span class="line">	<span class="keyword">this</span>.friends = [<span class="string">"Shelby"</span>,<span class="string">"Court"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype = &#123;					 <span class="comment">//共享的方法</span></span><br><span class="line">	<span class="keyword">constructor</span> : Person,</span><br><span class="line">	sayName : function() &#123;</span><br><span class="line">		alert(<span class="keyword">this</span>.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;        <span class="comment">//每个实例独有</span></span><br><span class="line">	<span class="keyword">this</span>.name    = name;</span><br><span class="line">	<span class="keyword">this</span>.age     = age;</span><br><span class="line">	<span class="keyword">this</span>.job     = job;</span><br><span class="line">	<span class="keyword">this</span>.friends = [<span class="string">"Shelby"</span>,<span class="string">"Court"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Person1继承Person */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> arg = <span class="built_in">arguments</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 构造函数继承：继承属性和构造方法 </span></span><br><span class="line">	Person.call(<span class="keyword">this</span>, arg[<span class="number">0</span>], arg[<span class="number">1</span>], arg[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 原型链继承：继承原型链上的属性和方法（一般为继承方法）</span></span><br><span class="line">Person1.prototype = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> showObj = <span class="keyword">new</span> Person1(<span class="string">'Sam'</span>, <span class="number">18</span>, <span class="string">'coder'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(showObj.name, showObj.age, showObj.job);  <span class="comment">// Sam, 18, coder</span></span><br><span class="line"><span class="built_in">console</span>.log(showObj.friends); <span class="comment">// ["Shelby","Court"]</span></span><br><span class="line"></span><br><span class="line">showObj.sayName(); <span class="comment">// Sam</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="class继承"><a href="#class继承" class="headerlink" title="class继承"></a>class继承</h2><p>当然了，随着ES6的进（填）步（坑），JavaScript也可以用class来进行继承了</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;        <span class="comment">//每个实例独有</span></span><br><span class="line">	<span class="keyword">this</span>.name    = name;</span><br><span class="line">	<span class="keyword">this</span>.age     = age;</span><br><span class="line">	<span class="keyword">this</span>.job     = job;</span><br><span class="line">	<span class="keyword">this</span>.friends = [<span class="string">"Shelby"</span>,<span class="string">"Court"</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 两个字：简洁</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person1</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> showObj = <span class="keyword">new</span> Person1(<span class="string">'Sam'</span>, <span class="number">18</span>, <span class="string">'coder'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(showObj.name, showObj.age, showObj.job);  <span class="comment">// Sam, 18, coder</span></span><br><span class="line"><span class="built_in">console</span>.log(showObj.friends); <span class="comment">// ["Shelby","Court"]</span></span><br><span class="line"></span><br><span class="line">showObj.sayName(); <span class="comment">// Sam</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -481,7 +492,7 @@
       
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <div class="addthis_inline_share_toolbox">
-  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async = "async" ></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a1b5c83b5df98ab" async="async"></script>
 </div>
 
       
@@ -491,7 +502,7 @@
 
 						<footer id="footer" class="footer" style="left: 0">
 							<div class="footer-inner" style="width: 100%">
-								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2018</span>
+								<div class="copyright">&copy; <span itemprop="copyrightYear">2017 - 2019</span>
   <span class="with-love">
     <i class="fa fa-plane"></i>
   </span>
@@ -510,7 +521,7 @@
 
 								
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -543,7 +554,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3"></div>
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMjAyMy84NTg3" style="margin-top: 10%"></div>
     </div>
 
   
@@ -583,9 +594,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image"
-                src="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg"
-                alt="KMKNKK" />
+              <img class="site-author-image" itemprop="image" src="https://kmknkk.oss-cn-beijing.aliyuncs.com/hexo-img/avatar.jpg" alt="KMKNKK">
             
               <p class="site-author-name" itemprop="name">KMKNKK</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -598,7 +607,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -609,7 +618,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -631,9 +640,9 @@
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://kmknkk.oss-cn-beijing.aliyuncs.com/mmqrcode1511677287205.png" target="_blank" title="Wechat">
+                  <a href="https://www.zhihu.com/people/ceng-kun-83/activities" target="_blank" title="知乎">
                     
-                      <i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                      <i class="fa fa-fw fa-edit"></i>知乎</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -676,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解原型链"><span class="nav-number">1.</span> <span class="nav-text">理解原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链引申出来的几个问题："><span class="nav-number">2.</span> <span class="nav-text">原型链引申出来的几个问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展：new操作符的原理"><span class="nav-number">2.1.</span> <span class="nav-text">扩展：new操作符的原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链继承"><span class="nav-number">3.</span> <span class="nav-text">原型链继承</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解原型链"><span class="nav-number">1.</span> <span class="nav-text">理解原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链引申出来的几个问题："><span class="nav-number">2.</span> <span class="nav-text">原型链引申出来的几个问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展：new操作符的原理"><span class="nav-number">2.1.</span> <span class="nav-text">扩展：new操作符的原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链继承"><span class="nav-number">3.</span> <span class="nav-text">原型链继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合继承"><span class="nav-number">4.</span> <span class="nav-text">组合继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class继承"><span class="nav-number">5.</span> <span class="nav-text">class继承</span></a></li></ol></div>
             
 
           </div>
